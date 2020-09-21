@@ -1,0 +1,118 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Monte Carlo (MC) simulations are used for a plethora of different purposes in contemporary high-energy physics experiments.
+Applications for experiments currently in operation include detector calibration; optimization of analysis techniques, including the training of machine learning algorithms;
+the modelling of backgrounds as well as the modelling of signal acceptance and efficiency.
+Besides, MC simulations are extensively used for detector development and for estimating the physics reach of experiments that are presently in construction or planned in the future.
+When using MC simulations for the purpose of modelling background contributions,
+the production of sufficiently large MC samples often poses a material challenge in terms of the computing resources required to produce and store such samples.
+
+This is particular so for experiments at the CERN Large Hadron Collider (LHC),
+firstly due to the large cross section of proton-proton ($\Pp\Pp$) collisions and secondly due to the large luminosity delivered by the LHC.
+We refer to a single $\Pp\Pp$ collision as an {\em event}.
+The number of events, $N_{\data}$, produced within a given interval of time 
+is given by the product of the $\Pp\Pp$ scattering cross section, $\sigma$, and of the integrated luminosity, $L$, that the LHC has delivered during this time:
+$N_{\data} = \sigma \cdot L$.
+The inelastic $\Pp\Pp$ scattering cross section at the present LHC centre-of-mass energy of $\sqrt{s}=13$~\TeV amounts to $\approx 75$~mb~\cite{Aaboud:2016mmw,Sirunyan:2018nqx},
+while the integrated luminosities recorded at $\sqrt{s}=13$~\TeV by the ATLAS and CMS experiments amount to $\approx 140$~fb$^{-1}$~\cite{ATLAS-CONF-2019-021,LUM-17-001,LUM-17-004,LUM-18-002}.
+Thus, $N_{\data} \approx 10^{16}$ inelastic $\Pp\Pp$ scattering events occured in each of the two experiments during this time.
+In order to render the statistical uncertainties on background estimates obtained from the MC simulation small compared to the statistical uncertainties on the data,
+MC samples of size larger than $N_{\data}$ are needed, ideally $N_{\mc} \gtrsim 10 \cdot N_{\data}$,
+where the size of the MC sample is denoted by the symbol $N_{\mc}$.
+Such large MC sample are prohibitive to produce.
+Well-thought-out MC production schemes therefore need to be utilized at the LHC,
+which restrict the set of MC samples to those processes most relevant for physics analyses
+and limit the size of each MC sample as much as possible, 
+while keeping the statistical uncertainties on background estimates as low as possible.
+
+
+
+maintaining acceptable statistical uncertainties on background estimates.
+
+background processes 
+
+restricting the set of background processes that are modelled using the MC simulation to the backgrounds that are most relevant for data analyses
+and limiting the size of MC samples
+
+Well-though-out 
+
+Sophisticated methods are therefore required to adjust the size of MC samples 
+limit the production of MC samples to those background processes that are relevant for physics analysis.
+
+Having MC samples of sufficient size is particularly important for searches for new physics
+
+Such large MC sample are often prohibitive to produce
+
+the size of MC samples
+
+
+The statistical uncertainties on background estimates obtained from the MC simulation may limit the sensitivity of physics abnalsys
+
+prohibitive
+
+
+The number of $\Pp\Pp$ scattering events that occured during this time is thus $N \approx 10^{16}$.
+
+
+Not all of these events are of equal interest, of course.
+
+
+cross section and integrated luminosity:
+
+
+We refer to the particles produced in a single crossing of the proton beams as an {\em event}.
+
+a single $\Pp\Pp$ collision as an {\em event}.
+
+
+due to the large cross section on the one
+
+We refer to a single proton-proton ($\Pp\Pp$) collision as an {\em event}.
+The number of events is given by the product of cross section and integrated luminosity:
+
+The inelastic $\Pp\Pp$ scattering cross section amounts to $$ at $\sqrt{s}= 13$~\TeV centre-of-mass energy,
+while typical luminosities recorded by the ATLAS and CMS experiments amount to $100$~fb$^{-1}$.
+
+
+
+a challenge is often the
+
+A challenge
+
+
+ the modelling of backgrounds and the modeling of signal acceptance and efficiency for experiments currently in operation,
+as well as for detector development and estimation of the physics reach of experiments that are in construction.
+
+
+For existing experiments, applications include the calibration of the detector, the modelling of backgrounds as well as the modeling of the signal acceptance and efficiency
+for calibration purposes, the modelling of backgrounds and the modeling of the signal acceptance and efficiency for existing experiments
+
+detector development and estimation of the physics reach of new experiments, 
+
+analyses of data recorded by high-energy physics experiments:
+
+
+
+Monte Carlo (MC) simulations are extensively used for various purposes in modern high-energy physics experiments.
+Precise measurements or searches for new physics often require the collection of vast amounts of data.
+It is often difficult to produce equally large MC samples, due to the computing resources that would be required to produce and store such samples.
+One solution often employed in physics analyses of data recorded by high-energy particle experiments 
+is to divide the phase-space of particle interactions into multiple regions 
+and adapt the size of MC samples produced for each region to the needs of the physics analyses that are performed in each region.
+In this paper we describe a procedure for making optimal use of the available MC samples, 
+in terms of reducing the statistical uncertainties that arise in physics analyses from the limited size of MC samples,
+in case the regions covered by different MC samples overlap in phase-space.
+
+
+We refer to one simulated particle interaction as one ``event''.
+
+The overlap is handled by applying appropriately chosen weights to simulated events
+
+We refer to this procedure as ``stitching''.
+
+
+The structure of this paper is as follows:
+The formalism for computing the stitching weights is described in Section~\ref{sec:stitching_weights}.
+In Section~\ref{sec:examples}, we present examples for applying the formalism.
+The paper concludes with a summary in Section~\ref{sec:summary}.
