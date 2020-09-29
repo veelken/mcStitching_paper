@@ -1,6 +1,36 @@
 \section{Examples}
 \label{sec:examples}
 
+In this Section, we illustrate the formalism with a few examples.
+The examples are drawn from two different applications: the estimation of Drell-Yan (DY) and $\PW$+jets backgrounds in physics analyses at the LHC
+and the estimation of trigger rates for the high-luminosity LHC (HL-LHC).
+
+The DY production of lepton pairs ($\PZggx \to \Plepton\Plepton$) and the production of $\PW$ bosons with subsequent decay to a charged lepton and a neutrino ($\PW \to \Plepton\Pnu$)
+constitute relevant relevant backgrounds to analyses of SM Higgs ($\PHiggs$) boson production in the decay modes $\PHiggs \to \Pgt\Pgt$ and $\PHiggs \to \PW\PW$
+and to the production of $\PHiggs$ boson pair production in the decay modes $\PHiggs\PHiggs \to \Pbottom\Pbottom\Pgt\Pgt$ and $\PHiggs\PHiggs \to \Pbottom\Pbottom\PW\PW$ 
+at the LHC~\cite{ATLAS:2014aga,Aad:2015vsa,Aad:2019yxi,Aaboud:2018sfw,CMS-HIG-13-004,CMS-HIG-13-027,CMS-HIG-17-002,CMS-HIG-17-006}.
+Samples of simulated DY and $\PW$+jets events produced in $\Pp\Pp$ collisions at $\sqrt{s}=13$~\TeV
+have been generated at leading order (LO) and at next-to-leading order (NLO) accuracy in perturbative quantum chromodynamics (pQCD)
+using the program \MGvATNLO~\cite{Alwall:2014hca}.
+The generation of DY events is restricted to the PS region $m_{\Plepton\Plepton} > 50$~\GeV, where $m_{\Plepton\Plepton}$ denotes the mass of the lepton pair.
+The samples are normalized using cross sections computed at next-to-next-to leading order (NNLO) accuracy in pQCD,
+taking electroweak corrections up to NLO into account~\cite{Li:2012wna}.
+The product of the $\PZggx \to \Plepton\Plepton$ ($\PW \to \Plepton\Pnu$) production cross section in the PS region $m_{\Plepton\Plepton} > 50$~\GeV
+times the branching fraction for the decay of the $\PZ$ boson or virtual photon to two charged leptons (of the $\PW$ boson to a charged lepton and a neutrino) amounts to $6.11$~nb ($20.5$~nb).
+We will demonstrate the stitching of these samples based on two observables,
+$N_{\jet}$ and $\HT$, defined as, respectively, the number of jets and the scalar sum in $\pT$ of the jets in an event.
+The PS region in which we perform the stitching will be either one- or two-dimensional.
+We will show that for the formalism developed in Section~\ref{sec:stitching_weights},
+it makes little difference whether the stitching is performed in one dimension or in two:
+The regions in PS are enumerated by a single index $i$ in either case,
+and in either case the probability $p_{i}$ follows a categorical distribution.
+
+The task of estimating trigger rates for the upcoming high-luminosity run of the LHC represents the second type of application.
+ (HL-LHC).
+
+The second type of application is given by the
+
+
 The trigger rate corresponds to the number of background events passing the trigger per second (the number of signal events is negligible)
 
 mention ``pileup'' : multiple proton-proton interactions in the same bunch-crossing
