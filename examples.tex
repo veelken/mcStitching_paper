@@ -26,14 +26,30 @@ The regions in PS are enumerated by a single index $i$ in either case,
 and in either case the probability $p_{i}$ follows a categorical distribution.
 
 The task of estimating trigger rates for the upcoming high-luminosity run of the LHC represents the second type of application.
- (HL-LHC).
+The ``rate'' of a trigger corresponds to the number of $\Pp\Pp$ collision events passing this trigger per unit of time, typically one second.
+The estimation of trigger rates is an important task to demonstrate the physics potential of the HL-LHC.
+This is because the HL-LHC physics program demands a large amount of integrated luminosity to be delivered by the LHC,
+in order to allow the ATLAS and CMS experiments to perform measurements of rare signal processes,
+such as the precise measurement of $\PHiggs$ boson couplings and the study of $\PHiggs$ boson pair production.
+In order to accomplish its physics program, the HL-LHC is expected to operate at an instantaneous luminosity of $5$-$7.5 \times 10^{34}\cm^{-2}\s^{-1}$
+at a center-of-mass energy to $\sqrt{s} = 14\TeV$~\cite{TDR_Phase2_lhc}.
+The challenge of developing triggers for the HL-LHC is to design the triggers such that most of the rare signal processes pass the triggers,
+whereas background processes are reduced by many orders of magnitude, in order not to exceed the limit with which events can be written to permanent storage.
+The inelastic $\Pp\Pp$ scattering cross section at $\sqrt{s} = 14\TeV$ amounts to $\approx 80$~mb,
+yielding up to $200$ simultaneous $\Pp\Pp$ interactions per crossing of the proton beams. 
+We denote the number of these simultaneous $\Pp\Pp$ interactions by the symbol $N_{\pileup}$.
+The vast majority of these interactions are inelastic proton-proton scatterings with low momentum exchange,
+which arise from the exchange of gluons between the colliding protons.
+These interactions are referred to as ``minimum bias interactions'' and the aggregate of up to $N_{\pileup}$ of such interactions in the same crossing of the proton beams is referred to as ``pileup''.
+In order to estimate the rates of triggers at the HL-LHC,
+MC samples of pure pileup events and of inelastic proton-proton scatterings with a higher momentum exchange are used.
+We denote the transverse momentum exchanged between the protons by the symbol $\pThat$.
+The stitching of pure pileup samples with samples generated for different ranges in $\pThat$ allows to estimate the trigger rates with acceptable statistical uncertainties.
+The scattering in which the transverse momentum exchanged between the protons equals $\pThat$ may occur in any of the $N_{\pileup}$ simultaneous $\Pp\Pp$ interactions.
+Thus, the regions in PS of these $N_{\pileup}$ interactions are enumerated by a vector $I$ of dimension $N_{\pileup}$ in this case.
+The $k$-th component of this vector indicates the range in $\pThat$ of the $k$-th $\Pp\Pp$ interaction.
+The probability $p_{I} = p_{i_{1},\dots,i_{N_{\pileup}}}$ follows a multinomial distribution in this case.
 
-The second type of application is given by the
-
-
-The trigger rate corresponds to the number of background events passing the trigger per second (the number of signal events is negligible)
-
-mention ``pileup'' : multiple proton-proton interactions in the same bunch-crossing
 
 \include{examples_background_yield}
 
