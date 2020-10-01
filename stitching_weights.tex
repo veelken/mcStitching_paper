@@ -33,14 +33,14 @@ We hence use weights that depend only in the PS region $i$ and not on the MC sam
 and refer to these weights using the notation $w^{i}$.
 
 It is useful to express the cross section $\sigma_{i}$ as the product of an ``inclusive'' cross section $\sigma_{\incl}$,
-which refers to the whole PS, and the probability $p_{i}$ that an event generated in the inclusive PS falls into region $i$:
+which refers to the whole PS, and the probability $p^{i}$ that an event generated in the inclusive PS falls into region $i$:
 \begin{equation*}
-\sigma_{i} = \sigma_{\incl} \, p_{i} \, .
+\sigma_{i} = \sigma_{\incl} \, p^{i} \, .
 \label{eq:two}
 \end{equation*}
 Inserting this relation into Eq.~(\ref{eq:one}) and solving for the weight $w^{i}$, one obtains:
 \begin{equation}
-w^{i} = \frac{L \, \sigma_{\incl} \, p_{i}}{\sum_{j} \, N_{j} \, p_{j}^{i}} \, .
+w^{i} = \frac{L \, \sigma_{\incl} \, p^{i}}{\sum_{j} \, N_{j} \, p_{j}^{i}} \, .
 \label{eq:master}
 \end{equation}
 
@@ -49,7 +49,7 @@ one often faces the case where one MC sample, produced for general physics analy
 and where this ``inclusive'' sample is complemented by additional samples, which cover the regions of PS most relevant for searches for new physics.
 In this case, Eq.~(\ref{eq:master}) can be rewritten in the form:
 \begin{equation}
-w^{i} = \frac{L \, \sigma_{\incl}}{N_{\incl}} \cdot \frac{N_{\incl} \, p_{i}}{N_{\incl} \, p_{i} + \sum_{j} \, N_{j} \, p_{j}^{i}} \, ,
+w^{i} = \frac{L \, \sigma_{\incl}}{N_{\incl}} \cdot \frac{N_{\incl} \, p^{i}}{N_{\incl} \, p^{i} + \sum_{j} \, N_{j} \, p_{j}^{i}} \, ,
 \label{eq:incl}
 \end{equation}
 where $N_{\incl}$ refers to the size of the inclusive sample.
@@ -59,8 +59,8 @@ The two factors in Eq.~(\ref{eq:incl}) may be interpreted in the following way:
 The first factor corresponds to the weights that one would apply to the events in PS region $i$ 
 in case no exclusive samples are available and the background estimate in PS region $i$ is obtained using the inclusive sample only.
 The production of exclusive samples increases the number of simulated events falling into the PS region $i$ 
-from $N_{\incl} \, p_{i}$ to $N_{\incl} \, p_{i} + \sum_{j} \, N_{j} \, p_{j}^{i}}$ 
+from $N_{\incl} \, p^{i}$ to $N_{\incl} \, p^{i} + \sum_{j} \, N_{j} \, p_{j}^{i}}$ 
 and reduces the weights that are applied to simulated events falling into this region by the reciprocal of this increase,
 given by the second factor in Eq.~(\ref{eq:incl}).
 This in turn reduces the statistical uncertainty on the background estimate in the PS region $i$ by a factor 
-$\sqrt{\frac{N_{\incl} \, p_{i}}{N_{\incl} \, p_{i} + \sum_{j} \, N_{j} \, p_{j}^{i}}}$.
+$\sqrt{\frac{N_{\incl} \, p^{i}}{N_{\incl} \, p^{i} + \sum_{j} \, N_{j} \, p_{j}^{i}}}$.

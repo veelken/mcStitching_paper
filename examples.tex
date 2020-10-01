@@ -11,8 +11,11 @@ and to the production of $\PHiggs$ boson pair production in the decay modes $\PH
 at the LHC~\cite{ATLAS:2014aga,Aad:2015vsa,Aad:2019yxi,Aaboud:2018sfw,CMS-HIG-13-004,CMS-HIG-13-027,CMS-HIG-17-002,CMS-HIG-17-006}.
 Samples of simulated DY and $\PW$+jets events produced in $\Pp\Pp$ collisions at $\sqrt{s}=13$~\TeV
 have been generated at leading order (LO) and at next-to-leading order (NLO) accuracy in perturbative quantum chromodynamics (pQCD)
-using the program \MGvATNLO~\cite{Alwall:2014hca}.
+using the program \MGvATNLO $2.2.2$~\cite{Alwall:2014hca}. [CHECK THAT VERSION IS CORRECT]
 The generation of DY events is restricted to the PS region $m_{\Plepton\Plepton} > 50$~\GeV, where $m_{\Plepton\Plepton}$ denotes the mass of the lepton pair.
+Parton showering, hadronization, and the underlying event are modeled using \PYTHIA $v8.2$ with the tune \textrm{CP5}~\cite{Sirunyan:2019dfx}.
+The matching of matrix elements to parton showers is done using the \textrm{MLM} scheme~\cite{Alwall:2007fs} for the LO samples
+and the \textrm{FXFX} scheme~\cite{Frederix:2012ps} for the samples simulated at NLO accuracy.
 The samples are normalized using cross sections computed at next-to-next-to leading order (NNLO) accuracy in pQCD,
 taking electroweak corrections up to NLO into account~\cite{Li:2012wna}.
 The product of the $\PZggx \to \Plepton\Plepton$ ($\PW \to \Plepton\Pnu$) production cross section in the PS region $m_{\Plepton\Plepton} > 50$~\GeV
@@ -23,7 +26,7 @@ The PS region in which we perform the stitching will be either one- or two-dimen
 We will show that for the formalism developed in Section~\ref{sec:stitching_weights},
 it makes little difference whether the stitching is performed in one dimension or in two:
 The regions in PS are enumerated by a single index $i$ in either case,
-and in either case the probability $p_{i}$ follows a categorical distribution.
+and in either case the probability $p^{i}$ follows a categorical distribution.
 
 The task of estimating trigger rates for the upcoming high-luminosity run of the LHC represents the second type of application.
 The ``rate'' of a trigger corresponds to the number of $\Pp\Pp$ collision events passing this trigger per unit of time, typically one second.
@@ -42,13 +45,14 @@ The vast majority of these interactions are inelastic proton-proton scatterings 
 which arise from the exchange of gluons between the colliding protons.
 These interactions are referred to as ``minimum bias interactions'' and the aggregate of up to $N_{\pileup}$ of such interactions in the same crossing of the proton beams is referred to as ``pileup''.
 In order to estimate the rates of triggers at the HL-LHC,
-MC samples of pure pileup events and of inelastic proton-proton scatterings with a higher momentum exchange are used.
+MC samples of pure pileup events and of inelastic proton-proton scatterings with a higher momentum exchange are generated at LO in pQCD
+using the program \PYTHIA $v8.2$~\cite{Sjostrand:2014zea}.
 We denote the transverse momentum exchanged between the protons by the symbol $\pThat$.
 The stitching of pure pileup samples with samples generated for different ranges in $\pThat$ allows to estimate the trigger rates with acceptable statistical uncertainties.
 The scattering in which the transverse momentum exchanged between the protons equals $\pThat$ may occur in any of the $N_{\pileup}$ simultaneous $\Pp\Pp$ interactions.
 Thus, the regions in PS of these $N_{\pileup}$ interactions are enumerated by a vector $I$ of dimension $N_{\pileup}$ in this case.
 The $k$-th component of this vector indicates the range in $\pThat$ of the $k$-th $\Pp\Pp$ interaction.
-The probability $p_{I} = p_{i_{1},\dots,i_{N_{\pileup}}}$ follows a multinomial distribution in this case.
+The probability $p^{I} = p^{i_{1},\dots,i_{N_{\pileup}}}$ follows a multinomial distribution in this case.
 
 
 \include{examples_background_yield}
