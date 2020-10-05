@@ -1,16 +1,18 @@
 \section{Summary}
 \label{sec:summary}
 
-An algorithm for the reconstruction of the mass $m_{\PHiggs\PHiggs}$ of the $\PHiggs$ boson pair 
-in events in which the Higgs boson pair decays via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$
-and the $\Pgt$ leptons subsequently decay into electrons, muons, or hadrons has been presented.
-The resolution on $m_{\PHiggs\PHiggs}$ has been studied in simulated events 
-and amounts to $22$, $7$, and $9\%$, relative to the true mass of the $\PHiggs$ boson pair,
-for events containing resonances $\textrm{X}$ of mass $m_{\textrm{X}} = 300$, $500$, and $800$~\GeV, respectively.
-The mass resolution for resonances of low mass, near the kinematic threshold $m_{\textrm{X}} \approx 2 \, m_{\PHiggs}$,
-is limited by the fact that the algorithm chooses the wrong association of electrons, muons, and $\tauh$ 
-to $\PHiggs$ boson pairs in $13\%$ of events.
-The probability to choose a spurious pairing decreases for resonances of higher mass and becomes negligible for $m_{\textrm{X}} \gtrsim 500$~\GeV.
-The optimization of the choice of the correct pairing for resonances of low mass is left to future studies.
-We expect that our algorithm will be useful in searches for heavy resonances decaying to $\PHiggs$ boson pairs
-at the LHC.
+The production of Monte Carlo (MC) samples of adequate size is often a challenge in modern high-energy physics experiments,
+due to the computing resources required to produce and store such samples.
+This is particularly true for experiments at the CERN Large Hadron Collider (LHC),
+firstly because of the large proton-proton scattering cross section and secondly because of the large luminosity delivered by the LHC.
+In this paper we have presented a procedure, which reduces the statistical uncertainties arising from the limited size of MC samples used in physics analyses,
+in case the regions covered by different MC samples overlap in phase-space (PS).
+Our formalism is general enough to be applied in various different cases.
+Different examples for applying the formalism were given in this paper.
+Of particular interest is the case of searches for new physics,
+where potential signals are typically expected to be small and often similar in size to the statistical uncertainties on background contributions, 
+which arise from established Standard Model processes.
+In this case, the statistical uncertainties on the background contributions can often be significantly reduced 
+by dividing the PS into multiple regions, producing separate MC samples for each region,
+and accounting for the overlap of different samples in PS by applying the weights computed as detailed in this paper to the simulated events.
+We refer to this procedure as ``stitching''.
