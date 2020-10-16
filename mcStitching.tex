@@ -5,11 +5,11 @@
 \ifx\ver\verPreprint
 \documentclass[a4paper,english,11pt]{article}
 \usepackage[bindingoffset=0.5cm,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,footskip=1.0cm]{geometry}
-\usepackage{lineno,hepnames,bm,multirow,amssymb,authblk,graphicx,newclude,xspace,hyperref}
+\usepackage{lineno,hepnames,bm,multirow,amssymb,authblk,graphicx,newclude,xspace,hyperref,rotating}
 \fi
 \ifx\ver\verPAPER
 \documentclass[1p]{elsarticle}
-\usepackage{lineno,hyperref,hepnames,bm,multirow,amssymb,xspace}
+\usepackage{lineno,hyperref,hepnames,bm,multirow,amssymb,xspace,rotating}
 \fi
 
 %\modulolinenumbers[5]
@@ -52,13 +52,10 @@
 %% Custom latex macros
 %%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\PHiggs}{\ensuremath{\PH}}
-\newcommand{\PZggx}{\ensuremath{\PZ/\PGg^{*}}\xspace}
-\newcommand{\Plepton}{\ensuremath{\PLepton}}
-\newcommand{\Pbottom}{\ensuremath{\PQb}}
-\newcommand{\APbottom}{\ensuremath{\PAQb}}
+\newcommand{\PZggx}{\ensuremath{\PZ/\Pgamma^{*}}\xspace}
 \newcommand{\pT}{\ensuremath{p_{\textrm{T}}}\xspace}
 \newcommand{\pThat}{\ensuremath{\hat{p}_{\textrm{T}}}\xspace}
+\newcommand{\kT}{\ensuremath{k_{\textrm{T}}}\xspace}
 \newcommand{\HT}{\ensuremath{H_{\mathrm{T}}}\xspace}
 \newcommand{\GeV}{\ensuremath{\textrm{GeV}}\xspace}
 \newcommand{\TeV}{\ensuremath{\textrm{TeV}}\xspace}
@@ -69,6 +66,8 @@
 \newcommand{\pileup}{\ensuremath{\textrm{pu}}\xspace}
 \newcommand{\Born}{\ensuremath{\textrm{born}}\xspace}
 \newcommand{\ME}{\ensuremath{\textrm{me}}\xspace}
+\newcommand{\MGvATNLO}{\textsc{MadGraph5}\_aMC@NLO\xspace}
+\newcommand{\PYTHIA}{\textsc{Pythia}\xspace}
 \newcommand{\cf}{cf.\xspace}
 \newcommand{\ie}{i.e.\xspace}
 \newcommand{\eg}{e.g.\xspace}

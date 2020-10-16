@@ -29,20 +29,14 @@ for the inclusive sample and for the sum of inclusive plus exclusive samples in 
 The distributions are normalized to an integrated luminosity of $140$~fb$^{-1}$, recorded at $\sqrt{s}=13$~\TeV.
 Individual exclusive samples $j$ are distinguished by different colors.
 The stitching weights $w^{i}$ computed according to Eq.~(\ref{eq:incl}) and given in Table~\ref{tab:weights_WJets_vs_Njet} are applied to the sum of inclusive plus exclusive samples.
-Jets are reconstructed using the anti-\kt algorithm~\cite{Cacciari:2008gp,Cacciari:2011ma} with a distance parameter of $0.4$,
-using all stable particles except neutrinos as input, and are required to satisfy the selection criteria $\pT > 25\GeV$ and $\abs{\eta} < 5.0$.
+Jets are reconstructed using the anti-\kT algorithm~\cite{Cacciari:2008gp,Cacciari:2011ma} with a distance parameter of $0.4$,
+using all stable particles except neutrinos as input, and are required to satisfy the selection criteria $\pT > 25\GeV$ and $\vert\eta\vert < 5.0$.
 The distributions for the inclusive sample and for the sum of inclusive plus exclusive samples, with the stitching weights applied, are in agreement within the statistical uncertainties.
 The exclusive samples reduce the statistical uncertainties in particular in the tails of the distributions,
 which are the regions most relevant in searches for new physics.
 
 \begin{table}[h!]
-\centering              
-\topcaption{
-  Number of events in the inclusive and exclusive $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD,
-  and probabilities $p^{i}$ for the events in the inclusive and exclusive samples to populate the different PS regions $i$.
-  The index $i$ equals the observable $N_{\jet}$.
-}
-\label{tab:samples_and_probabilities_WJets_vs_Njet}
+\centering
 \resizebox{0.7\textwidth}{!}{
 \begin{tabular}{l|c|ccccc}
 \hline
@@ -59,15 +53,16 @@ $N_{\jet} \geq 4$          & $XXX \times 10^{6}$ & $0$     & $0$     & $0$     &
 \hline
 \end{tabular}
 }
+\caption{
+  Number of events in the inclusive and exclusive $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD,
+  and probabilities $p^{i}$ for the events in the inclusive and exclusive samples to populate the different PS regions $i$.
+  The index $i$ equals the observable $N_{\jet}$.
+}
+\label{tab:samples_and_probabilities_WJets_vs_Njet}
 \end{table}
 
 \begin{table}[h!]
-\centering              
-\topcaption{
-  Weights $w^{i}$ for the case that inclusive and exclusive $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD
-  are stitched based on the observable $N_{\jet}$.
-}
-\label{tab:weights_WJets_vs_Njet}
+\centering
 \resizebox{0.7\textwidth}{!}{
 \begin{tabular}{l|ccccc}
 \hline
@@ -79,31 +74,36 @@ Weight & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ \\
 \hline
 \end{tabular}
 }
+\caption{
+  Weights $w^{i}$ for the case that inclusive and exclusive $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD
+  are stitched based on the observable $N_{\jet}$.
+}
+\label{tab:weights_WJets_vs_Njet}
 \end{table}
 
 \begin{figure}
-\topcaption{
-  Distributions in $\pT$ of the (a) leading and (b) subleading jet,
-  in (c) the multiplicity of jets and (d) the observable $\HT$,
-  for the case that $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD are stitched based on the observable $N_{\jet}$.
-}
 \setlength{\unitlength}{1mm}
 \begin{center}
 \begin{picture}(180,182)(0,0)
-\put(6.5, 100.0){\mbox{\includegraphics*[height=82mm]
-  {plots/leadJet_pT_WJets_vs_Njet.pdf}}}
-\put(81.5, 100.0){\mbox{\includegraphics*[height=82mm]
-  {plots/subleadJet_pT_WJets_vs_Njet.pdf}}}
-\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
-  {plots/numJets_WJets_vs_Njet.pdf}}}
-\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
-  {plots/HT_WJets_vs_Njet.pdf}}}
+%\put(6.5, 100.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/leadJet_pT_WJets_vs_Njet.pdf}}}
+%\put(81.5, 100.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/subleadJet_pT_WJets_vs_Njet.pdf}}}
+%\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/numJets_WJets_vs_Njet.pdf}}}
+%\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/HT_WJets_vs_Njet.pdf}}}
 \put(43.0, 96.0){\small (a)}
 \put(118.0, 96.0){\small (b)}
 \put(43.0, 0.0){\small (c)}
 \put(118.0, 0.0){\small (d)}
 \end{picture}
 \end{center}
+\caption{
+  Distributions in $\pT$ of the (a) leading and (b) subleading jet,
+  in (c) the multiplicity of jets and (d) the observable $\HT$,
+  for the case that $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD are stitched based on the observable $N_{\jet}$.
+}
 \label{fig:controlPlots_WJets_vs_Njet}
 \end{figure}
 
@@ -134,10 +134,6 @@ whereas the samples binned in $N_{\jet}$ are particularly well suited when the s
 
 \begin{table}[h!]
 \centering              
-\topcaption{
-  Number of events in the $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD and in ranges in $\HT$.
-}
-\label{tab:samples_WJets_vs_Njet_and_HT}
 \resizebox{0.7\textwidth}{!}{
 \begin{tabular}{l|c}
 \hline
@@ -155,37 +151,39 @@ $       \HT > 2500$~\GeV & $XXX \times 10^{6}$ \\
 \hline
 \end{tabular}
 }
+\caption{
+  Number of events in the $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD and in ranges in $\HT$.
+}
+\label{tab:samples_WJets_vs_Njet_and_HT}
 \end{table}
 
 \begin{figure}
-\topcaption{
+\setlength{\unitlength}{1mm}
+\begin{center}
+\begin{picture}(180,82)(0,0)
+%\put(44.0, 0.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/regions_WJets_vs_Njet_and_HT.pdf}}}
+\end{picture}
+\end{center}
+\caption{
   Definition of the PS regions $i$ in the plane of $N_{\jet}$ versus $\HT$,
   for the case that $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD are stitched based on the observables $N_{\jet}$ and $\HT$.
 }
-\includegraphics*[height=82mm]
-  {plots/regions_WJets_vs_Njet_and_HT.pdf}
-\end{picture}
-\end{center}
 \label{fig:regions_WJets_vs_Njet_and_HT}
 \end{figure}
 
 \begin{figure}
-\topcaption{
-  Distributions in $\pT$ of the (a) leading and (b) subleading jet,
-  in (c) the multiplicity of jets and (d) the observable $\HT$,
-  for the case that $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD are stitched based on the observables $N_{\jet}$ and $\HT$.
-}
 \setlength{\unitlength}{1mm}
 \begin{center}
 \begin{picture}(180,182)(0,0)
-\put(6.5, 100.0){\mbox{\includegraphics*[height=82mm]
-  {plots/leadJet_pT_WJets_vs_Njet_and_HT.pdf}}}
-\put(81.5, 100.0){\mbox{\includegraphics*[height=82mm]
-  {plots/subleadJet_pT_WJets_vs_Njet_and_HT.pdf}}}
-\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
-  {plots/numJets_WJets_vs_Njet_and_HT.pdf}}}
-\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
-  {plots/HT_WJets_vs_Njet_and_HT.pdf}}}
+%\put(6.5, 100.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/leadJet_pT_WJets_vs_Njet_and_HT.pdf}}}
+%\put(81.5, 100.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/subleadJet_pT_WJets_vs_Njet_and_HT.pdf}}}
+%\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/numJets_WJets_vs_Njet_and_HT.pdf}}}
+%\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/HT_WJets_vs_Njet_and_HT.pdf}}}
 \put(43.0, 96.0){\small (a)}
 \put(118.0, 96.0){\small (b)}
 \put(43.0, 0.0){\small (c)}
@@ -193,6 +191,11 @@ $       \HT > 2500$~\GeV & $XXX \times 10^{6}$ \\
 [ADD ``RATIO'' PLOT BELOW EACH DISTRIBUTION THAT SHOWS RELATIVE STATISTICAL UNCERTAINTY, DEFINED AS BINERROR/BINCONTENT FOR 3 CASES: 1) INCLUSIVE, 2) STITCHED BY NJET, 3) STITCHED BY NJET AND HT]
 \end{picture}
 \end{center}
+\caption{
+  Distributions in $\pT$ of the (a) leading and (b) subleading jet,
+  in (c) the multiplicity of jets and (d) the observable $\HT$,
+  for the case that $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD are stitched based on the observables $N_{\jet}$ and $\HT$.
+}
 \label{fig:controlPlots_WJets_vs_Njet_and_HT}
 \end{figure}
 
@@ -261,11 +264,6 @@ shown in Fig.~\ref{fig:controlPlots_WJets_vs_Njet} and in the lower part of Fig.
 
 \begin{table}[h!]
 \centering              
-\topcaption{
-  Number of events in the inclusive and exclusive $\PZggx \to \Plepton\Plepton$ samples simulated at NLO accuracy in pQCD,
-  and cross sections, computed by the program \MGvATNLO, for each sample.
-}
-\label{tab:samples_DYJets_vs_Njet}
 \resizebox{0.7\textwidth}{!}{
 \begin{tabular}{l|c|c}
 \hline
@@ -281,14 +279,15 @@ $N_{\jet}^{\Born} = 2$ & $XXX \times 10^{6}$ & $XX.XX$ \\
 \end{tabular}
 }
 $^{1}$ Computed at at NLO accuracy in pQCD using the program \MGvATNLO
+\caption{
+  Number of events in the inclusive and exclusive $\PZggx \to \Plepton\Plepton$ samples simulated at NLO accuracy in pQCD,
+  and cross sections, computed by the program \MGvATNLO, for each sample.
+}
+\label{tab:samples_DYJets_vs_Njet}
 \end{table}
 
 \begin{table}[h!]
-\centering              
-\topcaption{
-  Probability $p(N_{\jet}^{\ME})$ for the inclusive $\PZggx \to \Plepton\Plepton$ samples simulated at NLO accuracy in pQCD.
-}
-\label{tab:probabilities_inclusive_DYJets_vs_Njet}
+\centering
 \resizebox{0.7\textwidth}{!}{
 \begin{tabular}{l|cccc}
 \hline
@@ -301,46 +300,44 @@ Inclusive                  & $0.XXX$              & $0.XXX$              & $0.XX
 \hline
 \end{tabular}
 }
+\caption{
+  Probability $p(N_{\jet}^{\ME})$ for the inclusive $\PZggx \to \Plepton\Plepton$ samples simulated at NLO accuracy in pQCD.
+}
+\label{tab:probabilities_inclusive_DYJets_vs_Njet}
 \end{table}
 
 \begin{table}[h!]
-\centering              
-\topcaption{
-  Probabilities $p(N_{\jet}^{\Born})$ and $p(N_{\jet}^{\ME})$ for the $\PZggx \to \Plepton\Plepton$ samples simulated at NLO accuracy in pQCD and binned in jet multiplicity.
-  The probabilities $p(N_{\jet}^{\ME})$ for cases other than $N_{\jet}^{\ME} = N_{\jet}^{\Born}$ and $N_{\jet}^{\ME} = N_{\jet}^{\Born} + 1$ are zero.
-}
-\label{tab:probabilities_exclusive_DYJets_vs_Njet}
+\centering
 \resizebox{0.7\textwidth}{!}{
 \begin{tabular}{l|ccc|cc}
 \hline
-\multirow{2}{20mm}{Sample} & \multicolumn{3}{c}{Probability $p(N_{\jet}^{\Born})$}                    & \multicolumn{3}{c}{Probability $p(N_{\jet}^{\ME})$} \\
+\multirow{2}{20mm}{Sample} & \multicolumn{3}{c}{Probability $p(N_{\jet}^{\Born})$}                    & \multicolumn{2}{c}{Probability $p(N_{\jet}^{\ME})$} \\
                            & $N_{\jet}^{\Born} = 0$ & $N_{\jet}^{\Born} = 1$ & $N_{\jet}^{\Born} = 2$ & $N_{\jet}^{\ME} = N_{\jet}^{\Born}$ & $N_{\jet}^{\ME} = N_{\jet}^{\Born} + 1$ \\
 \hline
 \hline
 Inclusive                  & $0.XXX$                & $0.XXX$                & $0.XXX$                & $0.XXX$                             & $0.XXX$ \\
 \hline
-\hline
 \end{tabular}
 }
+\caption{
+  Probabilities $p(N_{\jet}^{\Born})$ and $p(N_{\jet}^{\ME})$ for the $\PZggx \to \Plepton\Plepton$ samples simulated at NLO accuracy in pQCD and binned in jet multiplicity.
+  The probabilities $p(N_{\jet}^{\ME})$ for cases other than $N_{\jet}^{\ME} = N_{\jet}^{\Born}$ and $N_{\jet}^{\ME} = N_{\jet}^{\Born} + 1$ are zero.
+}
+\label{tab:probabilities_exclusive_DYJets_vs_Njet}
 \end{table}
 
 \begin{figure}
-\topcaption{
-  Distributions in $\pT$ of the (a) leading and (b) subleading jet,
-  in (c) the multiplicity of jets and (d) the observable $\HT$,
-  for the case that $\PZggx \to \Plepton\Plepton$ samples generated at NLO accuracy in pQCD are stitched based on the multiplicity of jets at the ME level.
-}
 \setlength{\unitlength}{1mm}
 \begin{center}
 \begin{picture}(180,182)(0,0)
-\put(6.5, 100.0){\mbox{\includegraphics*[height=82mm]
-  {plots/leadJet_pT_DYJets_vs_Njet.pdf}}}
-\put(81.5, 100.0){\mbox{\includegraphics*[height=82mm]
-  {plots/subleadJet_pT_DYJets_vs_Njet.pdf}}}
-\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
-  {plots/numJets_DYJets_vs_Njet.pdf}}}
-\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
-  {plots/HT_DYJets_vs_Njet.pdf}}}
+%\put(6.5, 100.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/leadJet_pT_DYJets_vs_Njet.pdf}}}
+%\put(81.5, 100.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/subleadJet_pT_DYJets_vs_Njet.pdf}}}
+%\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/numJets_DYJets_vs_Njet.pdf}}}
+%\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
+%  {plots/HT_DYJets_vs_Njet.pdf}}}
 \put(43.0, 96.0){\small (a)}
 \put(118.0, 96.0){\small (b)}
 \put(43.0, 0.0){\small (c)}
@@ -348,5 +345,10 @@ Inclusive                  & $0.XXX$                & $0.XXX$                & $
 [ADD ``RATIO'' PLOT BELOW EACH DISTRIBUTION THAT SHOWS RELATIVE STATISTICAL UNCERTAINTY, DEFINED AS BINERROR/BINCONTENT FOR 3 CASES: 1) INCLUSIVE, 2) STITCHED BY NJET]
 \end{picture}
 \end{center}
+\caption{
+  Distributions in $\pT$ of the (a) leading and (b) subleading jet,
+  in (c) the multiplicity of jets and (d) the observable $\HT$,
+  for the case that $\PZggx \to \Plepton\Plepton$ samples generated at NLO accuracy in pQCD are stitched based on the multiplicity of jets at the ME level.
+}
 \label{fig:controlPlots_DYJets_vs_Njet}
 \end{figure}
