@@ -63,12 +63,16 @@
 \newcommand{\data}{\ensuremath{\textrm{data}}\xspace}
 \newcommand{\mc}{\ensuremath{\textrm{mc}}\xspace}
 \newcommand{\incl}{\ensuremath{\textrm{incl}}\xspace}
-\newcommand{\jet}{\ensuremath{\textrm{j}}\xspace}
+\newcommand{\jet}{\ensuremath{\textrm{jet}}\xspace}
 \newcommand{\pileup}{\ensuremath{\textrm{pu}}\xspace}
 \newcommand{\Born}{\ensuremath{\textrm{born}}\xspace}
 \newcommand{\ME}{\ensuremath{\textrm{me}}\xspace}
 \newcommand{\MGvATNLO}{\textsc{MadGraph5}\_aMC@NLO\xspace}
 \newcommand{\PYTHIA}{\textsc{Pythia}\xspace}
+\newcommand{\POWHEG}{\textsc{Powheg}\xspace}
+\newcommand{\ALPGEN}{\textsc{Alpgen}\xspace}
+\newcommand{\SHERPA}{\textsc{Sherpa}\xspace}
+\newcommand{\MCFM}{\textsc{MCFM}\xspace}
 \newcommand{\cf}{cf.\xspace}
 \newcommand{\ie}{i.e.\xspace}
 \newcommand{\eg}{e.g.\xspace}
@@ -105,16 +109,17 @@
 \fi
 
 \begin{abstract}
-Monte Carlo (MC) simulations are extensively used for various purposes in modern high-energy physics experiments.
-Precise measurements or searches for new physics often require the collection of vast amounts of data.
-It is often difficult to produce equally large MC samples, due to the computing resources that would be required to produce and store such samples.
-One solution often employed when analyzing data recorded by high-energy particle experiments 
+Monte Carlo (MC) simulations are extensively used for various purposes in modern high-energy physics (HEP) experiments.
+Precise measurements of established Standard Model processes or searches for new physics often require the collection of vast amounts of data.
+It is often difficult to produce MC samples of size matching that of the data, as substantial computing resources are required to produce and store such samples.
+One solution often employed when producing MC samples for HEP experiments 
 is to divide the phase-space of particle interactions into multiple regions 
-and to adapt the size of MC samples that are produced for each region to the needs of physics analyses that are performed in these regions.
-In this paper we describe a procedure for making optimal use of the available MC samples, 
-in terms of reducing the statistical uncertainties that arise in physics analyses from the limited size of MC samples,
-in case the regions covered by different MC samples overlap in phase-space.
-Different examples are given for applying the procedure to proton-proton collisions at the CERN Large Hadron Collider.
+and produce the MC samples separately for each region,
+with the size of MC samples being adapted to the needs of physics analyses that are performed in these regions.
+In this paper we present an optimal procedure for combining MC samples that overlap in phase-space.
+Our procedure is optimal in the sense that it provides the lowest statistical uncertainties.
+We refer to the procedure as ``stitching''.
+The paper includes different examples for applying the procedure to proton-proton collisions at the CERN Large Hadron Collider.
 \end{abstract}
 
 \ifx\ver\verPAPER
