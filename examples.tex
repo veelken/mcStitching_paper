@@ -281,21 +281,19 @@ This example demonstrates the stitching of an inclusive $\PZggx \to \Plepton\Ple
 with exclusive samples produced in slices of jet multiplicity.
 The latter produced for the case of $0$, $1$, and $2$ jets, using the \MGvATNLO commands:
 \begin{center}
-$N_{\jet} = 0$: \quad \texttt{generate p p > ell+ ell- [QCD]}
+\begin{tabular}{ll}
+$N_{\jet} = 0$: & \texttt{generate p p > ell+ ell- [QCD]} \\
+$N_{\jet} = 1$: & \texttt{generate p p > ell+ ell- j [QCD]} \\
+$N_{\jet} = 2$: & \texttt{generate p p > ell+ ell- j j [QCD]} \, ,
+\end{tabular}
 \end{center}
-and
+while the inclusive sample is produced by the commands:
 \begin{center}
-$N_{\jet} = 1$: \quad \texttt{generate p p > ell+ ell- j [QCD]}
-\end{center}
-and
-\begin{center}
-$N_{\jet} = 2$: \quad \texttt{generate p p > ell+ ell- j j [QCD]} \, ,
-\end{center}
-while the inclusive sample is produced by the command:
-\begin{center}
-$0 < \leq N_{\jet} \leq 2$: \quad \texttt{generate p p > ell+ ell- [QCD]} \\
-\qquad \texttt{add process p p > ell+ ell- j [QCD]} \\
-\qquad \texttt{add process p p > ell+ ell- j j [QCD]} \, .
+\begin{tabular}{l}
+\texttt{generate p p > ell+ ell- [QCD]} \\
+\texttt{add process p p > ell+ ell- j [QCD]} \\
+\texttt{add process p p > ell+ ell- j j [QCD]} \, .
+\end{tabular}
 \end{center}
 
 A complication in computing the stitching weights arises from the fact that the jets, represented by the symbol \texttt{j} in the above commands,
