@@ -1,18 +1,23 @@
 \section{Summary}
 \label{sec:summary}
 
-The production of Monte Carlo (MC) samples of adequate size is often a challenge in modern high-energy physics experiments,
+The production of MC samples of adequate size is often a challenge in modern HEP experiments,
 due to the computing resources required to produce and store such samples.
-This is particularly true for experiments at the CERN Large Hadron Collider (LHC),
-firstly because of the large proton-proton scattering cross section and secondly because of the large luminosity delivered by the LHC.
-In this paper we have presented a procedure, which reduces the statistical uncertainties arising from the limited size of MC samples used in physics analyses,
-in case the regions covered by different MC samples overlap in phase-space (PS).
+This is particularly true for experiments at the CERN LHC,
+firstly because of the large $\Pp\Pp$ scattering cross section and secondly because of the large luminosity delivered by the LHC.
+
+In this paper we have presented a procedure that allows to reduce the statistical uncertainties 
+by combining MC samples that overlap in PS.
 Our formalism is general enough to be applied in various different cases.
-Different examples for applying the formalism were given in this paper.
-Of particular interest is the case of searches for new physics,
-where potential signals are typically expected to be small and often similar in size to the statistical uncertainties on background contributions, 
-which arise from established Standard Model processes.
-In this case, the statistical uncertainties on the background contributions can often be significantly reduced 
+Different examples for applying the formalism to $\Pp\Pp$ collisions at the LHC were given in this paper.
+
+Of particular interest is the case of modelling background contributions to searches for new physics,
+where potential signals are typically expected to be small and often similar in size to the statistical uncertainties on the background contributions.
+The statistical uncertainties on these background contributions can often be significantly reduced 
 by dividing the PS into multiple regions, producing separate MC samples for each region,
 and accounting for the overlap of different samples in PS by applying the weights computed as detailed in this paper to the simulated events.
 We refer to this procedure as ``stitching''.
+
+The example of estimating trigger rates at the HL-LHC, 
+for which up to $200$ simultaneous $\Pp\Pp$ collisions per crossing of the proton beams are expected,
+demonstrates the flexibility of our formalism.
