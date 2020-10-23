@@ -52,18 +52,18 @@ We refer to the MC sample that covers the whole PS as the ``inclusive'' sample a
 In this case, Eq.~(\ref{eq:master}) can be rewritten in the form:
 \begin{equation}
 w^{i} = \frac{L \times \sigma_{\incl}}{N_{\incl}} \times \frac{N_{\incl} \times P^{i}}{N_{\incl} \times P^{i} + \sum_{j} \, N_{j} \times P_{j}^{i}} \, ,
-\label{eq:incl}
+\label{eq:weight_incl}
 \end{equation}
 where $N_{\incl}$ refers to the number of events in the inclusive sample.
-The sum over $j$ in Eq.~(\ref{eq:incl}) extends over the additional samples that each cover a different region in PS
+The sum over $j$ in Eq.~(\ref{eq:weight_incl}) extends over the additional samples that each cover a different region in PS
 and to which we will refer to as ``exclusive'' samples.
-The two factors in Eq.~(\ref{eq:incl}) may be interpreted in the following way:
+The two factors in Eq.~(\ref{eq:weight_incl}) may be interpreted in the following way:
 The first factor corresponds to the weights that one would apply to the events in PS region $i$ 
 in case no exclusive samples are available and the background estimate in PS region $i$ is based solely on the inclusive sample.
 The availability of the additional exclusive samples increases the number of simulated events in the PS region $i$ 
 from $N_{\incl} \times P^{i}$ to $N_{\incl} \times P^{i} + \sum_{j} \, N_{j} \times P_{j}^{i}$ ,
 thereby reducing the weights that are applied to simulated events falling into this region.
-The resulting reduction in weights is given by the second factor in Eq.~(\ref{eq:incl}).
+The resulting reduction in weights is given by the second factor in Eq.~(\ref{eq:weight_incl}).
 
 We note in passing that the square-root of this factor,
 $\sqrt{\frac{N_{\incl} \times P^{i}}{N_{\incl} \times P^{i} + \sum_{j} \, N_{j} \times P_{j}^{i}}}$,
