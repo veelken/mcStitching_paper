@@ -575,13 +575,13 @@ and for the case of single inelastic $\Pp\Pp$ scatterings with no condition impo
 Sample                    & Number of events \\
 \hline
 \hline
-Inclusive                 & $XXX \times 10^{6}$ \\
+Inclusive                 & $8 \times 10^{5}$ \\
 \hline
-$ 30 < \pThat <  50$~\GeV & $XXX \times 10^{6}$ \\
-$ 50 < \pThat <  80$~\GeV & $XXX \times 10^{6}$ \\
-$ 80 < \pThat < 120$~\GeV & $XXX \times 10^{6}$ \\
-$120 < \pThat < 170$~\GeV & $XXX \times 10^{6}$ \\
-$170 < \pThat < 300$~\GeV & $XXX \times 10^{6}$ \\
+$ 30 < \pThat <  50$~\GeV & $4 \times 10^{5}$ \\
+$ 50 < \pThat <  80$~\GeV & $2 \times 10^{5}$ \\
+$ 80 < \pThat < 120$~\GeV & $1 \times 10^{5}$ \\
+$120 < \pThat < 170$~\GeV & $5 \times 10^{4}$ \\
+$170 < \pThat < 300$~\GeV & $5 \times 10^{4}$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -599,7 +599,7 @@ Range in $\pThat$ [\GeV] & $< 30$ & $30$-$50$ & $50$-$80$ & $80$-$120$ & $120$-$
 Index $i$           & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\
 \hline
 \hline
-Probability $p_{i}$ & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ \\
+Probability $p_{i}$ & $0.998$ & $1.69 \times 10^{-3}$ & $2.54 \times 10^{-4}$ & $3.94 \times 10^{-5}$ & $6.20 \times 10^{-6}$ & $1.73 \times 10^{-6}$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -616,52 +616,52 @@ Instead, we show the variation of the weights $w^{I}$, computed according to Eq.
 for the inclusive sample and for the samples produced in ranges of $\pThat$ in Fig.~\ref{fig:weight_trigger_rate}.
 For comparison, we also show the corresponding weight, given by $w_{\incl} = F/N_{\incl}$,
 for the case that only the inclusive sample is used to estimate the trigger rate.
+As can be seen in the figure, the usage of the samples produced in ranges of $\pThat$ in combination with the inclusive sample reduces the weights.
+The different maxima in the distribution of stitching weights $w^{I}$ correspond to events 
+in which the transverse momentum exchanges in the $N_{\pileup}$ simultaneous $\Pp\Pp$ interactions falls into different ranges in $\pThat$.
+The weights $w^{I}$ are on average smaller for events that pass than for events that fail the trigger selection,
+and the reduction in statistical uncertainties that results from the reduction in weights thus increases once the trigger selection is applied.
 
 \begin{figure}
 \setlength{\unitlength}{1mm}
 \begin{center}
 \begin{picture}(180,182)(0,0)
-%\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/numJets_DYJets_atME_individual.pdf}}}
-%\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/numjets_DYJets_atME_sum.pdf}}}
-\put(43.0, 0.0){\small (a)}
-\put(118.0, 0.0){\small (b)}
+\put(44.0, 0.0){\mbox{\includegraphics*[height=82mm]
+  {plots/makeEvtWeightPlotsForPaper_evtWeight_log.pdf}}}
 \end{picture}
 \end{center}
 \caption{
-  Rate expected for (a) a dijet trigger, as function of the $\pT$ threshold applied to the jets,
-  and (b) a trigger based on $\HT$, as function of the threshold on $\HT$, at the HL-LHC.
+  Weights $w^{I}$, computed according to Eq.~(\ref{eq:weight_trigger_rate}), 
+  for the inclusive sample and for the samples produced in ranges of $\pThat$.
 }
 \label{fig:weight_trigger_rate}
 \end{figure}
 
-The rates expected at the HL-LHC for a dijet trigger and for a trigger based on $\HT$ are shown in Fig.~\ref{fig:trigger_rate}.
-The rate of the dijet trigger is computed as function of the $\pT$ threshold applied to the jets,
-while the rate of the trigger based on $\HT$ is computed as function of the threshold on $\HT$.
-The same $\pT$ threshold is applied to both jets.
-The jets considered for the dijet trigger and for the trigger based on $\HT$ are required to satisfy the conditions $\pT > 25$~\GeV and $\vert\eta\vert < 5.0$.
+The rates expected at the HL-LHC for a single jet trigger and a dijet trigger are shown in Fig.~\ref{fig:trigger_rate}.
+The rates are computed as function of the $\pT$ threshold that is applied to the jets. 
+In case of the dijet trigger, the same $\pT$ threshold is applied to both jets.
+The jets are required to satisfy the conditions $\pT > 25$~\GeV and $\vert\eta\vert < 5.0$.
 The rate estimates obtained for the inclusive sample and for the sum of inclusive plus exclusive samples, 
 with the stitching weights computed according to Eq.~(\ref{eq:weight_trigger_rate}),
 agree within statistical uncertainties, demonstrating that that estimate of the trigger rate obtained from the stitching procedure is unbiased.
-In the figure, we also show the relative statistical uncertainties on the trigger rates obtained for the case that only the inclusive sample is used
-and for the case that the sum of inclusive plus exclusive samples are used.
+The statistical uncertainties on the rate estimates obtained from the inclusive sample are represented by error bars,
+while those obtained from the sum of inclusive plus exclusive samples are represented by the green shaded area.
+The uncertainties are smaller in case the stitching procedure is used, albeit not by much in this example.
 
 \begin{figure}
 \setlength{\unitlength}{1mm}
 \begin{center}
-\begin{picture}(180,182)(0,0)
-%\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/trigger_rate_dijet.pdf}}}
-%\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/trigger_rate_HT.pdf}}}
+\begin{picture}(180,86)(0,0)
+\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
+  {plots/makeRatePlotsForPaper_SingleJet_absEtaLt5p00_log.pdf}}}
+\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
+  {plots/makeRatePlotsForPaper_DoubleJet_absEtaLt5p00_log.pdf}}}
 \put(43.0, 0.0){\small (a)}
 \put(118.0, 0.0){\small (b)}
 \end{picture}
 \end{center}
 \caption{
-  Rate expected for (a) a dijet trigger, as function of the $\pT$ threshold applied to the jets,
-  and (b) a trigger based on $\HT$, as function of the threshold on $\HT$, at the HL-LHC.
+  Rate expected for (a) a single jet trigger and (b) a dijet trigger at the HL-LHC, as function of the $\pT$ threshold that is applied to the jets.
 }
 \label{fig:trigger_rate}
 \end{figure}
