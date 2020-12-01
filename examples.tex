@@ -11,11 +11,11 @@ constitute relevant backgrounds to many physics analyses at the LHC,
 for example the analysis of SM Higgs ($\PHiggs$) boson production in the decay modes $\PHiggs \to \Pgt\Pgt$ and $\PHiggs \to \PW\PW$
 and the search for $\PHiggs$ boson pair production in the decay modes $\PHiggs\PHiggs \to \Pbottom\Pbottom\Pgt\Pgt$ and 
 $\PHiggs\PHiggs \to \Pbottom\Pbottom\PW\PW$~\cite{ATLAS:2014aga,Aad:2015vsa,Aad:2019yxi,Aaboud:2018sfw,CMS-HIG-13-004,CMS-HIG-13-027,CMS-HIG-17-002,CMS-HIG-17-006}.
-Simulated samples of DY and $\PW$+jets events have been produced for $\Pp\Pp$ collisions at $\sqrt{s}=13$~\TeV center-of-mass energy
+Simulated samples of $\PW$+jets and DY events have been produced for $\Pp\Pp$ collisions at $\sqrt{s}=13$~\TeV center-of-mass energy
 using matrix elements computed at leading order (LO) and at next-to-leading order (NLO) accuracy in perturbative quantum chromodynamics (pQCD)
-with the program \MGvATNLO $2.2.2$~\cite{Alwall:2014hca}. [CHECK THAT VERSION IS CORRECT]
+with the program \MGvATNLO $2.4.2$~\cite{Alwall:2014hca}.
 The production of DY events is restricted to the PS region $m_{\Plepton\Plepton} > 50$~\GeV, where $m_{\Plepton\Plepton}$ denotes the mass of the lepton pair.
-Parton showering, hadronization, and the underlying event are modelled using \PYTHIA $v8.2$ with the tune \textrm{CP5}~\cite{Sirunyan:2019dfx}.
+Parton showering, hadronization, and the underlying event are modelled using the program \PYTHIA $v8.2$~\cite{Sjostrand:2014zea} with the tune \textrm{CP5}~\cite{Sirunyan:2019dfx}.
 The matching of matrix elements to parton showers is done using the \textrm{MLM} scheme~\cite{Alwall:2007fs} for the LO samples
 and the \textrm{FXFX} scheme~\cite{Frederix:2012ps} for the NLO samples.
 The DY and $\PW$+jets samples are normalized using cross sections computed at next-to-next-to leading order (NNLO) accuracy in pQCD,
@@ -32,32 +32,32 @@ The regions in PS are enumerated by a single index $i$ in either case,
 and in either case the probability $P^{i}$ follows a {\em categorical distribution}.
 
 The task of estimating trigger rates for the upcoming high-luminosity data-taking period of the LHC is chosen as second example to illustrate the stitching procedure.
-The ``rate'' of a trigger corresponds to the number of $\Pp\Pp$ collision events passing this trigger per unit of time, conventionally chosen to be one second.
+The ``rate'' of a trigger corresponds to the number of $\Pp\Pp$ collision events passing this trigger per unit of time.
 
 The estimation of trigger rates constitutes an important task for demonstrating the physics potential of the HL-LHC.
 The HL-LHC physics program demands a large amount of integrated luminosity to be delivered by the LHC 
 to facilitate measurements of rare signal processes,
 such as the precise measurement of $\PHiggs$ boson couplings and the study of $\PHiggs$ boson pair production, to be performed by the ATLAS and CMS experiments.
 In order to satisfy this demand, the HL-LHC is expected to operate at an instantaneous luminosity of $5$-$7.5 \times 10^{34}$~cm$^{-2}$~s$^{-1}$
-at a center-of-mass energy of $\sqrt{s} = 14$~\TeV~\cite{TDR_Phase2_lhc}.
+at a center-of-mass energy of $\sqrt{s} = 14$~\TeV~\cite{TDR_Phase2_LHC}.
 The challenge of developing triggers for the HL-LHC is to design the triggers such that most of the rare signal processes pass the triggers,
 while background processes are reduced by many orders of magnitude, in order not to exceed bandwidth limitations on the detector read-out 
 and on the rate with which events can be written to permanent storage.
 
 The inelastic $\Pp\Pp$ scattering cross section at $\sqrt{s} = 14$~\TeV amounts to $\approx 80$~mb,
-resulting in up to $200$ simultaneous $\Pp\Pp$ interactions per crossing of the proton beams at the nominal HL-LHC instantaneous luminosity.
+resulting in up to $200$ simultaneous $\Pp\Pp$ interactions per crossing of the proton beams at the nominal HL-LHC instantaneous luminosity~\cite{TDR_Phase2_LHC}.
 The vast majority of these interactions are inelastic $\Pp\Pp$ scatterings with low momentum exchange,
 which predominantly arise from the exchange of gluons between the colliding protons.
-We refer to the aggregate of up to $N_{\pileup}$ of all such interactions that occur in the same crossing of the proton beams as ``pileup''
+We refer to all such interactions that occur in the same crossing of the proton beams as ``pileup''
 and denote the number of these interactions by the symbol $N_{\pileup}$.
 In order to estimate the rates of triggers at the HL-LHC,
 inclusive MC samples of inelastic $\Pp\Pp$ scattering interactions 
 and of inelastic $\Pp\Pp$ scatterings with a higher momentum exchange are produced at LO in pQCD
-using the program \PYTHIA $v8.2$~\cite{Sjostrand:2014zea}.
+using the program \PYTHIA $v8.2$.
 The transverse momentum exchanged between the scattered protons is denoted by the symbol $\pThat$.
 We refer to the inclusive samples of inelastic $\Pp\Pp$ scattering interactions with no selection on $\pThat$ applied during the production of these samples
 as ``minimum bias'' samples.
-The stitching of the minimum bias samples with samples generated for different ranges in $\pThat$ allows to estimate the trigger rates with acceptable statistical uncertainties.
+The stitching of the minimum bias samples with samples generated for different ranges in $\pThat$ allows to estimate the trigger rates with lower statistical uncertainties.
 
 The production of the samples proceeds by first simulating one ``hard-scatter'' interaction within a given range in $\pThat$
 and then adding a number of $N_{\pileup}$ pileup interactions to the same event.
@@ -73,23 +73,24 @@ The probability $P^{I} = P^{i_{1},\dots,i_{N_{\pileup}}}$ follows a {\em multino
 \subsection{Estimation of DY and $\PW$+jets backgrounds}
 \label{sec:examples_background_yield}
 
-The examples in this Section refer to the modelling of DY and $\PW$+jets backgrounds to physics analyses at the LHC.
+The examples in this section refer to the modelling of DY and $\PW$+jets backgrounds to physics analyses at the LHC.
 We will first discuss the stitching of $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD based on the observable $N_{\jet}$, 
 followed by a discussion of the stitching of $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD based on the two observables $N_{\jet}$ and $\HT$,
-before we conclude this Section with a discussion of stitching $\PZggx \to \Plepton\Plepton$ samples generated at NLO in pQCD based on the multiplicity of jets.
+before we conclude this section with a discussion of stitching $\PZggx \to \Plepton\Plepton$ samples generated at NLO in pQCD based on the multiplicity of jets.
 In all three cases, we will assume that an inclusive sample, covering the whole PS, is available.
 The probabilities $P^{i}$ and $P_{j}^{i}$ in Eq.~(\ref{eq:weight_incl})
 follow a categorial distribution and
 are obtained by determining the fraction of events that fall into PS region $i$ in the inclusive sample and in the exclusive samples $j$, respectively~\footnote{
   In case no inclusive sample is available to obtain the probabilities $P^{i}$ and $P_{j}^{i}$,
   one can determine these probabilities from the ratio of cross sections that are computed by the program \MGvATNLO 
-  or similar programs such as \POWHEG~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}, \SHERPA~\cite{Gleisberg:2008ta}, or \ALPGEN~\cite{Mangano:2002ea}.}.
+  or similar programs such as \POWHEG~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}, \SHERPA~\cite{Gleisberg:2008ta}, \ALPGEN~\cite{Mangano:2002ea}, or \MCFM~\cite{Campbell:2011bn}.}.
 
 \subsubsection{Stitching of LO $\PW$+jets samples by $N_{\jet}$}
 \label{sec:WJets_vs_Njet}
 
 In this example, an inclusive $\PW \to \Plepton\Pnu$ sample simulated at LO accuracy in pQCD 
-is stitched with exclusive samples produced for jet multiplicities of $N_{\jet} = 1$, $2$, $3$, and $N_{\jet} \geq 4$.
+is stitched with exclusive samples produced for jet multiplicities of $N_{\jet} = 1$, $2$, $3$, and $4$.
+The inclusive sample contains events with jet multiplicities between $0$ and $4$.
 We divide the PS by the number of jets and set the index $i$ equal to $N_{\jet}$.
 The number of events in each MC sample and the values of the $P^{i}$ and $P_{j}^{i}$ are given in Table~\ref{tab:samples_and_probabilities_WJets_vs_Njet}.
 The corresponding stitching weights, computed according to Eq.~(\ref{eq:weight_incl}), are given in Table~\ref{tab:weights_WJets_vs_Njet}.
@@ -123,7 +124,7 @@ Inclusive                  & $XXX \times 10^{6}$ & $0.XXX$ & $0.XXX$ & $0.XXX$ &
 $N_{\jet} = 1$             & $XXX \times 10^{6}$ & $0$     & $1$     & $0$     & $0$     & $0$     \\
 $N_{\jet} = 2$             & $XXX \times 10^{6}$ & $0$     & $0$     & $1$     & $0$     & $0$     \\
 $N_{\jet} = 3$             & $XXX \times 10^{6}$ & $0$     & $0$     & $0$     & $1$     & $0$     \\
-$N_{\jet} \geq 4$          & $XXX \times 10^{6}$ & $0$     & $0$     & $0$     & $0$     & $1$     \\
+$N_{\jet} = 4$             & $XXX \times 10^{6}$ & $0$     & $0$     & $0$     & $0$     & $1$     \\
 \hline
 \end{tabular}
 \end{center}
@@ -185,14 +186,16 @@ Weight & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ \\
 \label{sec:WJets_vs_Njet_and_HT}
 
 This example extends the previous one and demonstrates the stitching procedure based on two observables, $N_{\jet}$ and $\HT$.
-The exclusive samples are simulated for jet multiplicities of $N_{\jet} = 1$, $2$, $3$, and $N_{\jet} \geq 4$ 
-and for $\HT$ in the ranges $70$-$100$, $100$-$200$, $200$-$400$, $400$-$600$, $600$-$800$, $800$-$1200$, $1200$-$2500$, and $> 2500$~\GeV.
+The exclusive samples are simulated for jet multiplicities of $N_{\jet} = 1$, $2$, $3$, and $4$ 
+and for $\HT$ in the ranges $70$-$100$, $100$-$200$, $200$-$400$, $400$-$600$, $600$-$800$, $800$-$1200$, $1200$-$2500$, and $> 2500$~\GeV up to the kinematic limit.
+The inclusive sample contains events with jet multiplicities between $0$ and $4$ and covers the full range in $\HT$.
 The number of events in the samples simulated in ranges in $\HT$ are given in Table~\ref{tab:samples_WJets_vs_Njet_and_HT}.
 The information for the inclusive sample and for the samples produced in slices of jet multiplicity was given in Table~\ref{tab:samples_and_probabilities_WJets_vs_Njet} already.
 
 The corresponding PS regions $i$, defined in the plane of $N_{\jet}$ versus $\HT$, are shown in Fig.~\ref{fig:regions_WJets_vs_Njet_and_HT}.
-In total, the stitching weights $w^{i}$ are computed for $45$ separate PS regions.
-The numerical values of these weights are given in Table~\ref{tab:weights_WJets_vs_Njet_and_HT} in the appendix.
+In total, the probabilities $P^{i}$ and $P_{j}^{i}$ and the corresponding stitching weights $w^{i}$ are computed for $45$ separate PS regions.
+The numerical values of the probabilities are given in Table~\ref{tab:probabilities_WJets_vs_Njet_and_HT}, 
+while those of the weights are given in Table~\ref{tab:weights_WJets_vs_Njet_and_HT} in the appendix.
 
 Distributions in $\pT$ of the leading and subleading jet,
 in jet multiplicity and in the observable $\HT$ 
@@ -204,6 +207,7 @@ corresponding to only the inclusive sample being used, the inclusive sample bein
 the inclusive sample being used in combination with the samples simulated in ranges in $\HT$,
 and for the case that all samples given in Tables~\ref{tab:samples_and_probabilities_WJets_vs_Njet} and~\ref{tab:samples_WJets_vs_Njet_and_HT} are used together.
 As expected, the samples simulated in ranges in $\HT$ reduce the statistical uncertainties in particular in the tail of the $\HT$ distribution.
+
 Physics analyses that search for new particles of high mass, which decay to high $\pT$ jets, are thus best served by producing MC samples in ranges in $\HT$,
 whereas the samples binned in $N_{\jet}$ are particularly well suited when the signal process under study features a large number of low $\pT$ jets.
 
@@ -301,8 +305,8 @@ refer to quarks and gluons that are present at the Born level, while the samples
 The NLO matrix element (ME) that is used to generate the samples contains three different parts, 
 corresponding to the Born-level, virtual corrections, and the emission of a real gluon.
 For events produced by the ME for the Born-level and for the virtual corrections,
-the multiplicity of jets on the ME level matches the multiplicity of the symbols \texttt{j} in the \MGvATNLO commands.
-In contrast, events produced by the ME for real gluon emission ME contain an extra jet at the ME level.
+the multiplicity of jets on the ME level matches the multiplicity of the symbols \texttt{j} in the \MGvATNLO commands,
+whereas the ME for real gluon emission adds an extra jet at the ME level with respect to the Born level.
 
 The multiplicity of jets at the ME level is determined by counting the number of quarks and gluons of status $1$ 
 that are present in the \textrm{Les Houches Event} (LHE)~\cite{Alwall:2006yp} file produced by \MGvATNLO.
@@ -312,8 +316,8 @@ as function of the number of jets at the ME level and determine this probability
 For the inclusive sample, we obtain the probability $P(N_{\jet}^{\ME})$ for an event in the inclusive sample
 to contain $N_{\jet}^{\ME}$ jets at the ME level 
 from the distribution of $N_{\jet}^{\ME}$ in the inclusive sample.
-We use the superscript $\ME$ to refer to the jet multiplicity at the ME level
-and the superscript $\Born$ to refer to the number of jets that are present at the Born level.
+We use the superscript ``$\ME$'' to refer to the jet multiplicity at the ME level
+and the superscript ``$\Born$'' to refer to the number of jets that are present at the Born level.
 For the exclusive samples, the number of jets present at the Born level matches the multiplicity of the symbols \texttt{j} in the \MGvATNLO commands
 used to produce these samples.
 We express the probability $P(N_{\jet}^{\ME})$ as the product of two factors: $P(N_{\jet}^{\ME}) = P(N_{\jet}^{\Born}) \times P(N_{\jet}^{\ME} \vert N_{\jet}^{\Born})$.
@@ -351,8 +355,7 @@ is adequately addressed.
 \end{figure}
 
 The number of events contained in each MC sample and the cross sections computed by the program \MGvATNLO are given in Table~\ref{tab:samples_DYJets_vs_Njet}.
-Numerical values for the probability $P(N_{\jet}^{\ME})$ for the inclusive sample are given in Table~\ref{tab:probabilities_inclusive_DYJets_vs_Njet},
-while the values for the probabilities $P(N_{\jet}^{\Born})$ and $P(N_{\jet}^{\ME} \vert N_{\jet}^{\Born})$ 
+Numerical values for the probabilities $P(N_{\jet}^{\Born})$ and $P(N_{\jet}^{\ME} \vert N_{\jet}^{\Born})$ 
 for the samples produced in slices of jet multiplicity are reported in Table~\ref{tab:probabilities_exclusive_DYJets_vs_Njet}.
 The stitching weights $w(N_{\jet}^{\ME})$, computed according to Eq.~(\ref{eq:weight_incl}), are given in Table~\ref{tab:weights_DYJets_vs_Njet}.
 
@@ -377,25 +380,6 @@ $^{1}$ Computed at at NLO accuracy in pQCD using the program \MGvATNLO
   and cross sections, computed by the program \MGvATNLO, for each sample.
 }
 \label{tab:samples_DYJets_vs_Njet}
-\end{table}
-
-\begin{table}[h!]
-\begin{center}
-\begin{tabular}{l|cccc}
-\hline
-\multirow{2}{20mm}{Sample} & \multicolumn{4}{c}{Probability $P(N_{\jet}^{\ME})$} \\
-                           & $N_{\jet}^{\ME} = 0$ & $= 1$   & $= 2$   & $= 3$ \\
-\hline
-\hline
-Inclusive                  & $0.XXX$              & $0.XXX$ & $0.XXX$ & $0.XXX$ \\
-\hline
-\hline
-\end{tabular}
-\end{center}
-\caption{
-  Probability $P(N_{\jet}^{\ME})$ for the inclusive $\PZggx \to \Plepton\Plepton$ samples simulated at NLO accuracy in pQCD.
-}
-\label{tab:probabilities_inclusive_DYJets_vs_Njet}
 \end{table}
 
 \begin{table}[h!]
@@ -520,8 +504,7 @@ P^{I} = \frac{(N_{\pileup} + 1)!}{n_{1}! \times \dots \times n_{k}!} \times p_{1
 where the symbols $p_{i}$ correspond to the probability for a single inelastic $\Pp\Pp$ scattering interaction to feature a transverse momentum exchange that falls into the $i$-th interval in $\pThat$.
 The $n_{i}$ satisfy the condition $N_{\pileup} + 1 = \sum_{i=1}^{k} \, n_{i}$.
 
-The corresponding probability $P_{j}^{I}$ for an event in the $j$-th exclusive sample, which contains $N_{\pileup}$ pileup interactions,
-is given by:
+The corresponding probability $P_{j}^{I}$ for an event in the $j$-th exclusive sample that contains $N_{\pileup}$ pileup interactions is given by:
 \begin{equation}
 P_{j}^{I} = \begin{cases}
 \frac{N_{\pileup}!}{n_{1}! \times \dots \times (n_{j} - 1)! \times \dots \times n_{k}!} \times p_{1}^{n_{1}} \times \dots \times p_{j}^{(n_{j} - 1)} \times \dots \times p_{k}^{n_{k}} \, ,
@@ -550,7 +533,7 @@ for the purpose of estimating trigger rates at the HL-LHC:
 w^{I} = \frac{F}{N_{\incl}} \times \frac{N_{\incl} \times P^{I}}{N_{\incl} \times P^{I} + \sum_{j} \, N_{j} \times P_{j}^{I}} \, .
 \label{eq:weight_tmp}
 \end{equation}
-Dividing Eq.~(\ref{eq:weight_tmp}) by $P^{I}$ and replacing $P_{j}^{I}/P^{I}$ by Eq.~(\ref{eq:P_ratio}) yields:
+Dividing both numerator and denominator on the right-hand side of Eq.~(\ref{eq:weight_tmp}) by $P^{I}$ and replacing $P_{j}^{I}/P^{I}$ by Eq.~(\ref{eq:P_ratio}) yields:
 \begin{equation}
 w^{I} = \frac{F}{N_{\incl} + \sum_{j} \, N_{j} \times \frac{n_{j}}{(N_{\pileup} + 1) \times p_{j}}} \, .
 \label{eq:weight_trigger_rate}
@@ -643,7 +626,7 @@ In case of the dijet trigger, the same $\pT$ threshold is applied to both jets.
 The jets are required to satisfy the conditions $\pT > 25$~\GeV and $\vert\eta\vert < 5.0$.
 The rate estimates obtained for the inclusive sample and for the sum of inclusive plus exclusive samples, 
 with the stitching weights computed according to Eq.~(\ref{eq:weight_trigger_rate}),
-agree within statistical uncertainties, demonstrating that that estimate of the trigger rate obtained from the stitching procedure is unbiased.
+agree within statistical uncertainties, demonstrating that the estimate of the trigger rate obtained from the stitching procedure is unbiased.
 The statistical uncertainties on the rate estimates obtained from the inclusive sample are represented by error bars,
 while those obtained from the sum of inclusive plus exclusive samples are represented by the green shaded area.
 The uncertainties are smaller in case the stitching procedure is used, albeit not by much in this example.

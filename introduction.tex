@@ -8,7 +8,7 @@ Besides, MC simulations are extensively used for detector development and for es
 When using MC simulations for the purpose of modelling background contributions,
 the production of sufficiently large MC samples often poses a material challenge in terms of the computing resources required to produce and store such samples.
 
-This is especially so for experiments at the CERN Large Hadron Collider (LHC)~\cite{Bruning:2004ej,Buning:2004wk,Benedikt:2004wm},
+This is especially true for experiments at the CERN Large Hadron Collider (LHC)~\cite{Bruning:2004ej,Buning:2004wk,Benedikt:2004wm},
 firstly due to the large cross section of proton-proton ($\Pp\Pp$) collisions and secondly due to the large luminosity delivered by the LHC.
 We refer to a single $\Pp\Pp$ collision as an {\em event}.
 The number of events, $N_{\data}$, produced within a given interval of time 
@@ -23,16 +23,16 @@ MC samples of size larger than $N_{\data}$ are needed, ideally $N_{\mc} \gtrsim 
 where the size of the MC sample is denoted by the symbol $N_{\mc}$.
 Such large MC sample are prohibitive to produce.
 The solution to this apparent dilemma is to restrict the production of MC samples to the processes most relevant for physics analyses,
-which typically focus on events that contain either charged leptons, high $\pT$ jets, or large missing transverse momentum.
+which typically focus on events that contain either charged leptons, jets of high transverse momentum ($\pT$), or high $\pT$ neutrinos,
+where the latter is indicated by the presence of large missing transverse momentum in the event.
 The cross sections of these processes are orders of magnitude lower compared to the inelastic $\Pp\Pp$ scattering cross section~\footnote{ 
 See Ref.~\cite{StandardModelCrossSections} for a summary of Standard Model cross sections relevant for physics analyses at the LHC.}.
-Elaborate MC production schemes,
-which restrict the set of MC samples to those processes most relevant for physics analyses
-and limit the size of each MC sample as much as possible, 
-while keeping the statistical uncertainties on background estimates at an acceptable level,
-are in common use at the LHC.
+Elaborate MC production schemes are in common use at the LHC.
+These schemes typically restrict the set of MC samples to those processes most relevant for physics analyses
+and furthermore limit the size of each MC sample as much as possible, 
+while keeping the statistical uncertainties on background estimates at an acceptable level.
 
-The production of MC samples of sufficient size is of particular importance for searches for new physics.
+The production of MC samples of sufficient size is of particular importance in searches for new physics.
 In these searches, potential signals are typically expected to be small
 compared to the background contributions arising from established Standard Model (SM) processes
 and the presence or absence of a signal may in fact be obscured by the statistical uncertainties on the background estimate,
@@ -52,11 +52,11 @@ whereas another set of MC samples may divide the PS based on $\HT$, the scalar s
 In this paper, we present a procedure for combining MC samples in an ``optimal'' way,
 where optimal refers to yielding the lowest statistical uncertainty on the background estimate that can be achieved when combining given sets of MC samples.
 Our formalism handles the case that different MC samples may use different schemes to divide the PS into distinct regions,
-thereby allowing to use all available MC samples, regardless of the MC production schemes that were used to produce these samples.
+thereby allowing to use all available MC samples, regardless of any arbitrary overlap in PS between these samples.
 The overlap between MC samples in PS is accounted for by applying appropriately chosen weights to simulated events.
 We refer to this procedure as ``stitching''.
 
 The structure of this paper is as follows:
-The formalism for computing the stitching weights is developed in Section~\ref{sec:stitching_weights}.
+the formalism for computing the stitching weights is developed in Section~\ref{sec:stitching_weights}.
 In Section~\ref{sec:examples}, we present examples for applying the formalism to $\Pp\Pp$ collisions at the LHC.
 The paper concludes with a summary in Section~\ref{sec:summary}.

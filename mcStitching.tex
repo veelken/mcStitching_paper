@@ -12,6 +12,9 @@
 \usepackage{lineno,hyperref,hepnames,bm,multirow,amssymb,xspace,rotating}
 \fi
 
+%% Prevent breaking of footnotes to pages that are different from the page where the footnote symbol appears
+\interfootnotelinepenalty=10000
+
 %\modulolinenumbers[5]
 
 %%\journal{Journal of \LaTeX\ Templates}
@@ -122,7 +125,7 @@ with the size of MC samples being adapted to the needs of physics analyses that 
 In this paper we present an optimal procedure for combining MC samples that overlap in phase-space.
 Our procedure is optimal in the sense that it provides the lowest statistical uncertainties.
 We refer to the procedure as ``stitching''.
-The paper includes different examples for applying the procedure to proton-proton collisions at the CERN Large Hadron Collider.
+The paper includes different examples for applying the procedure to simulated proton-proton collisions at the CERN Large Hadron Collider.
 \end{abstract}
 
 \ifx\ver\verPAPER
@@ -142,6 +145,8 @@ The paper includes different examples for applying the procedure to proton-proto
 
 \appendix
 \include*{appendix}
+
+\clearpage
 
 \bibliography{mcStitching}
 %\endgroup

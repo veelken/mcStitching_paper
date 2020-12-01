@@ -23,15 +23,15 @@ which falls into the PS region $i$.
 Eq.~(\ref{eq:one}) holds separately for each background process under study.
 In principle, the same equation applies to signal MC samples. 
 The case of signal MC samples is less relevant in practice, however,
-as signal cross sections are typically significantly smaller that those of background processes 
+as signal cross sections are typically significantly smaller than those of background processes,
 and the production of signal MC samples of sufficient size is rarely a problem.
 
 One can show that the lowest statistical uncertainty on the background estimate is achieved 
 if the weights $w_{j}^{i}$ in Eq.~(\ref{eq:one}) only depend on the PS region $i$,
 that is, if all simulated events that fall into the same region of PS have the same weight,
 regardless of which MC sample these events are contained in.
-We hence use weights that depend only on the PS region $i$ and not on the MC sample $j$, 
-and refer to these weights using the notation $w^{i}$.
+We hence use weights that depend only on the PS region $i$ and not on the MC sample $j$.
+We refer to these weights as ``stitching weights'' and denote them by the symbol $w^{i}$.
 
 It is useful to express the cross section $\sigma_{i}$ as the product of an ``inclusive'' cross section $\sigma_{\incl}$,
 which refers to the whole PS, and the probability $P^{i}$ that an event generated in the inclusive PS falls into the PS region $i$:
@@ -58,7 +58,7 @@ where $N_{\incl}$ refers to the number of events in the inclusive sample.
 The sum over $j$ in Eq.~(\ref{eq:weight_incl}) extends over the additional samples that each cover a different region in PS
 and to which we will refer to as ``exclusive'' samples.
 The two factors in Eq.~(\ref{eq:weight_incl}) may be interpreted in the following way:
-The first factor corresponds to the weights that one would apply to the events in PS region $i$ 
+the first factor corresponds to the weights that one would apply to the events in PS region $i$ 
 in case no exclusive samples are available and the background estimate in PS region $i$ is based solely on the inclusive sample.
 The availability of the additional exclusive samples increases the number of simulated events in the PS region $i$ 
 from $N_{\incl} \times P^{i}$ to $N_{\incl} \times P^{i} + \sum_{j} \, N_{j} \times P_{j}^{i}$ ,
@@ -69,4 +69,4 @@ We note in passing that the square-root of this factor,
 $\sqrt{\frac{N_{\incl} \times P^{i}}{N_{\incl} \times P^{i} + \sum_{j} \, N_{j} \times P_{j}^{i}}}$,
 constitutes the quantity most relevant for physics analyses,
 as it represents the reduction in statistical uncertainty on the background estimate in the PS region $i$
-that results from the availability of the additional exclusive samples and the application or our stitching procedure.
+that results from the availability of the additional exclusive samples and the application of our stitching procedure.
