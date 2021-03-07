@@ -1,4 +1,4 @@
-#/bin/csh
+#/bin/bash
 pdflatex mcStitching.tex
 bibtex mcStitching
 pdflatex mcStitching.tex
