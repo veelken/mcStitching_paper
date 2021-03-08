@@ -70,7 +70,7 @@ The $k$-th component of this vector indicates the range in $\pThat$ of the $k$-t
 The probability $P^{I} = P^{i_{1},\dots,i_{N_{\pileup}}}$ follows a {\em multinomial distribution} in this case.
 
 
-\subsection{Estimation of DY and $\PW$+jets backgrounds}
+\subsection{Estimation of DY and \texorpdfstring{$\PW$}{W}+jets backgrounds}
 \label{sec:examples_background_yield}
 
 The examples in this section refer to the modelling of DY and $\PW$+jets backgrounds to physics analyses at the LHC.
@@ -85,7 +85,7 @@ are obtained by determining the fraction of events that fall into PS region $i$ 
   one can determine these probabilities from the ratio of cross sections that are computed by the program \MGvATNLO 
   or similar programs such as \POWHEG~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}, \SHERPA~\cite{Gleisberg:2008ta}, \ALPGEN~\cite{Mangano:2002ea}, or \MCFM~\cite{Campbell:2011bn}.}.
 
-\subsubsection{Stitching of LO $\PW$+jets samples by $N_{\jet}$}
+\subsubsection{Stitching of LO \texorpdfstring{$\PW$}{W}+jets samples by \texorpdfstring{$N_{\jet}$}{Njet}}
 \label{sec:WJets_vs_Njet}
 
 In this example, an inclusive $\PW \to \Plepton\Pnu$ sample simulated at LO accuracy in pQCD 
@@ -113,18 +113,18 @@ which are the regions most relevant in searches for new physics.
 
 \begin{table}[h!]
 \begin{center}
-\begin{tabular}{l|c|ccccc}
+\begin{tabular}{l|c|c|ccccc}
 \hline
-\multirow{2}{20mm}{Sample} & Number of events    & \multicolumn{5}{c}{Probabilities}               \\
-                           &                     & $P^{0}$ & $P^{1}$ & $P^{2}$ & $P^{3}$ & $P^{4}$ \\
+\multirow{2}{20mm}{Sample} & \multirow{2}{*}{Number of events} & \multirow{2}{*}{Cross section [nb]} & \multicolumn{5}{c}{Probabilities}               \\
+                           &                                   &                                     & $P^{0}$ & $P^{1}$ & $P^{2}$ & $P^{3}$ & $P^{4}$ \\
 \hline
 \hline
-Inclusive                  & $XXX \times 10^{6}$ & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ \\
+Inclusive                  & $3 \times 10^{6}$ & 61.5 & $0.765$ & $0.153$ & $0.053$ & $0.019$ & $0.010$ \\
 \hline
-$N_{\jet} = 1$             & $XXX \times 10^{6}$ & $0$     & $1$     & $0$     & $0$     & $0$     \\
-$N_{\jet} = 2$             & $XXX \times 10^{6}$ & $0$     & $0$     & $1$     & $0$     & $0$     \\
-$N_{\jet} = 3$             & $XXX \times 10^{6}$ & $0$     & $0$     & $0$     & $1$     & $0$     \\
-$N_{\jet} = 4$             & $XXX \times 10^{6}$ & $0$     & $0$     & $0$     & $0$     & $1$     \\
+$N_{\jet} = 1$             & $5 \times 10^{5}$ & 9.44  & $0$     & $1$     & $0$     & $0$     & $0$     \\
+$N_{\jet} = 2$             & $3 \times 10^{5}$ & 3.25  & $0$     & $0$     & $1$     & $0$     & $0$     \\
+$N_{\jet} = 3$             & $2 \times 10^{5}$ & 1.15  & $0$     & $0$     & $0$     & $1$     & $0$     \\
+$N_{\jet} = 4$             & $         10^{5}$ & 0.634 & $0$     & $0$     & $0$     & $0$     & $1$     \\
 \hline
 \end{tabular}
 \end{center}
@@ -144,13 +144,13 @@ $N_{\jet} = 4$             & $XXX \times 10^{6}$ & $0$     & $0$     & $0$     &
  & $0$ & $1$ & $2$ & $3$ & $4$ \\
 \hline
 \hline
-Weight & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ \\
+Weight & $20.5$ & $9.84$ & $7.07$ & $4.47$ & $4.85$ \\
 \hline
 \end{tabular}
 \end{center}
 \caption{
   Weights $w^{i}$ for the case that inclusive and exclusive $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD
-  are stitched based on the observable $N_{\jet}$.
+  are normalized to 1 fb${}^{-1}$ of integrated luminosity and stitched based on the observable $N_{\jet}$.
 }
 \label{tab:weights_WJets_vs_Njet}
 \end{table}
@@ -159,14 +159,10 @@ Weight & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ \\
 \setlength{\unitlength}{1mm}
 \begin{center}
 \begin{picture}(180,182)(0,0)
-%\put(6.5, 100.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/leadJet_pT_WJets_vs_Njet.pdf}}}
-%\put(81.5, 100.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/subleadJet_pT_WJets_vs_Njet.pdf}}}
-%\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/numJets_WJets_vs_Njet.pdf}}}
-%\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/HT_WJets_vs_Njet.pdf}}}
+\put(6.5, 100.0){\mbox{\includegraphics*[height=82mm]{plots/WJets_Njet_lead_stack_wRatio_log.pdf}}}
+\put(81.5, 100.0){\mbox{\includegraphics*[height=82mm]{plots/WJets_Njet_sublead_stack_wRatio_log.pdf}}}
+\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]{plots/WJets_Njet_njet_stack_wRatio_log.pdf}}}
+\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]{plots/WJets_Njet_ht_stack_wRatio_log.pdf}}}
 \put(43.0, 96.0){\small (a)}
 \put(118.0, 96.0){\small (b)}
 \put(43.0, 0.0){\small (c)}
@@ -182,7 +178,7 @@ Weight & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ & $0.XXX$ \\
 \end{figure}
 
 
-\subsubsection{Stitching of LO $\PW$+jets samples by $N_{\jet}$ and $\HT$}
+\subsubsection{Stitching of LO \texorpdfstring{$\PW$}{W}+jets samples by \texorpdfstring{$N_{\jet}$}{Njet} and \texorpdfstring{$\HT$}{HT}}
 \label{sec:WJets_vs_Njet_and_HT}
 
 This example extends the previous one and demonstrates the stitching procedure based on two observables, $N_{\jet}$ and $\HT$.
@@ -279,7 +275,7 @@ $       \HT > 2500$~\GeV & $XXX \times 10^{6}$ \\
 \end{figure}
 
 
-\subsubsection{Stitching of NLO DY samples by $N_{\jet}$}
+\subsubsection{Stitching of NLO DY samples by \texorpdfstring{$N_{\jet}$}{Njet}}
 
 This example demonstrates the stitching of an inclusive $\PZggx \to \Plepton\Plepton$ sample simulated at NLO accuracy in pQCD
 with exclusive samples produced in slices of jet multiplicity.
