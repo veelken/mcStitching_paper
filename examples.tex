@@ -214,14 +214,14 @@ whereas the samples binned in $N_{\jet}$ are particularly well suited when the s
 Sample                   & Number of events \\
 \hline
 \hline
-$  70 < \HT <  100$~\GeV & $XXX \times 10^{6}$ \\
-$ 100 < \HT <  200$~\GeV & $XXX \times 10^{6}$ \\
-$ 200 < \HT <  400$~\GeV & $XXX \times 10^{6}$ \\
-$ 400 < \HT <  600$~\GeV & $XXX \times 10^{6}$ \\
-$ 600 < \HT <  800$~\GeV & $XXX \times 10^{6}$ \\
-$ 800 < \HT < 1200$~\GeV & $XXX \times 10^{6}$ \\
-$1200 < \HT < 2500$~\GeV & $XXX \times 10^{6}$ \\
-$       \HT > 2500$~\GeV & $XXX \times 10^{6}$ \\
+$  70 < \HT <  100$~\GeV &            $10^{6}$ \\
+$ 100 < \HT <  200$~\GeV &            $10^{6}$ \\
+$ 200 < \HT <  400$~\GeV & $5   \times 10^{5}$ \\
+$ 400 < \HT <  600$~\GeV & $2.5 \times 10^{5}$ \\
+$ 600 < \HT <  800$~\GeV &            $10^{5}$ \\
+$ 800 < \HT < 1200$~\GeV &            $10^{5}$ \\
+$1200 < \HT < 2500$~\GeV &            $10^{5}$ \\
+$       \HT > 2500$~\GeV &            $10^{5}$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -235,8 +235,7 @@ $       \HT > 2500$~\GeV & $XXX \times 10^{6}$ \\
 \setlength{\unitlength}{1mm}
 \begin{center}
 \begin{picture}(180,82)(0,0)
-%\put(44.0, 0.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/regions_WJets_vs_Njet_and_HT.pdf}}}
+\includegraphics*[height=82mm]{plots/regions_WJets_vs_Njet_and_HT.pdf}
 \end{picture}
 \end{center}
 \caption{
@@ -250,20 +249,14 @@ $       \HT > 2500$~\GeV & $XXX \times 10^{6}$ \\
 \setlength{\unitlength}{1mm}
 \begin{center}
 \begin{picture}(180,182)(0,0)
-%\put(6.5, 100.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/leadJet_pT_WJets_vs_Njet_and_HT.pdf}}}
-%\put(81.5, 100.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/subleadJet_pT_WJets_vs_Njet_and_HT.pdf}}}
-%\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/numJets_WJets_vs_Njet_and_HT.pdf}}}
-%\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]
-%  {plots/HT_WJets_vs_Njet_and_HT.pdf}}}
+\put(6.5, 100.0){\mbox{\includegraphics*[height=82mm]{plots/WJets_lead_stack_wRatio_log.pdf}}}
+\put(81.5, 100.0){\mbox{\includegraphics*[height=82mm]{plots/WJets_sublead_stack_wRatio_log.pdf}}}
+\put(6.5, 4.0){\mbox{\includegraphics*[height=82mm]{plots/WJets_njet_stack_wRatio_log.pdf}}}
+\put(81.5, 4.0){\mbox{\includegraphics*[height=82mm]{plots/WJets_ht_stack_wRatio_log.pdf}}}
 \put(43.0, 96.0){\small (a)}
 \put(118.0, 96.0){\small (b)}
 \put(43.0, 0.0){\small (c)}
 \put(118.0, 0.0){\small (d)}
-%ADD ``RATIO'' PLOT BELOW EACH DISTRIBUTION THAT SHOWS RELATIVE STATISTICAL UNCERTAINTY, 
-%DEFINED AS BINERROR/BINCONTENT FOR 3 CASES: 1) INCLUSIVE, 2) STITCHED BY NJET, 3) STITCHED BY NJET AND HT
 \end{picture}
 \end{center}
 \caption{
@@ -604,10 +597,7 @@ and the reduction in statistical uncertainties that results from the reduction i
 \begin{figure}
 \setlength{\unitlength}{1mm}
 \begin{center}
-\begin{picture}(180,182)(0,0)
-\put(44.0, 0.0){\mbox{\includegraphics*[height=82mm]
-  {plots/makeEvtWeightPlotsForPaper_evtWeight_log.pdf}}}
-\end{picture}
+\includegraphics*[height=82mm]{plots/makeEvtWeightPlotsForPaper_evtWeight_log.pdf}
 \end{center}
 \caption{
   Weights $w^{I}$, computed according to Eq.~(\ref{eq:weight_trigger_rate}), 
