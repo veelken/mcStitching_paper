@@ -116,8 +116,8 @@ which are the regions most relevant in searches for new physics.
 \def\arraystretch{1.3}
 \begin{tabular}{l|c|c|ccccc}
 \hline
-\multirow{2}{20mm}{Sample} & \multirow{2}{*}{Number of events} & \multirow{2}{*}{Cross section [nb]} & \multicolumn{5}{c}{Probabilities}               \\
-                           &                                   &                                     & $P^{0}$ & $P^{1}$ & $P^{2}$ & $P^{3}$ & $P^{4}$ \\
+\multirow{2}{20mm}{Sample} & \multirow{2}{*}{Number of events} & \multirow{2}{*}{Cross section [nb]$^{\dagger}$} & \multicolumn{5}{c}{Probabilities}               \\
+                           &                                   &                                                 & $P^{0}$ & $P^{1}$ & $P^{2}$ & $P^{3}$ & $P^{4}$ \\
 \hline
 \hline
 Inclusive                  & $3 \times 10^{6}$ & $61.5$ & $0.765$ & $0.153$ & $0.053$ & $0.019$ & $0.010$ \\
@@ -129,10 +129,11 @@ $N_{\jet} = 4$             & $         10^{5}$ & $0.634$ & $0$     & $0$     & $
 \hline
 \end{tabular}
 \end{center}
+$^{\dagger}$ Computed at at LO accuracy in pQCD, then scaled to NNLO
 \caption{
   Number of events in the inclusive and exclusive $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD,
-  and probabilities $P^{i}$ for the events in the inclusive and exclusive samples to populate the different PS regions $i$,
-  defined by the observable $N_{\jet}$.
+  probabilities $P^{i}$ for the events in the inclusive and exclusive samples to populate the different PS regions $i$
+  defined by the observable $N_{\jet}$, and corresponding cross sections.
 }
 \label{tab:samples_and_probabilities_WJets_vs_Njet}
 \end{table}
@@ -213,7 +214,7 @@ whereas the samples binned in $N_{\jet}$ are particularly well suited when the s
 \def\arraystretch{1.3}
 \begin{tabular}{l|c|c}
 \hline
-Sample                   & Number of events    & Cross section [pb] \\
+Sample                   & Number of events    & Cross section [pb]$^{\dagger}$ \\
 \hline
 \hline
 $  70 < \HT <  100$~\GeV &            $10^{6}$ & $1.50\times10^{3}$ \\
@@ -227,8 +228,9 @@ $       \HT > 2500$~\GeV &            $10^{5}$ & $9.41\times10^{-3}$ \\
 \hline
 \end{tabular}
 \end{center}
+$^{\dagger}$ Computed at at LO accuracy in pQCD, then scaled to NNLO
 \caption{
-  Number of events in the $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD and in ranges in $\HT$.
+  Number of events in the $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD and in ranges in $\HT$, and corresponding cross sections.
 }
 \label{tab:samples_WJets_vs_Njet_and_HT}
 \end{table}
@@ -353,7 +355,7 @@ The stitching weights $w(N_{\jet}^{\ME})$, computed according to Eq.~(\ref{eq:we
 \def\arraystretch{1.3}
 \begin{tabular}{l|c|c}
 \hline
-Sample                 & Number of events    & Cross section [nb]$^{1}$ \\
+Sample                 & Number of events    & Cross section [nb]$^{\dagger}$ \\
 \hline
 \hline
 Inclusive              & $4 \times 10^{6}$ & $6.08$ \\
@@ -364,7 +366,7 @@ $N_{\jet}^{\Born} = 2$ & $10^{6}$ & $3.36$ \\
 \hline
 \end{tabular}
 \end{center}
-$^{1}$ Computed at at NLO accuracy in pQCD using the program \MGvATNLO
+$^{\dagger}$ Computed at at NLO accuracy in pQCD using the program \MGvATNLO, then scaled to NNLO
 \caption{
   Number of events in the inclusive and exclusive $\PZggx \to \Plepton\Plepton$ samples simulated at NLO accuracy in pQCD,
   and cross sections, computed by the program \MGvATNLO, for each sample.
