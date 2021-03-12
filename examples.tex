@@ -21,10 +21,10 @@ and the \textrm{FXFX} scheme~\cite{Frederix:2012ps} for the NLO samples.
 The DY and $\PW$+jets samples are normalized using cross sections computed at next-to-next-to leading order (NNLO) accuracy in pQCD,
 with electroweak corrections taken into account up to NLO accuracy~\cite{Li:2012wna}.
 The product of the DY cross section in the PS region $m_{\Plepton\Plepton} > 50$~\GeV
-times the branching fraction for the decay into two charged leptons amounts to $6.11$~nb.
-The cross section for $\PW$+jets production times the branching fraction for the decay to charged lepton and neutrino amounts to $61.5$~nb.
+times the branching fraction for the decay into two charged leptons amounts to $6.11$~nb,
+while the cross section for $\PW$+jets production times the branching fraction for the decay to charged lepton and neutrino amounts to $61.5$~nb.
 We will demonstrate the stitching of these samples based on two observables,
-$N_{\jet}$ and $\HT$, defined as, respectively, the number of jets and the scalar sum in $\pT$ of the jets in the event.
+$N_{\jet}$ and $\HT$, defined as, respectively, the number of jets and the scalar sum in $\pT$ of jets in the event.
 The PS region in which we perform the stitching will be either one- or two-dimensional.
 We will show that for our formalism
 it makes little difference whether the stitching is performed in one dimension or in two:
@@ -32,42 +32,40 @@ The regions in PS are enumerated by a single index $i$ in either case,
 and in either case the probability $P^{i}$ follows a {\em categorical distribution}.
 
 The task of estimating trigger rates for the upcoming high-luminosity data-taking period of the LHC is chosen as second example to illustrate the stitching procedure.
-The ``rate'' of a trigger corresponds to the number of $\Pp\Pp$ collision events passing this trigger per unit of time.
-
+The ``rate'' of a trigger corresponds to the number of $\Pp\Pp$ collision events that satisfy the trigger condition per unit of time.
 The estimation of trigger rates constitutes an important task for demonstrating the physics potential of the HL-LHC.
-The HL-LHC physics program demands a large amount of integrated luminosity to be delivered by the LHC 
-to facilitate measurements of rare signal processes,
-such as the precise measurement of $\PHiggs$ boson couplings and the study of $\PHiggs$ boson pair production, to be performed by the ATLAS and CMS experiments.
+The HL-LHC physics program demands a large amount of integrated luminosity to be delivered by the LHC, 
+in order to facilitate measurements of rare signal processes,
+such as the precise measurement of $\PHiggs$ boson couplings and the study of $\PHiggs$ boson pair production, by the ATLAS and CMS experiments.
 In order to satisfy this demand, the HL-LHC is expected to operate at an instantaneous luminosity of $5$-$7.5 \times 10^{34}$~cm$^{-2}$~s$^{-1}$
 at a center-of-mass energy of $\sqrt{s} = 14$~\TeV~\cite{TDR_Phase2_LHC}.
-The challenge of developing triggers for the HL-LHC is to design the triggers such that most of the rare signal processes pass the triggers,
-while background processes are reduced by many orders of magnitude, in order not to exceed bandwidth limitations on the detector read-out 
+The challenge of developing triggers for the HL-LHC is to design the triggers such that rare signal processes pass the triggers with a high efficiency,
+while the rate of background processes gets reduced by many orders of magnitude, in order not to exceed bandwidth limitations on the detector read-out 
 and on the rate with which events can be written to permanent storage.
 
 The inelastic $\Pp\Pp$ scattering cross section at $\sqrt{s} = 14$~\TeV amounts to $\approx 80$~mb,
 resulting in up to $200$ simultaneous $\Pp\Pp$ interactions per crossing of the proton beams at the nominal HL-LHC instantaneous luminosity~\cite{TDR_Phase2_LHC}.
 The vast majority of these interactions are inelastic $\Pp\Pp$ scatterings with low momentum exchange,
 which predominantly arise from the exchange of gluons between the colliding protons.
-We refer to all such interactions that occur in the same crossing of the proton beams as ``pileup''
-and denote the number of these interactions by the symbol $N_{\pileup}$.
+We refer to inelastic $\Pp\Pp$ scattering interactions with no further selection applied as ``minimum bias'' events.
 In order to estimate the rates of triggers at the HL-LHC,
-inclusive MC samples of inelastic $\Pp\Pp$ scattering interactions 
-and of inelastic $\Pp\Pp$ scatterings with a higher momentum exchange are produced at LO in pQCD
-using the program \PYTHIA $v8.2$.
-The transverse momentum exchanged between the scattered protons is denoted by the symbol $\pThat$.
-We refer to the inclusive samples of inelastic $\Pp\Pp$ scattering interactions with no selection on $\pThat$ applied during the production of these samples
-as ``minimum bias'' samples.
+MC samples of minimum bias events are produced at LO in pQCD using the program \PYTHIA $v8.2$.
+The minimum bias samples are complemented by samples of inelastic $\Pp\Pp$ scattering interactions
+in which a significant amount of transverse momentum, denoted by the symbol $\pThat$, is exchanged between the scattered protons.
 The stitching of the minimum bias samples with samples generated for different ranges in $\pThat$ allows to estimate the trigger rates with lower statistical uncertainties.
 
-The production of the samples proceeds by first simulating one ``hard-scatter'' interaction within a given range in $\pThat$
-and then adding a number of $N_{\pileup}$ pileup interactions to the same event.
+The production of MC samples used for estimating trigger rates at the HL-LHC
+proceeds by first simulating one ``hard-scatter'' interaction within a given range in $\pThat$
+and then adding a number of additional inelastic $\Pp\Pp$ scattering interactions of the minimum bias kind to the same event.
+We refer to these additional inelastic $\Pp\Pp$ scattering interactions as ``pileup''
+and use the symbol $N_{\pileup}$ to denote the total number of inelastic $\Pp\Pp$ scattering interactions (including the hard-scatter interaction) that occur in the same crossing of the proton beams.
 No selection on $\pThat$ is applied when simulating the pileup interactions.
-The distinction between the hard-scatter interaction and the pileup interactions is made for the purpose of MC production.
+The distinction between the hard-scatter interaction and the pileup interactions is artificial and made for the purpose of MC production only.
 Of course, the hard-scatter interaction and the pileup interactions are indistinguishable in the data that will be recorded at the HL-LHC.
-In the data, the scattering in which the transverse momentum exchanged between the protons equals $\pThat$ may occur in any of the $N_{\pileup}$ simultaneous $\Pp\Pp$ interactions.
+In the data, the scattering in which the transverse momentum exchange between the protons amounts to $\pThat$ may occur in any of the $N_{\pileup}$ simultaneous $\Pp\Pp$ interactions.
 This is taken into account in our formalism by enumerating the regions in PS of these $N_{\pileup}$ interactions by a vector $I$ of dimension $N_{\pileup}$.
 The $k$-th component of this vector indicates the range in $\pThat$ of the $k$-th $\Pp\Pp$ interaction.
-The probability $P^{I} = P^{i_{1},\dots,i_{N_{\pileup}}}$ follows a {\em multinomial distribution} in this case.
+The probability $P^{I} = P^{i_{1},\dots,i_{N_{\pileup}}}$ follows a {\em multinomial distribution}.
 
 
 \subsection{Estimation of DY and $\PW$+jets backgrounds}
