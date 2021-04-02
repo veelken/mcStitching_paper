@@ -2,9 +2,8 @@
 \label{sec:stitching_weights}
 
 As explained in the introduction,
-the production of MC samples by contemporary HEP experiments often utilizes production schemes
-which divide the PS into multiple regions and adapt the size of MC samples that are produced in each region 
-according to the needs of physics analyses.
+contemporary HEP experiments often employ MC production schemes
+that first divide the PS into multiple regions and then produce separate MC samples to cover each region.
 When using these MC samples for the purpose of modelling backgrounds,
 weights need to be applied to the simulated events, in order to obtain background estimates that are unbiased.
 More specifically, the weights need to be chosen such that the weighted sum of simulated events in each region $i$ of PS 
@@ -48,7 +47,7 @@ w^{i} = \frac{L \times \sigma_{\incl} \times P^{i}}{\sum_{j} \, N_{j} \times P_{
 A special case, which is frequently encountered in practice,
 is that one MC sample covers the whole PS,
 while additional samples reduce the statistical uncertainties in the regions of PS most relevant to searches for new physics.
-We refer to the MC sample that covers the whole PS as the ``inclusive'' sample and the corresponding PS as the inclusive PS.
+We refer to the MC sample that covers the whole PS as the inclusive sample and the corresponding PS as the inclusive PS.
 In this case, Eq.~(\ref{eq:master}) can be rewritten in the form:
 \begin{equation}
 w^{i} = \frac{L \times \sigma_{\incl}}{N_{\incl}} \times \frac{N_{\incl} \times P^{i}}{N_{\incl} \times P^{i} + \sum_{j} \, N_{j} \times P_{j}^{i}} \, ,

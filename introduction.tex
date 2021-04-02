@@ -10,16 +10,16 @@ the production of sufficiently large MC samples often poses a material challenge
 
 This is especially true for experiments at the CERN Large Hadron Collider (LHC)~\cite{Bruning:2004ej,Buning:2004wk,Benedikt:2004wm},
 firstly due to the large cross section of proton-proton ($\Pp\Pp$) collisions and secondly due to the large luminosity delivered by the LHC.
-We refer to a single $\Pp\Pp$ collision as an {\em event}.
+We refer to a single $\Pp\Pp$ collision as an ``event''.
 The number of events, $N_{\data}$, produced within a given interval of time 
 is given by the product of the $\Pp\Pp$ scattering cross section, $\sigma$, and of the integrated luminosity, $L$, that the LHC has delivered during this time:
 $N_{\data} = \sigma \times L$.
 The inelastic $\Pp\Pp$ scattering cross section at the present LHC center-of-mass energy of $\sqrt{s}=13$~\TeV amounts to $\approx 75$~mb~\cite{Aaboud:2016mmw,Sirunyan:2018nqx},
-while the integrated luminosities recorded at $\sqrt{s}=13$~\TeV by the ATLAS and CMS experiments amount to $\approx 140$~fb$^{-1}$~\cite{ATLAS-CONF-2019-021,LUM-17-001,LUM-17-004,LUM-18-002}.
+while the integrated luminosities recorded at $\sqrt{s}=13$~\TeV by the ATLAS and CMS experiments amount to $\approx 140\fbinv$~\cite{ATLAS-CONF-2019-021,LUM-17-001,LUM-17-004,LUM-18-002}.
 Thus, $N_{\data} \approx 10^{16}$ inelastic $\Pp\Pp$ scattering events occurred in each of the two experiments during this time.
 
 In order to render the statistical uncertainties on background estimates obtained from the MC simulation small compared to the statistical uncertainties on the data,
-MC samples of size larger than $N_{\data}$ are needed, ideally $N_{\mc} \gtrsim 10 \, N_{\data}$,
+MC samples of size larger than $N_{\data}$ are needed, ideally $N_{\mc} \gtrsim 10 \times N_{\data}$,
 where the size of the MC sample is denoted by the symbol $N_{\mc}$.
 Such large MC samples are prohibitive to produce.
 The solution to this apparent dilemma is to restrict the production of MC samples to the processes most relevant for physics analyses,
@@ -28,9 +28,7 @@ where the latter is indicated by the presence of large missing transverse moment
 The cross sections of these processes are orders of magnitude lower compared to the inelastic $\Pp\Pp$ scattering cross section~\footnote{ 
 See Ref.~\cite{StandardModelCrossSections} for a summary of Standard Model cross sections relevant for physics analyses at the LHC.}.
 Elaborate MC production schemes are in common use at the LHC.
-These schemes typically restrict the set of MC samples to those processes most relevant for physics analyses
-and furthermore limit the size of each MC sample as much as possible, 
-while keeping the statistical uncertainties on background estimates at an acceptable level.
+These schemes typically restrict the set of MC samples to those processes most relevant for physics analyses.
 
 The production of MC samples of sufficient size is of particular importance in searches for new physics.
 In these searches, potential signals are typically expected to be small
@@ -40,15 +38,17 @@ unless MC samples of adequate size are available to model the main background pr
 The presence of large signals is often already excluded by the results of previous searches, based on a smaller dataset.}.
 Searches for new physics are often performed in phase-space (PS) regions that are atypical for background processes,
 as only in these regions the ratio $S/\sqrt{B}$ is sufficiently large to allow for the discovery of potential signals.
-The MC production schemes employed by the ATLAS and CMS experiments utilize the fact 
+The MC production schemes employed by the ATLAS and CMS experiments take advantage of the fact 
 that typically only a small percentage of the background populates the regions of PS most relevant for physics analyses.
-A typical strategy is to divide the PS into multiple regions and to produce separate MC samples for each region,
-with the size of these MC samples being adapted to the needs of physics analyses.
+A typical strategy is to divide the PS into multiple regions and to produce separate MC samples for each region.
+The size of MC samples covering each region is then chosen such to be as small as possible,
+while keeping the statistical uncertainties on the background estimates obtained from these samples at an acceptable level.
+The choice of the regions is driven by the needs of physics analyses.
 
 The sets of MC samples produced following this strategy often overlap in PS,
 as a consequence of different schemes being used for dividing the PS into distinct regions by different physics analyses.
 For example, one set of MC samples may divide the PS based on the number of jets, 
-whereas another set of MC samples may divide the PS based on $\HT$, the scalar sum in $\pT$ of jets in the event.
+whereas another set of MC samples may divide the PS based on $\HT$, the scalar sum in $\pT$ of the jets in the event.
 In this paper, we present a procedure for combining MC samples in an ``optimal'' way,
 where optimal refers to yielding the lowest statistical uncertainty on the background estimate that can be achieved when combining a given set of MC samples.
 Our formalism handles the case that different MC samples may use different schemes to divide the PS into distinct regions,
