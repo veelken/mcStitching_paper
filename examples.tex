@@ -111,7 +111,7 @@ for the inclusive sample and for the sum of inclusive plus exclusive samples in 
 Jets are reconstructed using the anti-\kt algorithm~\cite{Cacciari:2008gp,Cacciari:2011ma} with a distance parameter of $0.4$,
 using all stable particles except neutrinos as input, and are required to satisfy the selection criteria $\pT > 25$~\GeV and $\vert\eta\vert < 5.0$.
 The distributions are normalized to an integrated luminosity of $140$~fb$^{-1}$, recorded at $\sqrt{s}=13$~\TeV.
-Individual exclusive samples $j$ are distinguished by different colors.
+Individual exclusive samples $j$ are distinguished by different colors and fill patterns.
 
 The distributions for the inclusive sample and for the sum of inclusive plus exclusive samples, with the stitching weights applied, are in agreement within the statistical uncertainties.
 The exclusive samples reduce the statistical uncertainties in particular in the tails of the distributions,
@@ -153,7 +153,7 @@ $^{\dagger}$ Computed at LO accuracy in pQCD, then scaled to NNLO
  & $0$ & $1$ & $2$ & $3$ & $4$ \\
 \hline
 \hline
-Weight & $20.5$ & $9.84$ & $7.07$ & $4.47$ & $4.85$ \\
+Weight & $2870$ & $1380$ & $990$ & $625$ & $678$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -253,7 +253,7 @@ The symbols $w_{\incl}$ and $w_{k}$ are defined as:
 \begin{equation*}
 w_{\incl} = \frac{1}{\left( \sigma_{\incl} \times \delta P^{i} \right)^{2}} \quad \mbox{and} \quad w_{k} = \frac{1}{\left( \sigma_{k} \times \delta P_{k}^{i} \right)^{2}}
 \end{equation*}
-and act as weights in the expression on the right-hand-side of Eq.~(\ref{lambda2}),
+and act as weights in the expression on the right-hand-side of Eq.~(\ref{eq:lambda2}),
 which has the form of a weighted average.
 
 The numerical values of the probabilities $P^{i}$ and of the weights $w^{i}$ are given in Tables~\ref{tab:probabilities_WJets_vs_Njet_and_HT}
@@ -262,11 +262,10 @@ and~\ref{tab:weights_WJets_vs_Njet_and_HT} in the appendix.
 Distributions in $\pT$ of the leading and subleading jet,
 in the multiplicity of jets, and in the observable $\HT$ 
 for the sum of inclusive plus exclusive samples are compared to the distributions obtained for the inclusive sample in Fig.~\ref{fig:controlPlots_WJets_vs_Njet_and_HT}.
-We use the same fill pattern for all $N_{\jet}$-samples and another pattern for all $\HT$-samples,
-so that one can better see where each of the two sets of exclusive samples contribute most.
+We use the same fill pattern for all $N_{\jet}$-samples, another pattern for all $\HT$-samples and a third pattern for the stitched inclusive sample,
+so that one can better see where each of the stitched samples contribute the most.
 Below each distribution, we show the relative statistical uncertainties for four cases,
-corresponding to only the inclusive sample being used, the inclusive sample being used in combination with the $N_{\jet}$-samples,
-the inclusive sample being used in combination with the $\HT$-samples,
+corresponding to only the inclusive sample being used,
 and for the case that all samples given in Tables~\ref{tab:samples_and_probabilities_WJets_vs_Njet} and~\ref{tab:samples_WJets_vs_Njet_and_HT} are used together.
 As expected, the addition of samples simulated in ranges in $\HT$ to the example given in Section~\ref{sec:WJets_vs_Njet}
 reduce the statistical uncertainties in particular in the tail of the $\HT$ distribution.
@@ -424,7 +423,7 @@ Inclusive                  & $0.768$              & $0.183$ & $5.99\times10^{-2}
 \hline
 $N_{\jet}^{\Born} = 0$     & $0.867$              & $0.133$ & $0$                 & $0$     \\
 $N_{\jet}^{\Born} = 1$     & $0$                  & $0.999$ & $9.81\times10^{-4}$ & $0$     \\
-$N_{\jet}^{\Born} = 2$     & $0$                  & $0$     & $1.15$              & $-0.149$ \\
+$N_{\jet}^{\Born} = 2$     & $0$                  & $0$     & $1.15$              & $-0.15$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -463,6 +462,7 @@ for the inclusive sample to the sum of inclusive plus exclusive samples with the
 to demonstrate that the stitching procedure yields an unbiased background estimate.
 The distributions  obtained for the $\PZggx \to \Plepton\Plepton$ samples simulated at NLO accuracy in pQCD are shown in Fig.~\ref{fig:controlPlots_DYJets_vs_Njet}.
 The distributions agree within the statistical uncertainties.
+The figure also shows exclusive samples, distinguished with different fill patterns, stacked together before they are stitched with the inclusive sample.
 Below each distribution, we again show the relative statistical uncertainties for the cases that only the inclusive sample is used
 and for case that the inclusive and exclusive samples are used.
 Compared to using only the inclusive sample,
