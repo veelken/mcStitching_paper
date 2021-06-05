@@ -67,9 +67,11 @@ $       \HT > 2500$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $2.55\times10^{-2
 \end{tabular}
 }
 \caption{
-  Probabilities $P^{i}$ and $P_{j}^{i}$ for the events in the inclusive and exclusive $\PW \to \Plepton\Pnu$ samples simulated at LO accuracy in pQCD to populate the different PS regions $i$.
+  Probabilities $P^{i}$ and $P_{j}^{i}$ for the events in the inclusive and exclusive $\PW \to \Plepton\Pnu$ samples 
+  %simulated at LO accuracy in pQCD 
+  to populate the different PS regions $i$.
   The definition of the PS regions $i$ in the plane of $N_{\jet}$ versus $\HT$ is shown in Fig.~\ref{fig:regions_WJets_vs_Njet_and_HT}.
-  A hyphen ($-$) is used for PS regions $i$ that are not simulated in a given sample $j$, effectively meaning that the corresponding probability $P_{j}^{i}$ is zero.
+  A hyphen ($-$) indicates PS regions $i$ that are not populated by a given sample $j$. The presence of a hyphen is equivalent to the probability $P_{j}^{i}$ being zero.
 }
 \label{tab:probabilities_WJets_vs_Njet_and_HT}
 \end{sidewaystable}
@@ -82,24 +84,25 @@ $       \HT > 2500$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $2.55\times10^{-2
                                 & $N_{\jet} = 0$ & $N_{\jet} = 1$      & $N_{\jet} = 2$      & $N_{\jet} = 3$      & $N_{\jet} = 4$       \\ 
 \hline
 \hline
-               $\HT < 70$   GeV & $2870$         & $1380$              & $998$               & $631$               &  $678$               \\
-  $70 \leqslant \HT < 100$  GeV & $-$            &  $183$              & $173$               & $158$               &  $161$               \\
- $100 \leqslant \HT < 200$  GeV & $-$            &  $195$              & $185$               & $167$               &  $171$               \\
- $200 \leqslant \HT < 400$  GeV & $-$            &  $122$              & $118$               & $110$               &  $1125$              \\
- $400 \leqslant \HT < 600$  GeV & $-$            & $36.8$              & $36.5$              & $35.7$              &  $35.8$              \\
- $600 \leqslant \HT < 800$  GeV & $-$            & $20.3$              & $20.7$              & $20.5$              &  $20.5$              \\
- $800 \leqslant \HT < 1200$ GeV & $-$            & $5.72$              & $8.86$              & $8.82$              &  $8.82$              \\
-$1200 \leqslant \HT < 2500$ GeV & $-$            & $0.596$             & $1.78$              & $1.78$              &  $1.78$              \\
-       $\HT \geqslant 2500$ GeV & $-$            & $0$                 & $4.50\times10^{-3}$ & $9.00\times10^{-3}$ &  $1.35\times10^{-2}$ \\ 
+               $\HT < 70$~\GeV   & $2870$         & $1380$              & $998$               & $631$               &  $678$               \\
+  $70 \leqslant \HT < 100$~\GeV  & $-$            &  $183$              & $173$               & $158$               &  $161$               \\
+ $100 \leqslant \HT < 200$~\GeV  & $-$            &  $195$              & $185$               & $167$               &  $171$               \\
+ $200 \leqslant \HT < 400$~\GeV  & $-$            &  $122$              & $118$               & $110$               &  $1125$              \\
+ $400 \leqslant \HT < 600$~\GeV  & $-$            & $36.8$              & $36.5$              & $35.7$              &  $35.8$              \\
+ $600 \leqslant \HT < 800$~\GeV  & $-$            & $20.3$              & $20.7$              & $20.5$              &  $20.5$              \\
+ $800 \leqslant \HT < 1200$~\GeV & $-$            & $5.72$              & $8.86$              & $8.82$              &  $8.82$              \\
+$1200 \leqslant \HT < 2500$~\GeV & $-$            & $0.596$             & $1.78$              & $1.78$              &  $1.78$              \\
+       $\HT \geqslant 2500$~\GeV & $-$            & $0$                 & $4.50\times10^{-3}$ & $9.00\times10^{-3}$ &  $1.35\times10^{-2}$ \\ 
 \hline
 \end{tabular}
 \caption{
   Weights $w^{i}$ for the case that the inclusive and exclusive $\PW \to \Plepton\Pnu$ samples 
-  given in Tables~\ref{tab:samples_and_probabilities_WJets_vs_Njet} and~\ref{tab:samples_WJets_vs_Njet_and_HT}, simulated at LO accuracy in pQCD,
+  given in Tables~\ref{tab:samples_and_probabilities_WJets_vs_Njet} and~\ref{tab:samples_WJets_vs_Njet_and_HT}
+  %, simulated at LO accuracy in pQCD,
   are stitched based on the observables $N_{\jet}$ and $\HT$.
   The weights are computed for an integrated luminosity of $140\fbinv$.
-  It is not possible to compute stitching weights for unphysical PS regions where $N_{\jet} = 0$ and $\HT > 0$ because $N_{\jet} = 0$ always implies that $\HT = 0$.
-  Such cases are hence marked with a hyphen ($-$).
+  Events with $N_{\jet} = 0$ all have $\HT < 70$~\GeV and hence the weights for PS regions with $N_{\jet} = 0$ and $\HT \geqslant 70$~\GeV cannot be computed (and are not needed).
+  These cases are indicated by a hyphen ($-$).
   %The definition of the PS regions $i$ in the plane of $N_{\jet}$ versus $\HT$ is shown in Fig.~\ref{fig:regions_WJets_vs_Njet_and_HT}.
 }
 \label{tab:weights_WJets_vs_Njet_and_HT}
