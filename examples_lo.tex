@@ -190,18 +190,20 @@ s^{i} = \sqrt{\frac{P^{i} \times (1 - P^{i})}{N_{\incl}}} \quad \mbox{and} \quad
 The fluctuations decrease proportional to the inverse of the square-root of the number of events in the MC samples.
 The solution for $\lambda_{i}$ is given by the expression:
 \begin{equation}
-\lambda_{i} = \frac{w_{\incl} \times \sigma_{\incl} \times P^{i} + \sum_{k} w_{k} \times \sigma_{k} \times P_{k}^{i}}{w_{\incl} + \sum_{k} w_{k}} \, ,
+\lambda_{i} = \frac{\alpha_{\incl}^{i} \times \sigma_{\incl} \times P^{i} + \sum_{k} \alpha_{k}^{i} \times \sigma_{k} \times P_{k}^{i}}{\alpha_{\incl}^{i} + \sum_{k} \alpha_{k}^{i}} \, ,
 \label{eq:lambda2}
 \end{equation}
 from which the probabilities $P^{i} = \lambda_{i}/\sigma_{\incl}$ and $P_{k}^{i} = \lambda_{i}/\sigma_{k}$ follow.
-The symbols $w_{\incl}$ and $w_{k}$ are defined as:
+The symbols $\alpha_{\incl}^{i}$ and $\alpha_{k}^{i}$ are defined as:
 \begin{equation*}
-w_{\incl} = \frac{1}{\left( \sigma_{\incl} \times s^{i} \right)^{2}} \quad \mbox{and} \quad w_{k} = \frac{1}{\left( \sigma_{k} \times s_{k}^{i} \right)^{2}}
+\alpha_{\incl}^{i} = \frac{1}{\left( \sigma_{\incl} \times s^{i} \right)^{2}} \quad \mbox{and} \quad \alpha_{k}^{i} = \frac{1}{\left( \sigma_{k} \times s_{k}^{i} \right)^{2}}
 \end{equation*}
 and act as weights in the expression on the right-hand-side of Eq.~(\ref{eq:lambda2}),
 which has the form of a weighted average.
+We use the symbols $\alpha_{\incl}^{i}$ and $\alpha_{k}^{i}$ to refer to these weights,
+in order to distinguish them from the stitching weights $w^{i}$ given by Eq.~(\ref{eq:weight_incl}).
 
-The numerical values of the probabilities $P^{i}$ and of the weights $w^{i}$ are given in Tables~\ref{tab:probabilities_WJets_vs_Njet_and_HT}
+The numerical values of the probabilities $P^{i}$ and of the stitching weights $w^{i}$ are given in Tables~\ref{tab:probabilities_WJets_vs_Njet_and_HT}
 and~\ref{tab:weights_WJets_vs_Njet_and_HT} in the appendix.
 
 Distributions in $\pT$ of the leading and subleading jet,
