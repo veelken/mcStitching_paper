@@ -5,11 +5,11 @@
 \ifx\ver\verPreprint
 \documentclass[a4paper,english,11pt]{article}
 \usepackage[bindingoffset=0.5cm,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,footskip=1.0cm]{geometry}
-\usepackage{lineno,hepnames,bm,multirow,amssymb,authblk,graphicx,newclude,xspace,hyperref,rotating}
+\usepackage{lineno,amsmath,bm,multirow,amssymb,authblk,graphicx,newclude,xspace,hyperref,rotating}
 \fi
 \ifx\ver\verPAPER
 \documentclass[1p]{elsarticle}
-\usepackage{lineno,hyperref,hepnames,bm,multirow,amssymb,xspace,rotating}
+\usepackage{lineno,hyperref,amsmath,hepnames,bm,multirow,amssymb,xspace,rotating}
 \fi
 
 %% Prevent breaking of footnotes to pages that are different from the page where the footnote symbol appears
@@ -54,6 +54,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Custom latex macros
 %%%%%%%%%%%%%%%%%%%%%%%
+
+\ifx\ver\verPreprint
+\newcommand{\PW}{\ensuremath{\textrm{W}}\xspace}
+\newcommand{\PZ}{\ensuremath{\textrm{Z}}\xspace}
+\newcommand{\PHiggs}{\ensuremath{\textrm{H}}\xspace}
+\newcommand{\Pp}{\ensuremath{\textrm{p}}\xspace}
+\newcommand{\Plepton}{\ensuremath{\ell}\xspace}
+\newcommand{\Pnu}{\ensuremath{\nu}\xspace}
+\newcommand{\Pgt}{\ensuremath{\tau}\xspace}
+\newcommand{\Pbottom}{\ensuremath{\textrm{b}}\xspace}
+\newcommand{\APbottom}{\ensuremath{\bar{\textrm{b}}}\xspace}
+\fi
 
 \newcommand{\PZggx}{\ensuremath{\PZ/\Pgamma^{*}}\xspace}
 \newcommand{\pT}{\ensuremath{p_{\textrm{T}}}\xspace}
