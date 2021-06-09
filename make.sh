@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ "$1" = "clean" ]]; then
+  rm -fv mcStitching.bbl mcStitching.blg mcStitching.aux mcStitching.out mcStitching.log mcStitching.pdf mcStitching_grayscale.pdf
+  exit 0
+fi
+
 pdflatex mcStitching.tex
 bibtex mcStitching
 pdflatex mcStitching.tex
