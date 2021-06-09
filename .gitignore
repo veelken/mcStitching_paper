@@ -4,4 +4,5 @@
 *.log
 *.out
 *.pdf
+mcStitching_epjc.bib
 !plots/*
