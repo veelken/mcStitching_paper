@@ -97,6 +97,9 @@ $ 50 < \pThat <  80$~\GeV & $2 \times 10^{5}$ \\
 $ 80 < \pThat < 120$~\GeV & $1 \times 10^{5}$ \\
 $120 < \pThat < 170$~\GeV & $5 \times 10^{4}$ \\
 $170 < \pThat < 300$~\GeV & $5 \times 10^{4}$ \\
+$300 < \pThat < 470$~\GeV & $5 \times 10^{4}$ \\
+$470 < \pThat < 600$~\GeV & $5 \times 10^{4}$ \\
+$\pThat > 600$~\GeV       & $5 \times 10^{4}$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -115,7 +118,16 @@ Range in $\pThat$ [\GeV] & $< 30$ & $30$-$50$ & $50$-$80$ & $80$-$120$ & $120$-$
 Index $i$           & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\
 \hline
 \hline
-Probability $p_{i}$ & $0.998$ & $1.69 \times 10^{-3}$ & $2.54 \times 10^{-4}$ & $3.94 \times 10^{-5}$ & $6.20 \times 10^{-6}$ & $1.73 \times 10^{-6}$ \\
+Probability $p_{i}$ & $0.998$ & $1.51 \times 10^{-3}$ & $2.25 \times 10^{-4}$ & $3.38 \times 10^{-5}$ & $6.00 \times 10^{-6}$ & $1.55 \times 10^{-6}$ \\
+\hline
+\end{tabular}
+\begin{tabular}{l|ccc}
+\hline
+Range in $\pThat$ [\GeV] & $300$-$470$ & $470$-$600$ & $> 600$ \\
+Index $i$           & $6$ & $7$ & $8$ \\
+\hline
+\hline
+Probability $p_{i}$ & $1.05 \times 10^{-7}$ & $8.73 \times 10^{-9}$ & $3.12 \times 10^{-9}$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -160,7 +172,6 @@ with the stitching weights computed according to Eq.~(\ref{eq:weight_trigger_rat
 agree within statistical uncertainties, demonstrating that the estimate of the trigger rate obtained from the stitching procedure is unbiased.
 The statistical uncertainties on the rate estimates obtained from the inclusive sample are represented by error bars,
 while those obtained from the sum of inclusive plus exclusive samples are represented by the shaded area.
-The uncertainties are smaller in case the stitching procedure is used, albeit not by much in this example.
 
 \begin{figure}
 \setlength{\unitlength}{1mm}
@@ -179,3 +190,14 @@ The uncertainties are smaller in case the stitching procedure is used, albeit no
 }
 \label{fig:trigger_rate}
 \end{figure}
+
+The statistical uncertainties obtained with the stitching procedure are smaller than the ones obtained in case only the inclusive sample is used.
+The reduction in the statistical uncertainties is more pronounced for the dijet trigger than for the single jet trigger.
+The single jet trigger rate decreases only modestly for jet $\pT$ thresholds greater than $400$~\GeV.
+This ``flattening'' of the trigger rate is due to events with low $\pThat$ that contain a single jet of high $\pT$.
+The stitching weights $w^{I}$ for these low $\pThat$ events are not much smaller than the weights for the inclusive sample,
+which explains why the statistical uncertainties on the single jet trigger rate are reduced only modestly by the stitching procedure.
+Thr requirement of a second high $\pT$ jet removes most of these $\pThat$ events.
+Consequently, very few low $\pThat$ events pass high jet $\pT$ thresholds in case of the dijet trigger,
+with the effect that the dijet trigger rate decreases more rapidly as function of the jet $\pT$ threshold
+and the stitching procedure becomes more effective in reducing the statistical uncertainties on the trigger rate.
