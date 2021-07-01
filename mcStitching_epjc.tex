@@ -694,6 +694,7 @@ where for each event the number of PU interactions, $N_{\pileup}$, is sampled at
 \Poisson(N_{\pileup} \vert \Nbar) = \frac{\Nbar^{N_{\pileup}} \times e^{-\Nbar}}{N_{\pileup}!}
 \label{eq:Poisson}
 \end{equation}
+
 with a mean $\Nbar = 200$.
 The exclusive samples contain one HS interaction of transverse momentum within a specified range in $\pThat$ and $N_{\pileup}$ additional minimum bias interactions to simulate the PU.
 The number $N_{\pileup}$ of PU interactions is again sampled at random from a Poisson distribution with a mean of $\Nbar = 200$.
@@ -780,6 +781,9 @@ $ 50 < \pThat <  80$~\GeV & $2 \times 10^{5}$ \\
 $ 80 < \pThat < 120$~\GeV & $1 \times 10^{5}$ \\
 $120 < \pThat < 170$~\GeV & $5 \times 10^{4}$ \\
 $170 < \pThat < 300$~\GeV & $5 \times 10^{4}$ \\
+$300 < \pThat < 470$~\GeV & $5 \times 10^{4}$ \\
+$470 < \pThat < 600$~\GeV & $5 \times 10^{4}$ \\
+$\pThat > 600$~\GeV       & $5 \times 10^{4}$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -793,14 +797,29 @@ $170 < \pThat < 300$~\GeV & $5 \times 10^{4}$ \\
 \label{tab:p_trigger_rate}
 \begin{center}
 %\small
+\begin{minipage}{16cm}
 \begin{tabular}{l|cccccc}
 \hline
 Range in $\pThat$ [\GeV] & $< 30$ & $30$-$50$ & $50$-$80$ & $80$-$120$ & $120$-$170$ & $170$-$300$ \\
 Index $i$           & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\
 \hline
-Probability $p_{i}$ & $0.998$ & $1.69 \times 10^{-3}$ & $2.54 \times 10^{-4}$ & $3.94 \times 10^{-5}$ & $6.20 \times 10^{-6}$ & $1.73 \times 10^{-6}$ \\
+\hline
+Probability $p_{i}$ & $0.998$ & $1.51 \times 10^{-3}$ & $2.25 \times 10^{-4}$ & $3.38 \times 10^{-5}$ & $6.00 \times 10^{-6}$ & $1.55 \times 10^{-6}$ \\
 \hline
 \end{tabular}
+
+\vspace{2mm}
+
+\begin{tabular}{l|ccc}
+\hline
+Range in $\pThat$ [\GeV] & $300$-$470$ & $470$-$600$ & $> 600$ \\
+Index $i$           & $6$ & $7$ & $8$ \\
+\hline
+\hline
+Probability $p_{i}$ & $1.05 \times 10^{-7}$ & $8.73 \times 10^{-9}$ & $3.12 \times 10^{-9}$ \\
+\hline
+\end{tabular}
+\end{minipage}
 \end{center}
 \end{table*}
 
@@ -810,12 +829,15 @@ Instead, we show in Fig.~\ref{fig:weight_trigger_rate} the spectrum of the weigh
 that we obtain when inserting the numbers given in Tables~\ref{tab:samples_trigger_rate} and~\ref{tab:p_trigger_rate} into Eq.~(\ref{eq:weight_trigger_rate}).
 For comparison, we also show the corresponding weight, given by $w_{\incl} = F/N_{\incl}$,
 for the case that only the inclusive sample is used to estimate the trigger rate.
+The weight $w_{\incl}$ amounts to $35$~Hz in this example.
 As can be seen in Fig.~\ref{fig:weight_trigger_rate}, the addition of samples produced in ranges in $\pThat$ to the inclusive sample reduces the weights.
 The different maxima in the distribution of stitching weights $w^{I}$ correspond to events 
 in which the transverse momentum exchanged between the scattered protons falls into different ranges in $\pThat$.
-The weights $w^{I}$ are on average smaller for events that pass than for events that fail the trigger selection,
-as the probability for an event to pass the trigger increases with $\pThat$,
-and the reduction in statistical uncertainties that results from the reduction in weights thus increases once the trigger selection is applied.
+The spectrum of weights shown in Fig.~\ref{fig:weight_trigger_rate} is plotted before any trigger selection is applied.
+The stitching weights $w^{I}$ are on average smaller for events that pass than for events that fail the trigger selection,
+as the probability for an event to pass the trigger increases with $\pThat$.
+In contrast, the weights $w_{\incl}$ are the same before and after the trigger selection is applied.
+The reduction in weights thus becomes more pronounced after the trigger selection is applied.
 
 \begin{figure}
 \includegraphics[width=0.48\textwidth]{plots/makeEvtWeightPlotsForPaper_evtWeight_log.pdf}
@@ -835,7 +857,6 @@ with the stitching weights computed according to Eq.~(\ref{eq:weight_trigger_rat
 agree within statistical uncertainties, demonstrating that the estimate of the trigger rate obtained from the stitching procedure is unbiased.
 The statistical uncertainties on the rate estimates obtained from the inclusive sample are represented by error bars,
 while those obtained from the sum of inclusive plus exclusive samples are represented by the shaded area.
-The uncertainties are smaller in case the stitching procedure is used, albeit not by much in this example.
 
 \begin{figure*}
 \setlength{\unitlength}{1mm}
@@ -854,6 +875,17 @@ The uncertainties are smaller in case the stitching procedure is used, albeit no
 }
 \label{fig:trigger_rate}
 \end{figure*}
+
+The statistical uncertainties obtained with the stitching procedure are smaller than the ones obtained in case only the inclusive sample is used.
+The reduction in the statistical uncertainties is more pronounced for the dijet trigger than for the single jet trigger.
+The single jet trigger rate decreases only modestly for jet $\pT$ thresholds greater than $400$~\GeV.
+This ``flattening'' of the trigger rate is due to events with low $\pThat$ that contain a single jet of high $\pT$.
+The stitching weights $w^{I}$ for these low $\pThat$ events are not much smaller than the weights for the inclusive sample,
+which explains why the statistical uncertainties on the single jet trigger rate are reduced only modestly by the stitching procedure.
+Thr requirement of a second high $\pT$ jet removes most of these $\pThat$ events.
+Consequently, very few low $\pThat$ events pass high jet $\pT$ thresholds in case of the dijet trigger,
+with the effect that the dijet trigger rate decreases more rapidly as function of the jet $\pT$ threshold
+and the stitching procedure becomes more effective in reducing the statistical uncertainties on the trigger rate.
 
 
 \section{Summary}
