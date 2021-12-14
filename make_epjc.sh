@@ -24,5 +24,7 @@ if [[ -f mcStitching_epjc.pdf ]] && [[ "$1" = "grayscale" ]]; then
    mcStitching_epjc.pdf
 fi
 
+cp mcStitching_epjc.pdf ~
+
 #acroread mcStitching_epjc.pdf
 

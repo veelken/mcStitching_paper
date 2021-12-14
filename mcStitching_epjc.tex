@@ -26,9 +26,10 @@
 %
 % insert here the call for the packages your document requires
 %\RequirePackage{latexsym}
-%\RequirePackage[numbers,sort&compress]{natbib}
+%\RequirePackage[sort&compress,numbers]{natbib}
 %\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
 %\RequirePackage{lineno}
+\RequirePackage[switch,modulo]{lineno}
 \RequirePackage{hyperref}
 \RequirePackage{amsmath}
 \RequirePackage{hepnames}
@@ -99,8 +100,9 @@
 \date{Received: date / Accepted: date}
 % The correct dates will be entered by the editor
 
-
 \maketitle
+
+\linenumbers
 
 \begin{abstract}
 %Insert your abstract here. Include keywords, PACS and mathematical
@@ -1029,8 +1031,9 @@ This work was supported by the Estonian Research Council grant PRG445.
 % BibTeX users please use one of
 %\bibliographystyle{spbasic}      % basic style, author-year citations
 \bibliographystyle{spmpsci}      % mathematics and physical sciences
+%\bibliographystyle{unsrt}
 %\bibliographystyle{spphys}       % APS-like style for physics
-\bibliography{mcStitching.bib}   % name your BibTeX data base
+\bibliography{mcStitching_epjc}   % name your BibTeX data base
 
 % Non-BibTeX users please use
 %\begin{thebibliography}{}
