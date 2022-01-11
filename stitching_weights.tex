@@ -4,68 +4,63 @@
 As explained in the introduction,
 contemporary HEP experiments often employ MC production schemes
 that first divide the PS into multiple regions and then produce separate MC samples to cover each region.
-When using these MC samples for the purpose of modelling backgrounds,
-weights need to be applied to the simulated events, in order to obtain background estimates that are unbiased.
-More specifically, the weights need to be chosen such that the weighted sum of simulated events in each region $i$ of PS 
+When using these MC samples in physics analyses,
+the overlap of the samples in PS needs to be accounted for by applying weights to the simulated events.
+The weights need to be chosen such that the weighted sum of simulated events in each region $i$ of PS 
 matches the SM prediction in that region:
 \begin{equation}
-\sum_{j} \, N_{j} \times P_{j}^{i} \times w_{j}^{i} = L \times \sigma_{i} \, ,
+\sum_{j} \, p_{j}^{i} \cdot s_{j}^{i} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k} = L \cdot \sigma^{i} \, ,
 \label{eq:one}
 \end{equation}
 where the symbol $L$ corresponds to the integrated luminosity of the analyzed dataset
-and $\sigma_{i}$ denotes the fiducial cross section for the process under study in the PS region $i$.
-The sum on the left-hand-side extends over the MC samples $j$,
-with $N_{j}$ denoting the total number of simulated events in the $j$-th sample.
-The symbol $P_{j}^{i}$ corresponds to the probability for an event in MC sample $j$ to fall into PS region $i$,
-and $w_{j}^{i}$ denotes the weight that is applied to events from the $j$-th sample,
-which falls into the PS region $i$.
-Eq.~(\ref{eq:one}) holds separately for each background process under study.
-In principle, the same equation applies to signal MC samples. 
-The case of signal MC samples is less relevant in practice, however,
-as signal cross sections are typically significantly smaller than those of background processes,
-and the production of signal MC samples of sufficient size is rarely a problem.
+and $\sigma^{i}$ denotes the fiducial cross section for the process under study in the PS region $i$.
+The first (second) sum on the left-hand-side extends over the MC samples $j$ 
+(over the events $k$ in the $j$-th sample, where $N_{j}$ denotes the total number of simulated events in the sample $j$).
+The symbol $w_{j}^{k}$ denotes the weight assigned to event $k$ by the MC generator program,
+while $s_{j}^{i}$ denotes the ``stitching'' weight that is applied to events from the sample $j$ that fall into the PS region $i$ to account for the overlap of the MC samples in PS.
+The symbol $p_{j}^{i}$ corresponds to the probability for an event in MC sample $j$ to fall into PS region $i$.
+The probability $p_{j}^{i}$ is equal to the ratio of cross sections $\sigma^{i}$ to the ``inclusive'' cross section $\sigma_{\incl}$ that refers to the whole PS.
+Eq.~(\ref{eq:one}) holds separately for each (signal or background) process under study.
 
-One can show that the lowest statistical uncertainty on the background estimate is achieved 
-if the weights $w_{j}^{i}$ in Eq.~(\ref{eq:one}) only depend on the PS region $i$,
-that is, if all simulated events that fall into the same region of PS have the same weight,
-regardless of which MC sample these events are contained in.
-We hence use weights that depend only on the PS region $i$ and not on the MC sample $j$.
-We refer to these weights as ``stitching weights'' and denote them by the symbol $w^{i}$.
+One can show that the statistical uncertainty on the signal or background estimate
+gets reduced when all simulated events that fall into PS region $i$ have the same weight,
+regardless of which MC sample $j$ contains the event.
+We hence choose the stitching weight to depend only on the PS region $i$ (and not on the MC sample $j$)
+and refer to these weights using the symbol $s^{i}$ from now on.
 
-It is useful to express the cross section $\sigma_{i}$ as the product of an ``inclusive'' cross section $\sigma_{\incl}$,
-which refers to the whole PS, and the probability $P^{i}$ that an event generated in the inclusive PS falls into the PS region $i$:
+Defining the symbol $P^{i}$ as the ratio of the fiducial cross section in PS region $i$ to the inclusive cross section,
 \begin{equation*}
-\sigma_{i} = \sigma_{\incl} \times P^{i} \, .
+P^{i} = \frac{\sigma_{i}}{\sigma_{\incl}} \quad \Longleftrightarrow \quad \sigma_{i} = \sigma_{\incl} \cdot P^{i} \, ,
 \label{eq:two}
 \end{equation*}
-Inserting this relation into Eq.~(\ref{eq:one}) and solving for the weight $w^{i}$ yields:
+inserting this relation into Eq.~(\ref{eq:one}), and solving for the weight $s^{i}$ yields:
 \begin{equation}
-w^{i} = \frac{L \times \sigma_{\incl} \times P^{i}}{\sum_{j} \, N_{j} \times P_{j}^{i}} \, .
+s^{i} = \frac{L \cdot \sigma_{\incl} \cdot P^{i}}{p_{j}^{i} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
 \label{eq:master}
 \end{equation}
 
 A special case, which is frequently encountered in practice,
 is that one MC sample covers the whole PS,
-while additional samples reduce the statistical uncertainties in the regions of PS most relevant to searches for new physics.
+while additional samples reduce the statistical uncertainties in the tails of distributions.
 We refer to the MC sample that covers the whole PS as the inclusive sample and the corresponding PS as the inclusive PS.
 In this case, Eq.~(\ref{eq:master}) can be rewritten in the form:
 \begin{equation}
-w^{i} = \frac{L \times \sigma_{\incl}}{N_{\incl}} \times \frac{N_{\incl} \times P^{i}}{N_{\incl} \times P^{i} + \sum_{j} \, N_{j} \times P_{j}^{i}} \, ,
+s^{i} = \frac{L \cdot \sigma_{\incl}}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}} \cdot \frac{P^{i} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}{P^{i} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + P_{j}^{i} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, ,
 \label{eq:weight_incl}
 \end{equation}
-where $N_{\incl}$ refers to the number of events in the inclusive sample.
+where $w_{\incl}^{k}$ refers to the weights assigned to events in the inclusive sample by the MC generator program and $N_{\incl}$ to the total number of events in the inclusive sample.
 The sum over $j$ in Eq.~(\ref{eq:weight_incl}) extends over the additional samples that each cover a different region in PS
 and to which we will refer to as ``exclusive'' samples.
 The two factors in Eq.~(\ref{eq:weight_incl}) may be interpreted in the following way:
 the first factor corresponds to the weights that one would apply to the events in PS region $i$ 
-in case no exclusive samples are available and the background estimate in PS region $i$ is based solely on the inclusive sample.
+in case no exclusive samples are available and the signal or background estimate in PS region $i$ is based solely on the inclusive sample.
 The availability of the additional exclusive samples increases the number of simulated events in the PS region $i$ 
-from $N_{\incl} \times P^{i}$ to $N_{\incl} \times P^{i} + \sum_{j} \, N_{j} \times P_{j}^{i}$,
+from $N_{\incl} \cdot P^{i}$ to $N_{\incl} \cdot P^{i} + \sum_{j} \, N_{j} \cdot p_{j}^{i}$,
 thereby reducing the weights applied to simulated events that fall into this region.
 The resulting reduction in weights is given by the second factor in Eq.~(\ref{eq:weight_incl}).
 
 We note in passing that the square-root of this factor,
-$\sqrt{\frac{N_{\incl} \times P^{i}}{N_{\incl} \times P^{i} + \sum_{j} \, N_{j} \times P_{j}^{i}}}$,
+$\sqrt{\frac{P^{i} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}{P^{i} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + P_{j}^{i} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}}}$,
 constitutes the quantity most relevant for physics analyses,
 as it represents the reduction in statistical uncertainty on the background estimate in PS region $i$
-that results from the availability of the additional exclusive samples and the application of our stitching procedure.
+that results from the availability of the additional exclusive samples and the application of the stitching procedure.
