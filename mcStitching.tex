@@ -65,6 +65,8 @@
 \newcommand{\Pgt}{\ensuremath{\tau}\xspace}
 \newcommand{\Pbottom}{\ensuremath{\textrm{b}}\xspace}
 \newcommand{\APbottom}{\ensuremath{\bar{\textrm{b}}}\xspace}
+\newcommand{\Ptop}{\ensuremath{\textrm{t}}\xspace}
+\newcommand{\APtop}{\ensuremath{\bar{\textrm{t}}}\xspace}
 \fi
 
 \newcommand{\PZggx}{\ensuremath{\PZ/\Pgamma^{*}}\xspace}
@@ -72,6 +74,7 @@
 \newcommand{\pThat}{\ensuremath{\hat{p}_{\textrm{T}}}\xspace}
 %\newcommand{\kT}{\ensuremath{k_{\textrm{T}}}\xspace}
 \newcommand{\kt}{\ensuremath{k_{\textrm{t}}}\xspace}
+\newcommand{\ptmiss}{\ensuremath{p_{\textrm{T}}^\textrm{miss}}\xspace}
 \newcommand{\HT}{\ensuremath{H_{\mathrm{T}}}\xspace}
 \newcommand{\GeV}{\ensuremath{\textrm{GeV}}\xspace}
 \newcommand{\TeV}{\ensuremath{\textrm{TeV}}\xspace}
@@ -86,6 +89,7 @@
 \newcommand{\ME}{\ensuremath{\textrm{me}}\xspace}
 \newcommand{\MGvATNLO}{\textsc{MadGraph5}\_aMC@NLO\xspace}
 \newcommand{\PYTHIA}{\textsc{Pythia}\xspace}
+\newcommand{\HERWIG}{\textsc{Herwig}\xspace}
 \newcommand{\POWHEG}{\textsc{Powheg}\xspace}
 \newcommand{\ALPGEN}{\textsc{Alpgen}\xspace}
 \newcommand{\SHERPA}{\textsc{Sherpa}\xspace}
@@ -129,14 +133,14 @@
 
 \begin{abstract}
 Monte Carlo (MC) simulations are extensively used for various purposes in modern high-energy physics (HEP) experiments.
-Precise measurements of established Standard Model processes or searches for new physics often require the collection of vast amounts of data.
+Precision measurements of established Standard Model processes or searches for new physics often require the collection of vast amounts of data.
 It is often difficult to produce MC samples of size matching that of the data, as substantial computing resources are required to produce and store such samples.
 One solution often employed when producing MC samples for HEP experiments 
 is to divide the phase-space of particle interactions into multiple regions 
-and produce the MC samples separately for each region,
-with the size of MC samples being adapted to the needs of physics analyses that are performed in these regions.
-In this paper we present an optimal procedure for combining MC samples that overlap in phase-space.
-Our procedure is optimal in the sense that it provides the lowest statistical uncertainties.
+and produce the MC samples separately for each region.
+This approach allows to adapt the size of the MC samples to the needs of physics analyses that are performed in these regions.
+In this paper we present a procedure for combining MC samples that overlap in phase-space.
+The procedure is based on applying suitably chosen weights to the simulated events.
 We refer to the procedure as ``stitching''.
 The paper includes different examples for applying the procedure to simulated proton-proton collisions at the CERN Large Hadron Collider.
 \end{abstract}
