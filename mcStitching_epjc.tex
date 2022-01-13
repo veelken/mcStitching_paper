@@ -288,9 +288,10 @@ events have been produced for $\Pp\Pp$ collisions at $\sqrt{s}=13$~\TeV center-o
 using matrix elements computed at leading order (LO) 
 %and at next-to-leading order (NLO) 
 accuracy in perturbative quantum chromodynamics (pQCD)
-with the program \MGvATNLO $2.4.2$~\cite{Alwall:2014hca}.
+with the program \MGvATNLO $2.6.5$~\cite{MGvATNLO}.
+The parton distribution functions of the proton are modeled with NNPDF3.1 set~\cite{NNPDF:2017mvq}.
 %The production of DY events is restricted to the fiducial region $m_{\Plepton\Plepton} > 50$~\GeV, where $m_{\Plepton\Plepton}$ denotes the mass of the lepton pair.
-Parton showering, hadronization, and the underlying event are modeled using the program \PYTHIA $v8.2$~\cite{Sjostrand:2014zea} with the tune \textrm{CP5}~\cite{Sirunyan:2019dfx}.
+Parton showering, hadronization, and the underlying event are modeled using the program \PYTHIA $v8.2$~\cite{PYTHIA} with the tune \textrm{CP5}~\cite{Sirunyan:2019dfx}.
 The matching of matrix elements to parton showers is done using the \textrm{MLM} scheme~\cite{Alwall:2007fs}.% for the LO samples
 %and the \textrm{FXFX} scheme~\cite{Frederix:2012ps} for the NLO samples.
 The 
@@ -378,6 +379,8 @@ We divide the PS by the number of jets and set the index $i$ equal to $N_{\jet}$
 The number of events in each MC sample and the values of the $P^{i}$ and $P_{j}^{i}$ are given in 
 %Table~\ref{tab:samples_and_probabilities_WJets_vs_Njet}.
 Tables~\ref{tab:samples_WJets_vs_Njet} and~\ref{tab:probabilities_WJets_vs_Njet}.
+The number of events in each exclusive sample is chosen to be about an order of magnitude greater
+than would be expected from the inclusive sample in the same phase space region.
 The probabilities $P^{1}$,$\ldots$,$P^{4}$ are computed by taking the ratio of cross sections 
 for the $N_{\jet} = 1$,$\ldots$,$4$ samples with respect to the cross section $\sigma_{\incl}$ of the inclusive sample.
 The cross sections used for computing these ratios have been calculated at LO accuracy in pQCD using the program \MGvATNLO
@@ -411,7 +414,6 @@ is visualized in the lower part of each figure and is represented by the the len
 The distributions for the inclusive sample and for the sum of inclusive plus exclusive samples, with the stitching weights applied, are in agreement within the statistical uncertainties.
 The exclusive samples reduce the statistical uncertainties in particular in the tails of the distributions,
 which are the regions most relevant in searches for new physics.
-The inclusive sample contains no events with $\HT > 1200$~\GeV. 
 
 \begin{table}
 \caption{
@@ -427,10 +429,10 @@ The inclusive sample contains no events with $\HT > 1200$~\GeV.
 \hline
 Inclusive                  & $-$   & $3 \times 10^{6}$ & $61.5$           \\
 \hline
-$N_{\jet} = 1$             & $1$   & $5 \times 10^{5}$ & $9.44$           \\
-$N_{\jet} = 2$             & $2$   & $3 \times 10^{5}$ & $3.25$           \\
-$N_{\jet} = 3$             & $3$   & $2 \times 10^{5}$ & $1.15$           \\
-$N_{\jet} = 4$             & $4$   & $         10^{5}$ & $0.634$          \\
+$N_{\jet} = 1$             & $1$   & $4.9 \times 10^{6}$ & $10.1$           \\
+$N_{\jet} = 2$             & $2$   & $1.6 \times 10^{6}$ & $3.21$           \\
+$N_{\jet} = 3$             & $3$   & $4.6 \times 10^{5}$ & $0.938$          \\
+$N_{\jet} = 4$             & $4$   & $2.2 \times 10^{5}$ & $0.443$          \\
 \hline
 \end{tabular}
 \end{center}
@@ -449,7 +451,7 @@ $^{\dagger}$ Computed at LO accuracy in pQCD, then scaled to NNLO
 \multirow{2}{12mm}{Sample} & \multicolumn{5}{c}{Probabilities}               \\
                            & $P^{0}$ & $P^{1}$ & $P^{2}$ & $P^{3}$ & $P^{4}$ \\
 \hline
-Inclusive                  & $0.765$ & $0.153$ & $0.053$ & $0.019$ & $0.010$ \\
+Inclusive                  & $0.755$ & $0.169$ & $0.053$ & $0.016$ & $0.007$ \\
 \hline
 $N_{\jet} = 1$             & $0$     & $1$     & $0$     & $0$     & $0$     \\
 $N_{\jet} = 2$             & $0$     & $0$     & $1$     & $0$     & $0$     \\
@@ -474,7 +476,7 @@ $N_{\jet} = 4$             & $0$     & $0$     & $0$     & $0$     & $1$     \\
  & \multicolumn{5}{c}{Multiplicity of jets} \\
  & $0$ & $1$ & $2$ & $3$ & $4$ \\
 \hline
-Weight & $2870$ & $1380$ & $990$ & $625$ & $678$ \\
+Weight & $2870$ & $264$ & $255$ & $260$ & $259$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -493,12 +495,12 @@ Weight & $2870$ & $1380$ & $990$ & $625$ & $678$ \\
 %\multirow{2}{12mm}{Sample} & Index & Number    & Cross                    & \multicolumn{5}{c}{Probabilities}               \\
 %                           & $j$   & of events & section [nb]$^{\dagger}$ & $P^{0}$ & $P^{1}$ & $P^{2}$ & $P^{3}$ & $P^{4}$ \\
 %\hline
-%Inclusive                  & $-$   & $3 \times 10^{6}$ & $61.5$ & $0.765$ & $0.153$ & $0.053$ & $0.019$ & $0.010$ \\
+%Inclusive                  & $-$   & $3 \times 10^{6}$ & $61.5$ & $0.755$ & $0.169$ & $0.053$ & $0.016$ & $0.007$ \\
 %\hline
-%$N_{\jet} = 1$             & $1$   & $5 \times 10^{5}$ & $9.44$  & $0$     & $1$     & $0$     & $0$     & $0$     \\
-%$N_{\jet} = 2$             & $2$   & $3 \times 10^{5}$ & $3.25$  & $0$     & $0$     & $1$     & $0$     & $0$     \\
-%$N_{\jet} = 3$             & $3$   & $2 \times 10^{5}$ & $1.15$  & $0$     & $0$     & $0$     & $1$     & $0$     \\
-%$N_{\jet} = 4$             & $4$   & $         10^{5}$ & $0.634$ & $0$     & $0$     & $0$     & $0$     & $1$     \\
+%$N_{\jet} = 1$             & $1$   & $4.9 \times 10^{6}$ & $10.1$  & $0$     & $1$     & $0$     & $0$     & $0$     \\
+%$N_{\jet} = 2$             & $2$   & $1.6 \times 10^{6}$ & $3.21$  & $0$     & $0$     & $1$     & $0$     & $0$     \\
+%$N_{\jet} = 3$             & $3$   & $4.6 \times 10^{5}$ & $0.938$ & $0$     & $0$     & $0$     & $1$     & $0$     \\
+%$N_{\jet} = 4$             & $4$   & $2.2 \times 10^{5}$ & $0.443$ & $0$     & $0$     & $0$     & $0$     & $1$     \\
 %\hline
 %\end{tabular}
 %\end{center}
@@ -614,6 +616,7 @@ In the lower part of each figure, we again show the difference between the backg
 and also the respective statistical uncertainties.
 As one would expect, the addition of samples simulated in ranges in $\HT$ to the example given in Section~\ref{sec:WJets_vs_Njet}
 reduce the statistical uncertainties in particular in the tail of the $\HT$ distribution.
+The inclusive sample contains no events with $\HT > 2500$~\GeV.
 
 Physics analyses that search for new particles of high mass, which decay to high $\pT$ jets, are thus best served by producing MC samples in ranges in $\HT$,
 whereas the samples binned in $N_{\jet}$ are particularly well suited when the signal process under study features a large number of low $\pT$ jets.
@@ -627,16 +630,16 @@ whereas the samples binned in $N_{\jet}$ are particularly well suited when the s
 \begin{tabular}{l|c|c|c}
 \hline
 \multirow{2}{20mm}{Sample} & Index & Number    & Cross                    \\
-                           & $j$   & of events & section [nb]$^{\dagger}$ \\
+                           & $j$   & of events & section [pb]$^{\dagger}$ \\
 \hline
-$  70 < \HT <  100$~\GeV   &  $5$  &            $10^{6}$ & $1.50 \times 10^{3}$ \\
-$ 100 < \HT <  200$~\GeV   &  $6$  &            $10^{6}$ & $1.62 \times 10^{3}$ \\
-$ 200 < \HT <  400$~\GeV   &  $7$  & $5   \times 10^{5}$ & $479$ \\
-$ 400 < \HT <  600$~\GeV   &  $8$  & $2.5 \times 10^{5}$ & $67.4$ \\
-$ 600 < \HT <  800$~\GeV   &  $9$  &            $10^{5}$ & $15.1$ \\
-$ 800 < \HT < 1200$~\GeV   & $10$  &            $10^{5}$ & $6.36$ \\
-$1200 < \HT < 2500$~\GeV   & $11$  &            $10^{5}$ & $1.27$ \\
-$       \HT > 2500$~\GeV   & $12$  &            $10^{5}$ & $9.41 \times 10^{-3}$ \\
+$  70 < \HT <  100$~\GeV   &  $5$  & $7   \times 10^{5}$ & $1430$ \\
+$ 100 < \HT <  200$~\GeV   &  $6$  & $6.9 \times 10^{5}$ & $1410$ \\
+$ 200 < \HT <  400$~\GeV   &  $7$  & $1.9 \times 10^{5}$ & $379$  \\
+$ 400 < \HT <  600$~\GeV   &  $8$  & $2.6 \times 10^{4}$ & $51.3$ \\
+$ 600 < \HT <  800$~\GeV   &  $9$  & $6.2 \times 10^{3}$ & $12.6$ \\
+$ 800 < \HT < 1200$~\GeV   & $10$  & $3.1 \times 10^{3}$ & $5.34$ \\
+$1200 < \HT < 2500$~\GeV   & $11$  & $1.1 \times 10^{3}$ & $1.51$ \\
+$       \HT > 2500$~\GeV   & $12$  & $2.5 \times 10^{1}$ & $0.052$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -930,59 +933,64 @@ where up to $200$ simultaneous $\Pp\Pp$ collisions are expected per crossing of 
 \resizebox{\textwidth}{!}{
 \begin{tabular}{lccccccccccccccc}
 \hline
-Sample                   &  $P^{0}$ &  $P^{1}$ &  $P^{2}$ &  $P^{3}$ &  $P^{4}$ &  $P^{5}$ &  $P^{6}$ &  $P^{7}$ &  $P^{8}$ &  $P^{9}$ & $P^{10}$ & $P^{11}$ & $P^{12}$ & $P^{13}$ & $P^{14}$ \\
+Sample                   &  $P^{0}$ &  $P^{1}$ &  $P^{2}$ &  $P^{3}$ &  $P^{4}$ &  $P^{5}$ &  $P^{6}$ &  $P^{7}$ &  $P^{8}$ &  $P^{9}$ &  $P^{10}$         &  $P^{11}$            &  $P^{12}$            & $P^{13}$ & $P^{14}$ \\
 \hline
-Inclusive                &  $0.769$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.145$ &  $6.10\times10^{-3}$ &  $2.59\times10^{-3}$ &  $1.57\times10^{-4}$ &  $3.38\times10^{-6}$ &  $1.37\times10^{-7}$ \\
 \hline
-$N_{\jet} = 1$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.942$ &  $3.97\times10^{-2}$ &  $1.69\times10^{-2}$ &  $1.02\times10^{-3}$ &  $2.20\times10^{-5}$ &  $8.91\times10^{-7}$ \\
+Inclusive                &  $0.758$ &  $-$     &  $-$     &  $-$     &  $-$     &  $-$     &  $-$     &  $-$     &  $-$     &  $0.156$ &  $6\times10^{-3}$ &  $2.51\times10^{-3}$ &  $1.48\times10^{-4}$ &  $4.02\times10^{-6}$ &  $0$ \\
+\hline
+$N_{\jet} = 1$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.948$ &  $3.64\times10^{-2}$ &  $1.52\times10^{-2}$ &  $9.00\times10^{-4}$ &  $2.44\times10^{-5}$ &  $1.87\times10^{-6}$ \\
 $N_{\jet} = 2$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
 $N_{\jet} = 3$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
 $N_{\jet} = 4$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
 \hline
-$  70 < \HT <  100$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.249$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$ 100 < \HT <  200$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $9.82\times10^{-2}$ &  $-$ &  $-$ &  $-$ \\
-$ 200 < \HT <  400$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $2.02\times10^{-2}$ &  $-$ &  $-$ \\
-$ 400 < \HT <  600$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $3.08\times10^{-3}$ &  $-$ \\
-$ 600 < \HT <  800$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $5.57\times10^{-4}$ \\
+$  70 < \HT <  100$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.259$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$ 100 < \HT <  200$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.109$ &  $-$ &  $-$ &  $-$ \\
+$ 200 < \HT <  400$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $2.40\times10^{-2}$ &  $-$ &  $-$ \\
+$ 400 < \HT <  600$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $4.82\times10^{-3}$ &  $-$ \\
+$ 600 < \HT <  800$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $1.50\times10^{-3}$ \\
 $ 800 < \HT < 1200$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
 $1200 < \HT < 2500$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
 $       \HT > 2500$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
 \hline
+\hline
 Sample                   & $P^{15}$ & $P^{16}$ & $P^{17}$ & $P^{18}$ & $P^{19}$ & $P^{20}$ & $P^{21}$ & $P^{22}$ & $P^{23}$ & $P^{24}$ & $P^{25}$ & $P^{26}$ & $P^{27}$ & $P^{28}$ & $P^{29}$ \\
 \hline
-Inclusive                &  $2.29\times10^{-7}$ &  $0$ &  $0$ &  $2.83\times10^{-2}$ &  $1.30\times10^{-2}$ &  $9.85\times10^{-3}$ &  $1.29\times10^{-3}$ &  $7.96\times10^{-5}$ &  $1.27\times10^{-5}$ &  $3.37\times10^{-6}$ &  $4.22\times10^{-7}$ &  $0$ &  $1.52\times10^{-3}$ &  $5.02\times10^{-3}$ &  $9.39\times10^{-3}$ \\
 \hline
-$N_{\jet} = 1$           &  $0$ &  $0$ &  $0$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$N_{\jet} = 2$           &  $-$ &  $-$ &  $-$ &  $0.535$ &  $0.247$ &  $0.186$ &  $2.43\times10^{-2}$ &  $1.51\times10^{-3}$ &  $2.41\times10^{-4}$ &  $6.38\times10^{-5}$ &  $7.98\times10^{-6}$ &  $0$ &  $-$ &  $-$ &  $-$ \\
-$N_{\jet} = 3$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $8.12\times10^{-2}$ &  $0.268$ &  $0.501$ \\
+Inclusive                & $8.89\times10^{-8}$ &  $0$ &  $0$ &  $2.84\times10^{-2}$ &  $1.29\times10^{-2}$ &  $9.67\times10^{-3}$ &  $1.23\times10^{-3}$ &  $7.58\times10^{-5}$ &  $1.18\times10^{-5}$ &  $3.36\times10^{-6}$ &  $5.21\times10^{-7}$ &  $0$ &  $1.36\times10^{-3}$ &  $4.03\times10^{-3}$ &  $7.6\times10^{-3}$ \\
+\hline
+$N_{\jet} = 1$           &  $5.40\times10^{-7}$ &  $0$ &  $0$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$N_{\jet} = 2$           &  $-$ &  $-$ &  $-$ &  $0.543$ &  $0.247$ &  $0.185$ &  $2.36\times10^{-2}$ &  $1.45\times10^{-3}$ &  $2.25\times10^{-4}$ &  $6.43\times10^{-5}$ &  $10^{-5}$ &  $0$ &  $-$ &  $-$ &  $-$ \\
+$N_{\jet} = 3$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $8.91\times10^{-2}$ &  $0.265$ &  $0.499$ \\
 $N_{\jet} = 4$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
 \hline
-$  70 < \HT <  100$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $0.533$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.205$ &  $-$ \\
-$ 100 < \HT <  200$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.373$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.355$ \\
-$ 200 < \HT <  400$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.166$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$ 400 < \HT <  600$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $7.26\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$ 600 < \HT <  800$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $5.19\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$ 800 < \HT < 1200$~\GeV &  $2.22\times10^{-4}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $3.26\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$1200 < \HT < 2500$~\GeV &  $-$ &  $1.01\times10^{-5}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $2.05\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$       \HT > 2500$~\GeV &  $-$ &  $-$ &  $0$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $1.12\times10^{-3}$ &  $-$ &  $-$ &  $-$ \\
+$  70 < \HT <  100$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $0.557$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.174$ &  $-$ \\
+$ 100 < \HT <  200$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.421$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.331$ \\
+$ 200 < \HT <  400$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.200$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$ 400 < \HT <  600$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $9.09\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$ 600 < \HT <  800$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $5.72\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$ 800 < \HT < 1200$~\GeV &  $1.02\times10^{-4}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $3.87\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$1200 < \HT < 2500$~\GeV &  $-$ &  $9.02\times10^{-4}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $2.12\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$       \HT > 2500$~\GeV &  $-$ &  $-$ &  $0$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0$ &  $-$ &  $-$ &  $-$ \\
+\hline
 \hline
 Sample                   & $P^{30}$ & $P^{31}$ & $P^{32}$ & $P^{33}$ & $P^{34}$ & $P^{35}$ & $P^{36}$ & $P^{37}$ & $P^{38}$ & $P^{39}$ & $P^{40}$ & $P^{41}$ & $P^{42}$ & $P^{43}$ & $P^{44}$ \\
 \hline
-Inclusive                &  $2.32\times10^{-3}$ &  $2.09\times10^{-4}$ &  $3.45\times10^{-5}$ &  $1.09\times10^{-5}$ &  $1.55\times10^{-6}$ &  $0$ &  $7.00\times10^{-6}$ &  $3.28\times10^{-4}$ &  $4.62\times10^{-3}$ &  $4.02\times10^{-3}$ &  $8.04\times10^{-4}$ &  $1.98\times10^{-4}$ &  $8.91\times10^{-4}$ &  $1.86\times10^{-5}$ &  $1.49\times10^{-7}$ \\
+\hline
+Inclusive                &  $1.94\times10^{-3}$ &  $1.70\times10^{-4}$ &  $2.98\times10^{-5}$ &  $9.17\times10^{-6}$ &  $1.46\times10^{-6}$ &  $0$ &  $1.39\times10^{-5}$ &  $2.96\times10^{-4}$ &  $3.24\times10^{-3}$ &  $2.83\times10^{-3}$ &  $5.76\times10^{-4}$ &  $1.60\times10^{-4}$ &  $7.20\times10^{-5}$ &  $2.13\times10^{-5}$ &  $0$ \\
 \hline
 $N_{\jet} = 1$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
 $N_{\jet} = 2$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$N_{\jet} = 3$           &  $0.124$ &  $1.11\times10^{-2}$ &  $1.85\times10^{-3}$ &  $5.82\times10^{-4}$ &  $8.29\times10^{-5}$ &  $2.08\times10^{-7}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$N_{\jet} = 4$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $6.79\times10^{-4}$ &  $3.19\times10^{-2}$ &  $0.449$ &  $0.390$ &  $7.81\times10^{-2}$ &  $1.92\times10^{-2}$ &  $8.65\times10^{-3}$ &  $1.80\times10^{-3}$ &  $1.44\times10^{-5}$ \\
+$N_{\jet} = 3$           &  $0.127$ &  $1.12\times10^{-2}$ &  $1.95\times10^{-3}$ &  $6.02\times10^{-4}$ &  $9.60\times10^{-5}$ &  $0$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$N_{\jet} = 4$           &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $1.93\times10^{-3}$ &  $4.12\times10^{-2}$ &  $0.451$ &  $0.393$ &  $7.99\times10^{-2}$ &  $2.23\times10^{-2}$ &  $10^{-2}$ &  $2.95\times10^{-3}$ &  $1.18\times10^{-4}$ \\
 \hline
-$  70 < \HT <  100$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $1.34\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$ 100 < \HT <  200$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.175$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$ 200 < \HT <  400$~\GeV &  $0.298$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.517$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$ 400 < \HT <  600$~\GeV &  $-$ &  $0.190$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.734$ &  $-$ &  $-$ &  $-$ &  $-$ \\
-$ 600 < \HT <  800$~\GeV &  $-$ &  $-$ &  $0.141$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.806$ &  $-$ &  $-$ &  $-$ \\
-$ 800 < \HT < 1200$~\GeV &  $-$ &  $-$ &  $-$ &  $0.106$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.862$ &  $-$ &  $-$ \\
-$1200 < \HT < 2500$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $7.55\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.904$ &  $-$ \\
-$       \HT > 2500$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $2.55\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.973$ \\
+$  70 < \HT <  100$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $1.28\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$ 100 < \HT <  200$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.141$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$ 200 < \HT <  400$~\GeV &  $0.314$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.459$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$ 400 < \HT <  600$~\GeV &  $-$ &  $0.204$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.690$ &  $-$ &  $-$ &  $-$ &  $-$ \\
+$ 600 < \HT <  800$~\GeV &  $-$ &  $-$ &  $0.145$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.781$ &  $-$ &  $-$ &  $-$ \\
+$ 800 < \HT < 1200$~\GeV &  $-$ &  $-$ &  $-$ &  $0.106$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.830$ &  $-$ &  $-$ \\
+$1200 < \HT < 2500$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $5.95\times10^{-2}$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0.865$ &  $-$ \\
+$       \HT > 2500$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $1$ \\
 \hline
 \end{tabular}
 }
@@ -1007,15 +1015,15 @@ $       \HT > 2500$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $2.55\times10^{-2
 \hline
                                  & $N_{\jet} = 0$ & $N_{\jet} = 1$      & $N_{\jet} = 2$      & $N_{\jet} = 3$      & $N_{\jet} = 4$       \\ 
 \hline
-               $\HT < 70$~\GeV   & $2870$         & $1380$              & $998$               & $631$               &  $678$               \\
-  $70 \leqslant \HT < 100$~\GeV  & $-$            &  $183$              & $173$               & $158$               &  $161$               \\
- $100 \leqslant \HT < 200$~\GeV  & $-$            &  $195$              & $185$               & $167$               &  $171$               \\
- $200 \leqslant \HT < 400$~\GeV  & $-$            &  $122$              & $118$               & $110$               &  $1125$              \\
- $400 \leqslant \HT < 600$~\GeV  & $-$            & $36.8$              & $36.5$              & $35.7$              &  $35.8$              \\
- $600 \leqslant \HT < 800$~\GeV  & $-$            & $20.3$              & $20.7$              & $20.5$              &  $20.5$              \\
- $800 \leqslant \HT < 1200$~\GeV & $-$            & $5.72$              & $8.86$              & $8.82$              &  $8.82$              \\
-$1200 \leqslant \HT < 2500$~\GeV & $-$            & $0.596$             & $1.78$              & $1.78$              &  $1.78$              \\
-       $\HT \geqslant 2500$~\GeV & $-$            & $0$                 & $4.50\times10^{-3}$ & $9.00\times10^{-3}$ &  $1.35\times10^{-2}$ \\ 
+               $\HT < 70$~\GeV   & $2870$         &  $263$              & $256$              & $260$              &  $257$  \\
+  $70 \leqslant \HT < 100$~\GeV  & $-$            &  $137$              & $135$              & $136$              &  $135$  \\
+ $100 \leqslant \HT < 200$~\GeV  & $-$            &  $137$              & $135$              & $136$              &  $136$  \\
+ $200 \leqslant \HT < 400$~\GeV  & $-$            &  $135$              & $134$              & $135$              &  $134$  \\
+ $400 \leqslant \HT < 600$~\GeV  & $-$            &  $132$              & $133$              & $134$              &  $134$  \\
+ $600 \leqslant \HT < 800$~\GeV  & $-$            & $93.1$              & $134$              & $136$              &  $139$  \\
+ $800 \leqslant \HT < 1200$~\GeV & $-$            &  $109$              & $119$              & $124$              &  $128$  \\
+$1200 \leqslant \HT < 2500$~\GeV & $-$            & $64.2$              & $109$              & $102$              &  $123$  \\
+       $\HT \geqslant 2500$~\GeV & $-$            &    $0$              &   $0$              &   $0$              &  $135$  \\
 \hline
 \end{tabular}
 \end{center}
