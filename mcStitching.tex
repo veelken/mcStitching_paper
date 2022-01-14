@@ -58,6 +58,7 @@
 \ifx\ver\verPreprint
 \newcommand{\PW}{\ensuremath{\textrm{W}}\xspace}
 \newcommand{\PZ}{\ensuremath{\textrm{Z}}\xspace}
+\newcommand{\PGg}{\ensuremath{\gamma}\xspace}
 \newcommand{\PHiggs}{\ensuremath{\textrm{H}}\xspace}
 \newcommand{\Pp}{\ensuremath{\textrm{p}}\xspace}
 \newcommand{\Plepton}{\ensuremath{\ell}\xspace}
@@ -69,7 +70,8 @@
 \newcommand{\APtop}{\ensuremath{\bar{\textrm{t}}}\xspace}
 \fi
 
-\newcommand{\PZggx}{\ensuremath{\PZ/\Pgamma^{*}}\xspace}
+\newcommand{\Pggx}{\ensuremath{\PGg^{*}}\xspace}
+\newcommand{\PZggx}{\ensuremath{\PZ/\Pggx}\xspace}
 \newcommand{\pT}{\ensuremath{p_{\textrm{T}}}\xspace}
 \newcommand{\pThat}{\ensuremath{\hat{p}_{\textrm{T}}}\xspace}
 %\newcommand{\kT}{\ensuremath{k_{\textrm{T}}}\xspace}
@@ -159,7 +161,6 @@ The paper includes different examples for applying the procedure to simulated pr
 \include*{stitching_weights}
 \include*{examples}
 \include*{examples_lo}
-%\include*{examples_nlo}
 \include*{examples_trigger}
 \include*{summary}
 \include*{acknowledgements}

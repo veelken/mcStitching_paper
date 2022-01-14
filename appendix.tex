@@ -1,4 +1,3 @@
-%\section{Supplementary material}
 
 \begin{sidewaystable}
 \centering              
@@ -68,8 +67,7 @@ $       \HT > 2500$~\GeV &  $-$ &  $-$ &  $-$ &  $-$ &  $-$ &  $0$ &  $-$ &  $-$
 \end{tabular}
 }
 \caption{
-  Probabilities $P^{i}$ and $P_{j}^{i}$ for the events in the inclusive and exclusive $\PW \to \Plepton\Pnu$ samples 
-  %simulated at LO accuracy in pQCD 
+  Probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ for the events in the inclusive and exclusive $\PW$+jets samples 
   to populate the different PS regions $i$.
   The definition of the PS regions $i$ in the plane of $N_{\jet}$ versus $\HT$ is shown in Fig.~\ref{fig:regions_WJets_vs_Njet_and_HT}.
   A hyphen ($-$) indicates PS regions $i$ that are not populated by a given sample $j$. The presence of a hyphen is equivalent to the probability $P_{j}^{i}$ being zero.
@@ -97,7 +95,7 @@ $1200 \leqslant \HT < 2500$~\GeV & $-$            &  $193$              & $109$ 
 \hline
 \end{tabular}
 \caption{
-  Weights $w^{i}$ for the case that the inclusive and exclusive $\PW \to \Plepton\Pnu$ samples 
+  Stitching weights $s^{i}$ for the case that the inclusive and exclusive $\PW$+jets samples 
   given in Tables~\ref{tab:samples_and_probabilities_WJets_vs_Njet} and~\ref{tab:samples_WJets_vs_Njet_and_HT}
   %, simulated at LO accuracy in pQCD,
   are stitched based on the observables $N_{\jet}$ and $\HT$.
@@ -108,3 +106,55 @@ $1200 \leqslant \HT < 2500$~\GeV & $-$            &  $193$              & $109$ 
 }
 \label{tab:weights_WJets_vs_Njet_and_HT}
 \end{table}
+
+\section{Appendix}
+\label{sec:appendix}
+
+In this section, we detail the application of the least-squares method~\cite{Cowan:1998ji}
+to the example in Section~\ref{sec:WJets_vs_Njet_and_HT}.
+The purpose is to make the computation of of the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ less sensitive to statistical fluctuations in the MC samples.
+We start by assuming the following relation to hold:
+\begin{equation}
+\sigma_{\incl} \cdot P_{\incl}^{i} = \sigma_{j} \cdot P_{j}^{i} \quad \forall \, j \, ,
+\label{eq:lambda1}
+\end{equation}
+except for statistical fluctuations on the $P_{\incl}^{i}$ and $P_{j}^{i}$.
+The $P_{\incl}^{i}$ and $P_{j}^{i}$ are obtained by determining the fraction of events in the inclusive and exclusive samples that fall into PS region $i$.
+The symbol $j$ here refers to those $N_{\jet}$- and $\HT$-samples that cover the PS region $i$
+and the symbol $\sigma_{j}$ to the cross sections corresponding to these samples.
+We denote the unknown true value of the left-hand-side (and equivalently of the right-hand-side) of Eq.~(\ref{eq:lambda1}) by the symbol $\lambda_{i}$
+and use the symbols $r_{\incl}^{i}$ and $r_{j}^{i}$ to refer to the deviations (``residuals''), caused by statistical fluctuations,
+between the true values of the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ and the values obtained using the MC samples.
+We further use the symbols $e_{\incl}^{i}$ and $e_{j}^{i}$ to denote the expected statistical fluctuations (``errors'') of these probabilities.
+According to the least-squares method,
+the best estimate for the value of $\lambda_{i}$ is obtained as solution to the system of equations:
+\begin{eqnarray*}
+\sigma_{\incl} \cdot \left( P_{\incl}^{i} + r_{\incl}^{i} \right) - \lambda_{i} & = & 0 \quad \mbox{and} \\
+\sigma_{j} \cdot \left( P_{j}^{i} + r_{j}^{i} \right) - \lambda_{i} & = & 0 \quad \forall \, j \, ,
+\end{eqnarray*}
+subject to the condition that the sum of residuals
+\begin{equation*}
+\left( \frac{r_{\incl}^{i}}{e_{\incl}^{i}} \right)^{2} + \sum_{j} \left( \frac{r_{j}^{i}}{s_{j}^{i}} \right)^{2}
+\end{equation*}
+attains its minimal value.
+The expected statistical fluctuations $e_{\incl}^{i}$ and $e_{j}^{i}$ of the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$
+are given by the standard errors of the Binomial distribution~\cite{Cowan:1998ji}
+\begin{equation*}
+e_{\incl}^{i} = \sqrt{\frac{P_{\incl}^{i} \cdot (1 - P_{\incl}^{i})}{N_{\incl}}} \quad \mbox{and} \quad e_{j}^{i} = \sqrt{\frac{P_{j}^{i} \cdot (1 - P_{j}^{i})}{N_{j}}} \, .
+\end{equation*}
+The fluctuations decrease proportional to the inverse of the square-root of the number of events in the MC samples.
+The solution for $\lambda_{i}$ is given by the expression:
+\begin{equation}
+\lambda_{i} = \frac{\alpha_{\incl}^{i} \cdot \sigma_{\incl} \cdot P_{\incl}^{i} + \sum_{j} \alpha_{j}^{i} \cdot \sigma_{j} \cdot P_{j}^{i}}{\alpha_{\incl}^{i} + \sum_{j} \alpha_{j}^{i}} \, ,
+\label{eq:lambda2}
+\end{equation}
+from which the probabilities $P_{\incl}^{i} = \lambda_{i}/\sigma_{\incl}$ and $P_{j}^{i} = \lambda_{i}/\sigma_{j}$ follow.
+The symbols $\alpha_{\incl}^{i}$ and $\alpha_{j}^{i}$ are defined as:
+\begin{equation*}
+\alpha_{\incl}^{i} = \frac{1}{\left( \sigma_{\incl} \cdot e^{i} \right)^{2}} \quad \mbox{and} \quad \alpha_{j}^{i} = \frac{1}{\left( \sigma_{j} \cdot e_{j}^{i} \right)^{2}}
+\end{equation*}
+and act as ``weights'' in the expression on the right-hand-side of Eq.~(\ref{eq:lambda2}),
+which has the form of a weighted average.
+We use the symbols $\alpha_{\incl}^{i}$ and $\alpha_{j}^{i}$ to refer to these weights,
+in order to distinguish them from the weights $w_{\incl}^{k}$ and $w_{j}^{k}$ computed by the MC generator program
+and from the stitching weights $s^{i}$.

@@ -2,62 +2,90 @@
 \subsection{Estimation of \texorpdfstring{$\PW$}{W}+jets backgrounds}
 \label{sec:examples_background_yield}
 
-The examples in this section refer to the modelling of 
-%DY and 
-$\PW$+jets backgrounds in the context of physics analyses at the LHC.
-We will first discuss the stitching of $\PW \to \Plepton\Pnu$ samples
-%generated at LO accuracy in pQCD 
-based on the observable $N_{\jet}$
-%, followed by a discussion of the stitching of $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD based on the two observables $N_{\jet}$ and $\HT$,
-%before we conclude this section with a discussion of stitching $\PZggx \to \Plepton\Plepton$ samples generated at NLO in pQCD based on the multiplicity of jets.
-and then proceed to discuss the stitching of $\PW \to \Plepton\Pnu$ samples based on the two observables $N_{\jet}$ and $\HT$.
-In 
-%all three 
-both cases, we will assume that an inclusive sample, covering the whole PS, is available.
+The production of $\PW$ bosons represents an important process to study at the LHC for several reasons.
+The measurement of the mass of the $\PW$ boson is an important input to global fits to SM parameters~\cite{Baak:2014ora}.
+The fits allow to test the overall consistency of the SM and to set constraints on physics beyond the SM.
+The sensitivity of these fits is currently limited by the precision of the $\PW$ boson mass measurement~\cite{Baak:2014ora}.
+Differential measurements of the cross section for $\PW$+jets production 
+are used to constrain parton distribution functions~\cite{CMS:2016qqr,ATLAS:2016nqi,ATLAS:2019fgb,CMS:2020cph}.
+In particular, the measurement of the associated production of $\PW$ bosons with charm quarks
+provides sensitivity to the strange quark content of the proton~\cite{CMS:2013wql,ATLAS:2014jkm,CMS:2018dxg} 
+and allows to tune MC generators to improve the modelling of heavy-flavour production at hadron colliders.
+The production of $\PW$ bosons also constitutes a relevant background to measurements of other SM processes
+and to searches for new physics, see Refs.~\cite{ATLAS:2014aga,Aad:2019yxi,CMS-HIG-13-027,CMS-HIG-17-006} for examples.
+In this section, we focus on $\PW$+jets production with subsequent decay of the $\PW$ boson to an electron or muon and a neutrino 
+(excluding electrons or muons resulting from $\Pgt$ decays).
+
+Simulated samples of $\PW$+jets events have been produced for $\Pp\Pp$ collisions at $\sqrt{s}=13$~\TeV center-of-mass energy
+using matrix elements computed at leading order (LO) accuracy in perturbative quantum chromodynamics (pQCD)
+with the program \MGvATNLO $2.6.5$~\cite{MGvATNLO}.
+The parton distribution functions of the proton are modeled with NNPDF3.1 set~\cite{NNPDF:2017mvq}.
+Parton showering, hadronization, and the underlying event are modeled using the program \PYTHIA $v8.2$~\cite{PYTHIA} with the tune \textrm{CP5}~\cite{Sirunyan:2019dfx}.
+The matching of matrix elements to parton showers is done using the \textrm{MLM} scheme~\cite{Alwall:2007fs}.
+Samples containing either $1$, $2$, $3$, or $4$ jets at matrix-element level are complemented by an ``inclusive'' sample 
+and by sampled binned in $\HT$, the scalar sum in $\pT$ of the jets present at the matrix-element level in the event.
+The inclusive and $\HT$-binned samples contain events with $0$--$4$ jets at the matrix-element level.
+
+The weights $w_{j}^{k}$ and $w_{\incl}^{k}$ are equal to one for all events in these samples.
+Thus, $w_{j}^{k} = N_{j}$ and $w_{\incl}^{k} = N_{\incl}$ for this example,
+which allows to simplify Eq.~(\ref{eq:weight_incl}) to:
+\begin{equation}
+s^{i} = \frac{L \cdot \sigma_{\incl}}{N_{\incl}} \cdot \frac{P^{i} \cdot N_{\incl}}{P^{i} \cdot N_{\incl} + P_{j}^{i} \cdot N_{j}} \, .
+\label{eq:weight_incl_simplified}
+\end{equation}
+
+The samples are normalized using a $k$-factor of $X.XX$, given by the ratio of the inclusive cross section computed at next-to-next-to leading order (NNLO) accuracy in pQCD,
+with electroweak corrections taken into account up to NLO accuracy~\cite{Li:2012wna},
+and the inclusive cross section computed at LO accuracy by the program \MGvATNLO.
+The product of the inclusive $\PW$+jets production cross section times the branching fraction for the decay to a charged lepton and a neutrino amounts to $61.5$~nb.
+
+We will demonstrate the stitching of these samples based on two observables,
+$N_{\jet}$ and $\HT$, defined as, respectively, the number of jets at the matrix-element level and the scalar sum in $\pT$ of these jets.
+The PS region in which we perform the stitching will be either one- or two-dimensional.
+We will show that for our formalism
+it makes little difference whether the stitching is performed in one dimension or in two.
+
+We will first discuss the stitching of $\PW$+jets samples based on the observable $N_{\jet}$
+and then proceed to discuss the stitching of $\PW$+jets samples based on the two observables $N_{\jet}$ and $\HT$.
 
 
 %\subsubsection{Stitching of LO \texorpdfstring{$\PW$}{W}+jets samples by \texorpdfstring{$N_{\jet}$}{Njet}}
 \subsubsection{Stitching of \texorpdfstring{$\PW$}{W}+jets samples by \texorpdfstring{$N_{\jet}$}{Njet}}
 \label{sec:WJets_vs_Njet}
 
-In this example, an inclusive $\PW \to \Plepton\Pnu$ sample simulated at LO accuracy in pQCD 
-is stitched with exclusive samples produced for jet multiplicities of $N_{\jet} = 1$, $2$, $3$, and $4$.
-The inclusive sample contains events with jet multiplicities between $0$ and $4$.
-We divide the PS by the number of jets and set the index $i$ equal to $N_{\jet}$.
-The number of events in each MC sample and the values of the $P^{i}$ and $P_{j}^{i}$ are given in Table~\ref{tab:samples_and_probabilities_WJets_vs_Njet}.
-The probabilities $P^{1}$,$\ldots$,$P^{4}$ are computed by taking the ratio of cross sections 
-for the $N_{\jet} = 1$,$\ldots$,$4$ samples with respect to the cross section $\sigma_{\incl}$ of the inclusive sample.
-The cross sections used for computing these ratios have been calculated at LO accuracy in pQCD using the program \MGvATNLO
-and have been upgraded to NNLO accuracy by scaling all cross sections by the ratio ($k$-factor) of the NNLO to LO inclusive cross sections.
-The probability $P^{0}$ is obtained using the relation $P^{0} = 1 - \sum_{i=1}^{4} P^{i}$.
+In this example, an inclusive $\PW$+jets sample simulated at LO accuracy in pQCD 
+is stitched with exclusive samples containing events with jet multiplicities of $N_{\jet} = 1$, $2$, $3$, and $4$ at the matrix-element level.
+The inclusive sample contains events with jet multiplicities at the matrix-element level between $0$ and $4$.
+We divide the PS by the number of jets at the matrix-element level and set the index $i$ equal to $N_{\jet}$.
+The number of events in each MC sample is chosen such that the stitching weights decrease by about a factor two for each increase in jet multiplicity.
+As the cross section decreases as function of $N_{\jet}$,
+one can afford to produce samples with lower statistical uncertainties to cover the region of large jet multiplicity
+without increasing by too much the expenditure of computing resources required to produce and store these samples.
+The number of events and the corresponding values of the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ are given in Table~\ref{tab:samples_and_probabilities_WJets_vs_Njet}.
+The probabilities are computed by taking the ratio of cross sections 
+for the exclusive samples with respect to the cross section $\sigma_{\incl}$ of the inclusive sample.
+The probability $P_{\incl}^{0}$ is obtained using the relation $P_{\incl}^{0} = 1 - \sum_{i=1}^{4} P_{\incl}^{i}$.
 The probabilities $P_{j}^{i}$ for the exclusive samples are $1$ if $i=j$ and $0$ otherwise,
 as each of the exclusive samples $j$ covers exactly one of the PS regions $i$.
-The corresponding stitching weights, computed according to Eq.~(\ref{eq:weight_incl}), are given in Table~\ref{tab:weights_WJets_vs_Njet}.
+The corresponding stitching weights $s^{i}$, computed according to Eq.~(\ref{eq:weight_incl_simplified}), are given in Table~\ref{tab:weights_WJets_vs_Njet}.
 
-Except for the $N_{\jet} = 3$ and $N_{\jet} = 4$ regions,
-the weights $w^{i}$ decrease as the number of jets increases, 
-reflecting the reduction in statistical uncertainty that is achieved by using the exclusive samples in combination with the inclusive one.
-The weights $w^{3}$ and $w^{4}$ for the $N_{\jet} = 3$ and $N_{\jet} = 4$ regions are about the same,
-reflecting the fact that the number of events in the $N_{\jet} = 4$ sample is smaller compared to the number of events in the $N_{\jet} = 3$ sample
-by about the same factor as the ratio of the corresponding cross sections.
-
-In order to demonstrate that the stitching procedure yields background estimates that are unbiased,
-we show distributions in $\pT$ of the ``leading'' and ``subleading'' jet (the jets of, respectively, highest and second-highest $\pT$ in the event),
-in the multiplicity of jets and in the observable $\HT$ 
-for the inclusive sample and for the sum of inclusive plus exclusive samples in Fig.~\ref{fig:controlPlots_WJets_vs_Njet}.
+In order to demonstrate that the stitching procedure is unbiased,
+we compare the normalization and shape of distributions obtained using the stitching procedure with the normalization and shape of distributions obtained from the inclusive sample.
+Distributions in $\pT$ of the ``leading'' and ``subleading'' jet (the jets of, respectively, highest and second-highest $\pT$ in the event),
+in the multiplicity of jets and in the observable $\HT$ are shown in Fig.~\ref{fig:controlPlots_WJets_vs_Njet}.
 Jets are reconstructed using the anti-\kt algorithm~\cite{Cacciari:2008gp,Cacciari:2011ma} with a distance parameter of $0.4$,
 using all stable particles except neutrinos as input, and are required to satisfy the selection criteria $\pT > 25$~\GeV and $\vert\eta\vert < 5.0$.
+The observable $\HT$ is computed as the scalar sum in $\pT$ of those jets.
 The distributions are normalized to an integrated luminosity of $140$~fb$^{-1}$, recorded at $\sqrt{s}=13$~\TeV.
 Individual exclusive samples $j$ are distinguished by different colors and fill patterns in the upper part of each figure.
-In the lower part, we show the difference between the background prediction obtained from the inclusive sample and from the sum of inclusive and exclusive samples,
+In the lower part, we show the difference in normalization and shape the distributions obtained from the inclusive sample and from the sum of inclusive and exclusive samples,
 using our stitching procedure.
-The differences are given relative to the $\PW$+jets background estimate obtained from our stitching procedure.
+The differences are given relative to the distribution obtained from our stitching procedure.
 The size of statistical uncertainties on the background estimates obtained from the inclusive sample and obtained from our stitching procedure
 is visualized in the lower part of each figure and is represented by the the length of the error bars and by the height of the dark shaded area, respectively.
 
 The distributions for the inclusive sample and for the sum of inclusive plus exclusive samples, with the stitching weights applied, are in agreement within the statistical uncertainties.
-The exclusive samples reduce the statistical uncertainties in particular in the tails of the distributions,
-which are the regions most relevant in searches for new physics.
+The exclusive samples reduce the statistical uncertainties in particular in the tails of the distributions.
 The inclusive sample contains no events with $\HT > 2500$~\GeV. 
 
 \begin{table}[h!]
@@ -80,7 +108,7 @@ $N_{\jet} = 4$             & $4$   & $2.2 \times 10^{5}$ & $0.443$ & $0$     & $
 \end{center}
 $^{\dagger}$ Computed at LO accuracy in pQCD, then scaled to NNLO
 \caption{
-  Number of events in the inclusive $\PW \to \Plepton\Pnu$ sample and in the $\PW \to \Plepton\Pnu$ samples produced in bins of jet multiplicity,
+  Number of events in the inclusive $\PW$+jets sample and in the $\PW$+jets samples produced in bins of jet multiplicity,
   corresponding cross sections,
   and probabilities $P^{i}$ for the events in the inclusive and exclusive samples to populate the different PS regions $i$.
 }
@@ -95,12 +123,12 @@ $^{\dagger}$ Computed at LO accuracy in pQCD, then scaled to NNLO
  & $0$ & $1$ & $2$ & $3$ & $4$ \\
 \hline
 \hline
-Weight & $2870$ & $264$ & $255$ & $260$ & $259$ \\
+Stitching weight & $2870$ & $264$ & $255$ & $260$ & $259$ \\
 \hline
 \end{tabular}
 \end{center}
 \caption{
-  Weights $w^{i}$ for the case that the inclusive and exclusive $\PW \to \Plepton\Pnu$ samples 
+  Stitching weights $s^{i}$ for the case that the inclusive and exclusive $\PW$+jets samples 
   given in Table~\ref{tab:samples_and_probabilities_WJets_vs_Njet}
   are stitched based on $N_{\jet}$, the number of jets.
   The weights are computed for an integrated luminosity of $140\fbinv$.
@@ -126,7 +154,8 @@ Weight & $2870$ & $264$ & $255$ & $260$ & $259$ \\
   Distributions in $\pT$ of the (a) leading and (b) subleading jet,
   in (c) the multiplicity of jets and in (d) the observable $\HT$,
   %for the case that $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD are stitched based on the observable $N_{\jet}$.
-  for the case of $\PW \to \Plepton\Pnu$ samples that are stitched based on the observable $N_{\jet}$.
+  for the case of $\PW$+jets samples that are stitched based on the observable $N_{\jet}$.
+  The $\PW$ bosons are required to decay leptonically.
   The event yields are computed for an integrated luminosity of $140\fbinv$.
 }
 \label{fig:controlPlots_WJets_vs_Njet}
@@ -149,77 +178,28 @@ The information for the inclusive sample and for the $N_{\jet}$-samples is the s
 and is given in Table~\ref{tab:samples_and_probabilities_WJets_vs_Njet}.
 
 The corresponding PS regions $i$, defined in the plane of $N_{\jet}$ versus $\HT$, are shown in Fig.~\ref{fig:regions_WJets_vs_Njet_and_HT}.
-In total, the probabilities $P^{i}$ and $P_{j}^{i}$ and the corresponding stitching weights $w^{i}$ are computed for $45$ separate PS regions.
+In total, the probabilities $P^{i}$ and $P_{j}^{i}$ and the corresponding stitching weights $s^{i}$ are computed for $45$ separate PS regions.
 
-In some of the $45$ PS regions, the probabilities $P^{i}$ are rather low, on the level of $10^{-7}$.
-In order to reduce the statistical uncertainties on the probabilities $P^{i}$ and $P_{j}^{i}$ as much as possible,
+In some of the $45$ PS regions, the probabilities $P_{\incl}^{i}$ are rather low, on the level of $10^{-7}$.
+In order to reduce the statistical uncertainties on the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ as much as possible,
 we compute these probabilities using the following procedure:
 For all regions $i$ of PS that are covered only by the inclusive sample, and by none of the $\HT$- or $N_{\jet}$-samples,
-we obtain the probability $P^{i}$ by determining the fraction of events in the inclusive sample that fall into PS region $i$.
+we obtain the probability $P_{\incl}^{i}$ by determining the fraction of events in the inclusive sample that fall into PS region $i$.
 For PS regions $i$ that are covered by the inclusive sample and by one or more $N_{\jet}$- or $\HT$-samples,
-we determine the probabilities $P^{i}$ and $P_{j}^{i}$ by the method of least squares~\cite{Cowan:1998ji}.
-When applying the least-squares method, we make the assumption that the following relation holds:
-\begin{equation}
-\sigma_{\incl} \times P^{i} = \sigma_{k} \times P_{k}^{i} \quad \forall k \,
-\label{eq:lambda1}
-\end{equation}
-except for statistical fluctuations on the $P^{i}$ and $P_{k}^{i}$.
-The $P^{i}$ and $P_{k}^{i}$ are obtained by determining the fraction of events in the inclusive and exclusive samples that fall into PS region $i$.
-The symbol $k$ refers to those $N_{\jet}$- and $\HT$-samples that cover the PS region $i$
-and the symbol $\sigma_{k}$ to the cross sections corresponding to these samples.
-We denote the unknown true value of the left-hand-side (and equivalently of the right-hand-side) of Eq.~(\ref{eq:lambda1}) by the symbol $\lambda_{i}$
-and use the symbols $r^{i}$ and $r_{k}^{i}$ to refer to the deviations (``residuals''), caused by statistical fluctuations,
-between the true values of the probabilities $P^{i}$ and $P_{k}^{i}$ and the values obtained using the MC samples.
-We further use the symbols $s^{i}$ and $s_{j}^{i}$ to denote the expected statistical fluctuations of these probabilities.
-According to the least-squares method,
-the best estimate for the value of $\lambda_{i}$ is obtained as solution to the equations:
-\begin{eqnarray*}
-\sigma_{\incl} \times \left( P^{i} + r^{i} \right) - \lambda_{i} & = & 0 \quad \mbox{and} \\
-\sigma_{k} \times \left( P_{k}^{i} + r_{k}^{i} \right) - \lambda_{i} & = & 0 \quad \forall k \, ,
-\end{eqnarray*}
-subject to the condition that the sum of residuals
-\begin{equation*}
-S = \left( \frac{r^{i}}{s^{i}} \right)^{2} + \sum_{k} \left( \frac{r_{k}^{i}}{s_{k}^{i}} \right)^{2}
-\end{equation*}
-attains its minimal value.
-The expected statistical fluctuations $s^{i}$ and $s_{j}^{i}$ of the probabilities $P^{i}$ and $P_{k}^{i}$
-are given by the standard errors of the Binomial distribution~\cite{Cowan:1998ji}
-\begin{equation*}
-s^{i} = \sqrt{\frac{P^{i} \times (1 - P^{i})}{N_{\incl}}} \quad \mbox{and} \quad s_{k}^{i} = \sqrt{\frac{P_{k}^{i} \times (1 - P_{k}^{i})}{N_{k}}} \, .
-\end{equation*}
-The fluctuations decrease proportional to the inverse of the square-root of the number of events in the MC samples.
-The solution for $\lambda_{i}$ is given by the expression:
-\begin{equation}
-\lambda_{i} = \frac{\alpha_{\incl}^{i} \times \sigma_{\incl} \times P^{i} + \sum_{k} \alpha_{k}^{i} \times \sigma_{k} \times P_{k}^{i}}{\alpha_{\incl}^{i} + \sum_{k} \alpha_{k}^{i}} \, ,
-\label{eq:lambda2}
-\end{equation}
-from which the probabilities $P^{i} = \lambda_{i}/\sigma_{\incl}$ and $P_{k}^{i} = \lambda_{i}/\sigma_{k}$ follow.
-The symbols $\alpha_{\incl}^{i}$ and $\alpha_{k}^{i}$ are defined as:
-\begin{equation*}
-\alpha_{\incl}^{i} = \frac{1}{\left( \sigma_{\incl} \times s^{i} \right)^{2}} \quad \mbox{and} \quad \alpha_{k}^{i} = \frac{1}{\left( \sigma_{k} \times s_{k}^{i} \right)^{2}}
-\end{equation*}
-and act as weights in the expression on the right-hand-side of Eq.~(\ref{eq:lambda2}),
-which has the form of a weighted average.
-We use the symbols $\alpha_{\incl}^{i}$ and $\alpha_{k}^{i}$ to refer to these weights,
-in order to distinguish them from the stitching weights $w^{i}$ given by Eq.~(\ref{eq:weight_incl}).
-
-The numerical values of the probabilities $P^{i}$ and of the stitching weights $w^{i}$ are given in Tables~\ref{tab:probabilities_WJets_vs_Njet_and_HT}
-and~\ref{tab:weights_WJets_vs_Njet_and_HT}
-% in the appendix
-.
+we determine the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ by the method of least squares~\cite{Cowan:1998ji}.
+Details of the computation are given in the appendix.
+The numerical values of the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ and of the stitching weights $s^{i}$ are given in Tables~\ref{tab:probabilities_WJets_vs_Njet_and_HT}
+and~\ref{tab:weights_WJets_vs_Njet_and_HT}.
 
 Distributions in $\pT$ of the leading and subleading jet,
 in the multiplicity of jets, and in the observable $\HT$ 
 for the sum of inclusive plus exclusive samples are compared to the distributions obtained for the inclusive sample in Fig.~\ref{fig:controlPlots_WJets_vs_Njet_and_HT}.
 We use the same fill pattern for all $N_{\jet}$-samples, another pattern for all $\HT$-samples and a third pattern for the stitched inclusive sample,
 so that one can better see where each of the stitched samples contribute the most.
-In the lower part of each figure, we again show the difference between the background estimates obtained from the inclusive sample and obtained by using our stitching procedure,
+In the lower part of each figure, we again show the difference between the distributions obtained from the inclusive sample and obtained by using our stitching procedure,
 and also the respective statistical uncertainties.
 As one would expect, the addition of samples simulated in ranges in $\HT$ to the example given in Section~\ref{sec:WJets_vs_Njet}
-reduce the statistical uncertainties in particular in the tail of the $\HT$ distribution.
-
-Physics analyses that search for new particles of high mass, which decay to high $\pT$ jets, are thus best served by producing MC samples in ranges in $\HT$,
-whereas the samples binned in $N_{\jet}$ are particularly well suited when the signal process under study features a large number of low $\pT$ jets.
+reduce the statistical uncertainties in particular in the tails of the distributions in leading and subleading jet $\pT$ and in particular in the tail of the $\HT$ distribution.
 
 \begin{table}[h!]
 \begin{center}
@@ -243,7 +223,7 @@ $       \HT > 2500$~\GeV   & $12$  & $2.5 \times 10^{1}$ & $0.052$ \\
 \end{center}
 $^{\dagger}$ Computed at LO accuracy in pQCD, then scaled to NNLO
 \caption{
-  Number of events in the $\PW \to \Plepton\Pnu$ samples simulated produced in ranges in $\HT$ and corresponding cross sections.
+  Number of events in the $\PW$+jets samples simulated produced in ranges in $\HT$ and corresponding cross sections.
 }
 \label{tab:samples_WJets_vs_Njet_and_HT}
 \end{table}
@@ -257,8 +237,7 @@ $^{\dagger}$ Computed at LO accuracy in pQCD, then scaled to NNLO
 \end{center}
 \caption{
   Definition of the PS regions $i$ in the plane of $N_{\jet}$ versus $\HT$,
-  %for the case that $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD are stitched based on the observables $N_{\jet}$ and $\HT$.
-  for the case of $\PW \to \Plepton\Pnu$ samples that are stitched based on the observables $N_{\jet}$ and $\HT$.
+  for the case of $\PW$+jets samples that are stitched based on the observables $N_{\jet}$ and $\HT$.
 }
 \label{fig:regions_WJets_vs_Njet_and_HT}
 \end{figure}
@@ -280,8 +259,8 @@ $^{\dagger}$ Computed at LO accuracy in pQCD, then scaled to NNLO
 \caption{
   Distributions in $\pT$ of the (a) leading and (b) subleading jet,
   in (c) the multiplicity of jets and in (d) the observable $\HT$,
-  %for the case that $\PW \to \Plepton\Pnu$ samples generated at LO accuracy in pQCD are stitched based on the observables $N_{\jet}$ and $\HT$.
-  for the case of $\PW \to \Plepton\Pnu$ samples that are stitched based on the observables $N_{\jet}$ and $\HT$.
+  for the case of $\PW$+jets samples that are stitched based on the observables $N_{\jet}$ and $\HT$.
+  The $\PW$ bosons are required to decay leptonically.
   The event yields are computed for an integrated luminosity of $140\fbinv$.
 }
 \label{fig:controlPlots_WJets_vs_Njet_and_HT}
