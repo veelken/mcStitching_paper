@@ -10,82 +10,81 @@ The production of sufficiently large MC samples often poses a material challenge
 in terms of the computing resources required to produce and store such samples~\cite{HSFPhysicsEventGeneratorWG:2020gxw}.
 This is especially true for experiments at the CERN Large Hadron Collider (LHC)~\cite{Bruning:2004ej,Buning:2004wk,Benedikt:2004wm},
 firstly due to the large cross section for proton-proton ($\Pp\Pp$) scattering and secondly due to the large luminosity delivered by the LHC.
+
 The number of $\Pp\Pp$ scattering interactions, $N_{\data}$, that occur within a given interval of time 
 is given by the product of the $\Pp\Pp$ scattering cross section, $\sigma$, and of the integrated luminosity, $L$, that the LHC has delivered during this time:
 $N_{\data} = \sigma \times L$.
+We refer to the ensemble of $\Pp\Pp$ scattering interactions that occur within the same crossing of the proton bunches as an ``event''.
+The interaction with the highest momentum exchange between the protons is referred to as the ``hard-scatter'' interaction,
+and the remaining interactions are referred to as ``pileup''.
 The inelastic $\Pp\Pp$ scattering cross section at the center-of-mass energy of $\sqrt{s}=13$~\TeV, the energy achieved during the recently completed Run $2$ of the LHC (in the period $2015$-$2018$),
 amounts to $\approx 75$~mb~\cite{Aaboud:2016mmw,Sirunyan:2018nqx}.
 The $\Pp\Pp$ scattering data recorded by the ATLAS and CMS experiments during LHC Run $2$ 
 amounts to an integrated luminosity of $\approx 140\fbinv$ per experiment~\cite{ATLAS-CONF-2019-021,LUM-17-001,LUM-17-004,LUM-18-002}.
 Thus, $N_{\data} \approx 10^{16}$ inelastic $\Pp\Pp$ scattering interactions occurred in each of the two experiments during this time.
-We refer to the ensemble of $\Pp\Pp$ scattering interactions that occur within the same crossing of the proton bunches as an ``event''.
-The interaction with the highest momentum exchange between the protons is referred to as the ``hard-scatter'' interaction,
-and the remaining interactions are referred to as ``pileup''.
-Ideally, one would want to have more simulated events than data,
+Ideally, one would want the number of simulated events to be higher then the number of events in the data,
 such that the statistical uncertainties on the MC simulation are small compared to the statistical uncertainties on the data.
 The production of such large MC samples is clearly prohibitive, however.
 
-Even if one restricts the production of MC samples to processes with a significantly smaller cross section,
-such as events containing jets of high transverse momentum ($\pT$), isolated leptons, or large missing transverse momentum ($\ptmiss$, indicating the presence of high $\pT$ neutrinos in the event),
+Even if one restricts the production of MC samples to processes with a cross section that is significantly smaller than the inelastic $\Pp\Pp$ scattering cross section,
+such as Drell-Yan (DY) production, the production of $\PW$ bosons ($\PW$+jets), and the production of top quark pairs ($\Ptop\APtop$+jets),
 the production of MC samples containing a sufficient number of events to allow for meaningful comparison with the data represents a formidable challenge.
-Drell-Yan (DY) production, the production of $\PW$ bosons ($\PW$+jets), and the production of top quark pairs ($\Ptop\APtop$+jets) are typical processes
-that produce events with isolated leptons, large $\ptmiss$, and (to a lesser extent) high $\pT$ jets.
-These processes are used for detector calibration and Standard Model (SM) precision measurements.
-Each of these processes also constitutes a background to searches for physics beyond the SM.
-Their cross sections amount to $6.08$~nb (DY production of lepton pairs with a mass $> 50$~\GeV),
-$61.5$~nb ($\PW$+jets production with leptonic decay of the $\PW$ boson), 
-and $832$~pb ($\Ptop\APtop$+jets production for top quark mass of $172.5$~\GeV)~\cite{Melnikov:2006kv,Czakon:2011xx}.
-This means that the ATLAS and CMS experiments each would need to produce MC samples containing $840$ million DY, $8.61$ billion $\PW$+jets, and $116$ million $\Ptop\APtop$+jets events
-in order to reduce the statistical uncertainties on the MC simulation to the same level as those on the LHC Run $2$ data.
+The DY, $\PW$+jets, and $\Ptop\APtop$+jets production processes are used for detector calibration and Standard Model (SM) precision measurements.
+They also constitute relevant backgrounds to searches for physics beyond the SM.
+Their cross sections amount to $6.08$~nb for DY production, $61.5$~nb for $\PW$+jets production,
+and $832$~pb for $\Ptop\APtop$+jets production~\cite{Melnikov:2006kv,Li:2012wna,Czakon:2011xx}~\footnote{
+  The quoted cross sections refer to, respectively, DY production of lepton (electron, muon, and $\Pgt$) pairs of mass $> 50$~\GeV,
+  $\PW$+jets production with subsequent leptonic decay of the $\PW$ boson,
+  and to the pair production of top quarks of mass $172.5$~\GeV.
+}.
+The ATLAS and CMS experiments would each need to produce MC samples containing $840$ million DY, $8.61$ billion $\PW$+jets, and $116$ million $\Ptop\APtop$+jets events
+in order to reduce the statistical uncertainties on the MC simulation to the same level as the uncertainties on the LHC Run $2$ data.
 
-In order to mitigate the effect of limited computing resources, the ATLAS and CMS experiments employ sophisticated strategies for the production of MC samples.
-A common feature of these strategies is to vary the expenditure of resources across phase space (PS),
-according to the needs of physics analyses.
-In searches for new physics, for example, it is important to better populate the tails of distributions,
-in order to distinguish potential signals from established Standard Model (SM) processes
-and to avoid these signals from being obscured by the statistical uncertainties on background estimates obtained from the MC simulation.
+In order to mitigate the effect of limited computing resources, both experiments employ sophisticated strategies for the production of MC samples.
+A common feature of these strategies is to vary the expenditure of computing resources across phase space (PS),
+depending on the needs of physics analyses.
+When searching for new physics, for example, it is important to produce sufficiently many events in the tails of distributions,
+to prevent these signals from being obscured by the statistical uncertainties on backgrounds that arise from established SM processes which are modeled by the MC simulation.
 
 Different mechanisms for adapting the expenditure of computing resources to the needs of physics analyses have been proposed in the literature.
 Modern MC programs (``generators'') such as \POWHEG~\cite{POWHEG1,POWHEG2,POWHEG3}, \MGvATNLO~\cite{MGvATNLO}, \SHERPA~\cite{SHERPA}, \PYTHIA~\cite{PYTHIA}, and \HERWIG~\cite{HERWIG}
-provide functionality that allows to adjust the number of events samples in different regions of of PS through user-defined weighting functions.
-An alternative approach is to divide the PS into distinct regions (``slices'') and to produce separate independent MC samples covering each region.
+provide functionality that allows to adjust the number of events sampled in different regions of PS through user-defined weighting functions.
+An alternative approach is to divide the PS into distinct regions (``slices'') and to produce separate independent MC samples covering each slice.
 Following Ref.~\cite{HSFPhysicsEventGeneratorWG:2020gxw}, we refer to the first approach as ``biasing'' and to the second one as ``slicing''.
 
 In this paper, we focus on the case that MC samples have already been produced and present a method that makes optimal use of these samples,
-where ``optimal'' refers to yielding the lowest statistical uncertainty on the signal or background estimate that is obtained using these samples.
-The sets of MC samples produced following this strategy often overlap in PS,
-as a consequence of different schemes being used for dividing the PS into distinct regions by different physics analyses.
+where ``optimal'' refers to yielding the lowest statistical uncertainty on the signal or background estimate that is obtained from these samples.
+The sets of MC available samples typically overlap in PS.
 For example, one set of MC samples may divide the PS based on the number of jets, 
-whereas another set of MC samples may divide the PS based on $\HT$, the scalar sum in $\pT$ of the jets in the event.
+whereas another set of MC samples may divide the PS based on $\HT$, the scalar sum in $\pT$ of these jets.
 Our method is general enough to handle arbitrary overlaps between these samples.
 The overlap is accounted for by applying appropriately chosen weights to the simulated events.
 We refer to the procedure as ``stitching''.
 
 In the following, we will assume that all MC samples that are subject to the stitching procedure 
-have been produced with the same version of the MC program and consistent (the same) settings 
+have been produced with the same version of the MC program and consistent (\ie identical) settings 
 for parton distribution functions, scale choices, parton-shower and underlying-event tunes, etc.
-If this is not the case for a given existing set of MC samples,
-the effect of these differences either need to be small (compared to the systematic uncertainties) or the events need to be reweighted,
-to make all MC samples consistent, prior to applying the stitching procedure.
-The details of this reweighting depend on the case at hand and are beyond the scope of this paper.
+In case a given set of MC samples was produced with inconsistent settings,
+the effect of the inconsistencies either need to be small (compared to \eg the systematic uncertainties) or the events need to be reweighted
+to make all MC samples consistent prior to applying the stitching procedure.
 
-The stitching procedure has been used by the ATLAS and CMS experiments since LHC Run $1$,
-but, to the best of our knowledge, has not been described in detail in a public document yet.
-In Section~\ref{sec:stitching_weights} we develop the formalism for the computation of stitching weights.
+Variants of the stitching procedure described in the first part of this manuscript have been used by the ATLAS and CMS experiments since LHC Run $1$,
+but, to the best of our knowledge, have not been documented in a publication yet.
+The formalism for the computation of stitching weights is detailed in Section~\ref{sec:stitching_weights}.
 Concrete examples for using the formalism in physics analyses are given in Sections~\ref{sec:WJets_vs_Njet} and~\ref{sec:WJets_vs_Njet_and_HT}.
-These examples reflect the use of the stitching procedure by different physics analyses performed by the CMS experiment during LHC Runs $1$ and $2$.
+The examples characterize the use of the stitching procedure by the CMS experiment during LHC Runs $1$ and $2$.
 They are chosen with the intention to provide a reference.
-In Section~\ref{sec:examples_trigger_rate} we extend the stitching procedure to the case of estimating trigger rates at the High-Luminosity LHC (HL-LHC).
-The distinguishing feature between the use cases described in Sections~\ref{sec:examples_background_yield} and~\ref{sec:examples_trigger_rate}
-is that in the former (but not in the latter) the cross section of the process of interest
-is orders of magnitude smaller than the inelastic $\Pp\Pp$ scattering cross section.
-We use the expression ``process of interest'' to refer to the process that is subject to the stitching procedure.
-In the former case one can thus assume that the process of interest solely occurs in the hard-scatter interaction
-and does not mix with the pileup.
-When estimating trigger rates, a relevant use case is that both the hard-scatter interaction and the pileup are inelastic $\Pp\Pp$ scattering interactions
+In Section~\ref{sec:examples_trigger_rate} we extend the stitching procedure to the case of estimating trigger rates at the High-Luminosity LHC (HL-LHC)~\cite{TDR_Phase2_LHC},
+scheduled to start operation in $2027$.
+The distinguishing feature between the applications of the stitching procedure described in Sections~\ref{sec:examples_background_yield} and~\ref{sec:examples_trigger_rate}
+is that in the former (but not in the latter) the cross section of the process that is modeled by the MC simulation
+is orders of magnitude smaller compared to the inelastic $\Pp\Pp$ scattering cross section.
+In the former case one can make the simplifying assumption that the process of interest (the process modeled by the MC simulation) 
+solely occurs in the hard-scatter interaction and not in any of the pileup interactions.
+For the purpose of estimating trigger rates, a relevant use case is that the hard-scatter interaction as well as the pileup interactions are inelastic $\Pp\Pp$ scattering interactions,
 and the hard-scatter interaction is in fact indistinguishable from the pileup.
 As described in detail in Section~\ref{sec:examples_trigger_rate},
-the indistinguishability is accounted for by suitable modifications to the computation of stitching weights.
-The formalism developed in Section~\ref{sec:examples_trigger_rate} has been used to estimate trigger rates 
+we account for this indistinguishability by making suitable modifications to the formalism for the computation of stitching weights.
+The modified stitching procedure detailed in Section~\ref{sec:examples_trigger_rate} has been used to estimate trigger rates 
 for the HL-LHC upgrade technical design report of the CMS experiment~\cite{TDR-21-001}.
 We conclude the paper with a summary in Section~\ref{sec:summary}.

@@ -1,7 +1,7 @@
 \subsection{Estimation of trigger rate}
 \label{sec:examples_trigger_rate}
 
-The task of estimating trigger rates for the upcoming high-luminosity data-taking period of the LHC is chosen as second example to illustrate the stitching procedure.
+We choose the task of estimating trigger rates for the upcoming high-luminosity data-taking period of the LHC as second example to illustrate the stitching procedure.
 The ``rate'' of a trigger corresponds to the number of $\Pp\Pp$ collision events that satisfy the trigger condition per unit of time.
 The estimation of trigger rates constitutes an important task for demonstrating the physics potential of the HL-LHC.
 The HL-LHC physics program demands a large amount of integrated luminosity to be delivered by the LHC, 
@@ -31,7 +31,7 @@ in order to simulate the pileup (PU).
 We use the symbol $N_{\pileup}$ to denote the total number of PU interactions 
 that occur in the same crossing of the proton beams as the HS interaction.
 No selection on $\pThat$ is applied when simulating the PU interactions.
-The distinction between the HS interaction and the PU interactions is artificial and solely made for the purpose of MC production.
+We remark that the distinction between the HS interaction and the PU interactions is artificial and solely made for the purpose of MC production.
 The HS interaction and the PU interactions will be indistinguishable in the data that will be recorded at the HL-LHC:
 The scattering in which the transverse momentum exchange between the protons amounts to $\pThat$ may occur in any of the $N_{\pileup} + 1$ simultaneous $\Pp\Pp$ interactions.
 Our formalism treats the HS interaction and the PU interactions on an equal footing.
@@ -43,18 +43,18 @@ where for each event the number of PU interactions, $N_{\pileup}$, is sampled at
 \label{eq:Poisson}
 \end{equation}
 with a mean $\Nbar = 200$.
-The exclusive samples contain one HS interaction of transverse momentum within a specified range in $\pThat$ and $N_{\pileup}$ additional minimum bias interactions to simulate the PU.
+The exclusive samples contain one HS interaction of transverse momentum within a specified range in $\pThat$ in addition to $N_{\pileup}$ minimum bias interactions.
+The latter represent the PU.
 The number $N_{\pileup}$ of PU interactions is again sampled at random from a Poisson distribution with a mean of $\Nbar = 200$.
 
 We enumerate the ranges in $\pThat$ by the index $i$ and denote the number of $\pThat$ ranges used to produce the exclusive samples by the symbol $m$.
-We further use the symbol $n_{i}$ to refer to the number of inelastic $\Pp\Pp$ scatterings,
-occurring either in the HS interaction or in any of the $N_{\pileup}$ PU interactions,
-which fall into the $i$-th interval in $\pThat$.
-The ``phase space'' corresponding to a given event is specified by a vector $I=n_{1},\dots,n_{m}$ of dimension $m$.
+We further introduce the symbol $n_{i}$ to refer to the number of inelastic $\Pp\Pp$ scattering interactions that fall into the $i$-th interval in $\pThat$.
+The inelastic $\Pp\Pp$ scatterings may occur either in the HS interaction or in any of the $N_{\pileup}$ PU interactions.
+The ``phase space'' corresponding to a given event is represented by a vector $I=n_{1},\dots,n_{m}$ of dimension $m$.
 The $i$-th component of this vector indicates the number of inelastic $\Pp\Pp$ scattering interactions that fall into the $i$-th interval in $\pThat$.
 
 The probability $P^{I}$ for an event in the inclusive sample that contains $N_{\pileup}$ pileup interactions
-to feature $n_{1}$ inelastic $\Pp\Pp$ scatterings that fall into the first interval in $\pThat$, $n_{2}$ into the second,$\dots$, and $n_{m}$ into the $m$-th 
+to feature $n_{1}$ inelastic $\Pp\Pp$ scatterings that fall into the first interval in $\pThat$, $n_{2}$ that fall into the second,$\dots$, and $n_{m}$ that fall into the $m$-th 
 follows a multinomial distribution~\cite{evans2011statistical} and is given by:
 \begin{equation}
 P_{\incl}^{I} = \frac{(N_{\pileup} + 1)!}{n_{1}! \cdot \dots \cdot n_{m}!} \cdot p_{1}^{n_{1}} \cdot \dots \cdot p_{m}^{n_{m}} \, ,
@@ -92,15 +92,15 @@ s^{I} = \frac{F}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}} \cdot \frac{P^{I} \cdo
 \label{eq:weight_tmp}
 \end{equation}
 The probabilities $P_{\incl}^{I}$ and $P_{j}^{I}$ are given by Eqs.(~\ref{eq:P_inclusive}) and~(\ref{eq:P_exclusive}).
-Dividing both numerator and denominator on the right-hand side of Eq.~(\ref{eq:weight_tmp}) by $P^{I}$ and replacing the ratio $P_{j}^{I}/P_{\incl}^{I}$ by Eq.~(\ref{eq:P_ratio}) yields:
+Dividing both numerator and denominator on the right-hand side of Eq.~(\ref{eq:weight_tmp}) by $P_{\incl}^{I}$ and replacing the ratio $P_{j}^{I}/P_{\incl}^{I}$ by Eq.~(\ref{eq:P_ratio}) yields:
 \begin{equation}
-w^{I} = \frac{F}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, \frac{n_{j}}{(N_{\pileup} + 1) \cdot p_{j}} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
+s^{I} = \frac{F}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, \frac{n_{j}}{(N_{\pileup} + 1) \cdot p_{j}} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
 \label{eq:weight_trigger_rate}
 \end{equation}
 At the HL-LHC, the $\Pp\Pp$ collision frequency $F$ amounts to $28$~MHz~\footnote{
   The beams cross every $25$~ns, but $\Pp\Pp$ collisions occur only in $\approx 70\%$ of those beam crossings~\cite{TDR_Phase2_LHC}.}.
 Eq.~(\ref{eq:weight_trigger_rate}) represents the equivalent of Eq.~(\ref{eq:weight_incl}),
-tailored to the case of estimating trigger rates instead of estimating event yields of signal or background processes.
+tailored to the case of estimating trigger rates instead of estimating event yields.
 The weights $w_{\incl}^{k}$ and $w_{j}^{k}$ are equal to one for all events in this example,
 which allows to simplify Eq.~(\ref{eq:weight_trigger_rate}).
 Using the relations $\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} = N_{\incl}$ and $\sum_{k=1}^{N_{j}} \, w_{j}^{k} = N_{j}$,
@@ -121,12 +121,9 @@ and for the case that no condition is imposed on $\pThat$.
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{l|c}
-\hline
 Sample                    & Number of events \\
 \hline
-\hline
 Inclusive                 & $8 \times 10^{5}$ \\
-\hline
 $ 30 < \pThat <  50$~\GeV & $4 \times 10^{5}$ \\
 $ 50 < \pThat <  80$~\GeV & $2 \times 10^{5}$ \\
 $ 80 < \pThat < 120$~\GeV & $1 \times 10^{5}$ \\
@@ -135,7 +132,6 @@ $170 < \pThat < 300$~\GeV & $5 \times 10^{4}$ \\
 $300 < \pThat < 470$~\GeV & $5 \times 10^{4}$ \\
 $470 < \pThat < 600$~\GeV & $5 \times 10^{4}$ \\
 $\pThat > 600$~\GeV       & $5 \times 10^{4}$ \\
-\hline
 \end{tabular}
 \end{center}
 \caption{
@@ -149,25 +145,19 @@ $\pThat > 600$~\GeV       & $5 \times 10^{4}$ \\
 \small
 \begin{minipage}{16cm}
 \begin{tabular}{l|cccccc}
-\hline
 Range in $\pThat$ [\GeV] & $< 30$ & $30$-$50$ & $50$-$80$ & $80$-$120$ & $120$-$170$ & $170$-$300$ \\
 Index $i$           & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\
 \hline
-\hline
 Probability $p_{i}$ & $0.998$ & $1.51 \times 10^{-3}$ & $2.25 \times 10^{-4}$ & $3.38 \times 10^{-5}$ & $6.00 \times 10^{-6}$ & $1.55 \times 10^{-6}$ \\
-\hline
 \end{tabular}
 
 \vspace{2mm}
 
 \begin{tabular}{l|ccc}
-\hline
 Range in $\pThat$ [\GeV] & $300$-$470$ & $470$-$600$ & $> 600$ \\
 Index $i$           & $6$ & $7$ & $8$ \\
 \hline
-\hline
 Probability $p_{i}$ & $1.05 \times 10^{-7}$ & $8.73 \times 10^{-9}$ & $3.12 \times 10^{-9}$ \\
-\hline
 \end{tabular}
 \end{minipage}
 \end{center}
@@ -186,14 +176,15 @@ For comparison, we also show the corresponding weight, given by $s_{\incl} = F/N
 for the case that only the inclusive sample is used to estimate the trigger rate.
 The weight $s_{\incl}$ amounts to $35$~Hz in this example.
 As can be seen in Fig.~\ref{fig:weight_trigger_rate}, the addition of samples produced in ranges in $\pThat$ to the inclusive sample reduces the weights.
-The different maxima in the distribution of stitching weights $w^{I}$ correspond to events 
+Lower weights reduce the statistical uncertainties on the estimate of the trigger rate.
+The different maxima in the distribution of stitching weights $s^{I}$ correspond to events 
 in which the transverse momentum exchanged between the scattered protons falls into different ranges in $\pThat$.
 The spectrum of weights shown in Fig.~\ref{fig:weight_trigger_rate} is plotted before any trigger selection is applied.
-The stitching weights $s^{I}$ are on average smaller for events that pass the trigger selection than for events that fail it,
+The stitching weights $s^{I}$ are on average smaller for events that pass than for events that fail the trigger selection,
 as the probability for an event to pass the trigger increases with $\pThat$.
 In contrast, the weight $s_{\incl}$ is the same before and after the trigger selection is applied.
-Thus, the reduction in statistical uncertainties that one obtains by using the exclusive samples and applying the stitching weights 
-becomes more pronounced after the trigger selection is applied.
+Consequently, the reduction in statistical uncertainties that one obtains by using the exclusive samples and applying the stitching weights 
+becomes even more pronounced after the trigger selection is applied.
 
 \begin{figure}
 \setlength{\unitlength}{1mm}
@@ -210,8 +201,9 @@ becomes more pronounced after the trigger selection is applied.
 The rates expected for a single jet trigger and for a dijet trigger at the HL-LHC are shown in Fig.~\ref{fig:trigger_rate}.
 The rates are computed as function of the $\pT$ threshold that is applied to the jets. 
 In case of the dijet trigger, the same $\pT$ threshold is applied to both jets.
-The jets are required to be within the geometric acceptance $\vert\eta\vert < 5.0$.
-The rate estimates obtained for the inclusive sample and for the sum of inclusive plus exclusive samples, 
+The jets are reconstructed as described in Section~\ref{sec:WJets_vs_Njet}
+and are required to be within the geometric acceptance $\vert\eta\vert < 5.0$.
+The rate estimate obtained for the inclusive sample and for the sum of inclusive plus exclusive samples, 
 with the stitching weights computed according to Eq.~(\ref{eq:weight_trigger_rate_simplified}),
 agree within statistical uncertainties, demonstrating that the estimate of the trigger rate obtained from the stitching procedure is unbiased.
 The statistical uncertainties on the rate estimates obtained from the inclusive sample are represented by error bars,
@@ -241,7 +233,6 @@ The single jet trigger rate decreases only modestly for jet $\pT$ thresholds gre
 This ``flattening'' of the trigger rate is due to events with low $\pThat$ that contain a single jet of high $\pT$.
 The stitching weights $s^{I}$ for these low $\pThat$ events are not much smaller than the weights for the inclusive sample,
 which explains why the statistical uncertainties on the single jet trigger rate are reduced only modestly by the stitching procedure.
-Thr requirement of a second high $\pT$ jet removes most of these $\pThat$ events.
-Consequently, very few low $\pThat$ events pass high jet $\pT$ thresholds in case of the dijet trigger,
-with the effect that the dijet trigger rate decreases more rapidly as function of the jet $\pT$ threshold
-and the stitching procedure becomes more effective in reducing the statistical uncertainties on the trigger rate.
+Thr requirement of a second high $\pT$ jet removes most of these low $\pThat$ events.
+This has the effect that the dijet trigger rate decreases more rapidly as function of the jet $\pT$ threshold.
+And the stitching procedure becomes more effective in reducing the statistical uncertainties on the trigger rate.
