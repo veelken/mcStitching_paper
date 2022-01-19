@@ -97,6 +97,7 @@ Dividing both numerator and denominator on the right-hand side of Eq.~(\ref{eq:w
 s^{I} = \frac{F}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, \frac{n_{j}}{(N_{\pileup} + 1) \cdot p_{j}} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
 \label{eq:weight_trigger_rate}
 \end{equation}
+The sum over $j$ refers to the exclusive samples.
 At the HL-LHC, the $\Pp\Pp$ collision frequency $F$ amounts to $28$~MHz~\footnote{
   The beams cross every $25$~ns, but $\Pp\Pp$ collisions occur only in $\approx 70\%$ of those beam crossings~\cite{TDR_Phase2_LHC}.}.
 Eq.~(\ref{eq:weight_trigger_rate}) represents the equivalent of Eq.~(\ref{eq:weight_incl}),
@@ -203,11 +204,6 @@ The rates are computed as function of the $\pT$ threshold that is applied to the
 In case of the dijet trigger, the same $\pT$ threshold is applied to both jets.
 The jets are reconstructed as described in Section~\ref{sec:WJets_vs_Njet}
 and are required to be within the geometric acceptance $\vert\eta\vert < 5.0$.
-The rate estimate obtained for the inclusive sample and for the sum of inclusive plus exclusive samples, 
-with the stitching weights computed according to Eq.~(\ref{eq:weight_trigger_rate_simplified}),
-agree within statistical uncertainties, demonstrating that the estimate of the trigger rate obtained from the stitching procedure is unbiased.
-The statistical uncertainties on the rate estimates obtained from the inclusive sample are represented by error bars,
-while those obtained from the sum of inclusive plus exclusive samples are represented by the shaded area.
 
 \begin{figure}
 \setlength{\unitlength}{1mm}
@@ -227,12 +223,23 @@ while those obtained from the sum of inclusive plus exclusive samples are repres
 \label{fig:trigger_rate}
 \end{figure}
 
+The rate estimate obtained for the inclusive sample and for the sum of inclusive plus exclusive samples, 
+with the stitching weights computed according to Eq.~(\ref{eq:weight_trigger_rate_simplified}),
+agree within statistical uncertainties, demonstrating that the estimate of the trigger rate obtained from the stitching procedure is unbiased.
+The statistical uncertainties on the rate estimates obtained from the inclusive sample are represented by error bars,
+while those obtained from the sum of inclusive plus exclusive samples are represented by the shaded area.
+The modest difference between the rate estimates for the dijet trigger with jet $\pT$ thresholds higher than $280$~\GeV
+is not statistically significant.
+One needs to keep in mind that the trigger rate estimates for adjacent bins are correlated,
+because all events that pass the trigger for a given jet $\pT$ threshold also pass the trigger for all lower thresholds.
+
 The statistical uncertainties obtained with the stitching procedure are smaller than the ones obtained in case only the inclusive sample is used.
-The reduction in the statistical uncertainties is more pronounced for the dijet trigger than for the single jet trigger.
-The single jet trigger rate decreases only modestly for jet $\pT$ thresholds greater than $400$~\GeV.
-This ``flattening'' of the trigger rate is due to events with low $\pThat$ that contain a single jet of high $\pT$.
+The reduction in the statistical uncertainties is small for the single jet trigger and larger for the dijet trigger,
+in particular for high jet $\pT$ thresholds.
+The reason for the difference in behaviour between the single jet and the dijet trigger rates is caused by events with low $\pThat$ that contain a single jet of high $\pT$.
 The stitching weights $s^{I}$ for these low $\pThat$ events are not much smaller than the weights for the inclusive sample,
 which explains why the statistical uncertainties on the single jet trigger rate are reduced only modestly by the stitching procedure.
-Thr requirement of a second high $\pT$ jet removes most of these low $\pThat$ events.
-This has the effect that the dijet trigger rate decreases more rapidly as function of the jet $\pT$ threshold.
-And the stitching procedure becomes more effective in reducing the statistical uncertainties on the trigger rate.
+One can see the effect of these low $\pThat$ events in the ``flattening'' of the single jet trigger rate for jet $\pT$ thresholds higher than $400$~\GeV.
+The requirement of a second high $\pT$ jet removes most of these low $\pThat$ events,
+with the effect that the dijet trigger rate decreases more rapidly as function of the jet $\pT$ threshold
+and the stitching procedure becomes more effective in reducing the statistical uncertainties on the rate of the dijet trigger.

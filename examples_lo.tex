@@ -18,7 +18,7 @@ Simulated samples of $\PW$+jets events have been produced for $\Pp\Pp$ collision
 using matrix elements computed at leading order (LO) accuracy in perturbative quantum chromodynamics (pQCD)
 with the program \MGvATNLO $2.6.5$~\cite{MGvATNLO}.
 The parton distribution functions of the proton are modeled using the NNPDF3.1 set~\cite{NNPDF:2017mvq}.
-Parton showering, hadronization, and the underlying event are modeled using the program \PYTHIA $v8.2$~\cite{PYTHIA} with the tune \textrm{CP5}~\cite{Sirunyan:2019dfx}.
+Parton showering, hadronization, and the underlying event are modeled using the program \PYTHIA $v8.240$~\cite{PYTHIA} with the tune \textrm{CP5}~\cite{Sirunyan:2019dfx}.
 The matching of matrix elements to parton showers is done using the \textrm{MLM} scheme~\cite{Alwall:2007fs}.
 Samples containing either $1$, $2$, $3$, or $4$ jets at matrix-element level are complemented by an ``inclusive'' sample 
 and by samples binned in the scalar sum in $\pT$ of these jets.
@@ -52,7 +52,7 @@ and then we will discuss the stitching of $\PW$+jets samples based on the two ob
 In this example, an inclusive $\PW$+jets sample simulated at LO accuracy in pQCD 
 is stitched with exclusive samples containing events with $N_{\jet}$ equal to either $1$, $2$, $3$, or $4$.
 The inclusive sample contains events with $N_{\jet}$ between $0$ and $4$.
-We divide the PS into slices based on the multiplicity of jets at the matrix-element level and set the index $i$ equal to $N_{\jet}$.
+We partition the PS into slices based on the multiplicity of jets at the matrix-element level and set the index $i$ equal to $N_{\jet}$.
 The number of events in each MC sample is chosen such that the stitching weights decrease by about a factor two for each increase in jet multiplicity.
 The decrease in the cross section as function of $N_{\jet}$
 allows to reduce the statistical uncertainties in the tail of the $N_{\jet}$ distribution
@@ -74,7 +74,7 @@ using all stable generator-level particles (after hadron shower and hadronizatio
 The observable $\HT$ is computed as the scalar sum in $\pT$ of these jets.
 Note that the multiplicity of jets and the observable $\HT$ shown in Fig.~\ref{fig:controlPlots_WJets_vs_Njet} 
 differ from the observables $N_{\jet}$ and $\HT$ that are used in the stitching procedure:
-The former observables refer to jets at the generator (detector) level, while the latter refer to jets at the matrix-element level (\ie to parton-level jets, before hadron shower and hadronization).
+The former refer to jets at the generator (detector) level, while the latter refer to jets at the matrix-element level (\ie to parton-level jets, before hadron shower and hadronization).
 The distributions are normalized to an integrated luminosity of $140$~fb$^{-1}$, recorded at $\sqrt{s}=13$~\TeV.
 Individual exclusive samples $j$ are distinguished by different colors and fill patterns in the upper part of each figure.
 In the lower part, we show the difference in normalization and shape between the distributions obtained from the inclusive sample and from the sum of inclusive and exclusive samples,
@@ -85,7 +85,6 @@ is visualized in the lower part of each figure and is represented by the the len
 
 The distributions for the inclusive sample and for the sum of inclusive plus exclusive samples, with the stitching weights applied, are in agreement within the statistical uncertainties.
 The exclusive samples reduce the statistical uncertainties in particular in the tails of the distributions.
-The inclusive sample contains no events with $\HT > 2500$~\GeV. 
 
 \begin{table}[h!]
 \begin{center}
@@ -191,7 +190,8 @@ so that one can better see where each type of sample contributes the most.
 In the lower part of each figure, we again show the difference between the distributions obtained from the inclusive sample and obtained by using our stitching procedure,
 and also the respective statistical uncertainties.
 As one would expect, the addition of samples simulated in ranges in $\HT$ to the example given in Section~\ref{sec:WJets_vs_Njet}
-reduces the statistical uncertainties in the tails of the distributions in leading and subleading jet $\pT$ and in particular in the tail of the $\HT$ distribution.
+reduces the statistical uncertainties in the tail of distributions.
+The reduction is most pronounced in the tails of the distributions in leading and subleading jet $\pT$ and in the observable $\HT$.
 
 \begin{table}[h!]
 \begin{center}

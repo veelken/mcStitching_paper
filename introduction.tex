@@ -6,7 +6,7 @@ Applications for experiments currently in operation include detector calibration
 the modelling of backgrounds, as well as the modelling of signal acceptance and efficiency.
 Besides, MC simulations are extensively used for detector development and for estimating the physics reach of experiments that are presently in construction or planned in the future.
 
-The production of sufficiently large MC samples often poses a material challenge 
+The production of MC samples containing a sufficient number of events often poses a material challenge 
 in terms of the computing resources required to produce and store such samples~\cite{HSFPhysicsEventGeneratorWG:2020gxw}.
 This is especially true for experiments at the CERN Large Hadron Collider (LHC)~\cite{Bruning:2004ej,Buning:2004wk,Benedikt:2004wm},
 firstly due to the large cross section for proton-proton ($\Pp\Pp$) scattering and secondly due to the large luminosity delivered by the LHC.
@@ -28,7 +28,7 @@ The production of such large MC samples is clearly prohibitive, however.
 
 Even if one restricts the production of MC samples to processes with a cross section that is significantly smaller than the inelastic $\Pp\Pp$ scattering cross section,
 such as Drell-Yan (DY) production, the production of $\PW$ bosons ($\PW$+jets), and the production of top quark pairs ($\Ptop\APtop$+jets),
-the production of MC samples containing a sufficient number of events to allow for meaningful comparison with the data represents a formidable challenge.
+the production of MC samples containing a sufficient number of events to allow for a meaningful comparison with the data represents a formidable challenge.
 The DY, $\PW$+jets, and $\Ptop\APtop$+jets production processes are used for detector calibration and Standard Model (SM) precision measurements.
 They also constitute relevant backgrounds to searches for physics beyond the SM.
 Their cross sections amount to $6.08$~nb for DY production, $61.5$~nb for $\PW$+jets production,
@@ -49,14 +49,14 @@ to prevent these signals from being obscured by the statistical uncertainties on
 Different mechanisms for adapting the expenditure of computing resources to the needs of physics analyses have been proposed in the literature.
 Modern MC programs (``generators'') such as \POWHEG~\cite{POWHEG1,POWHEG2,POWHEG3}, \MGvATNLO~\cite{MGvATNLO}, \SHERPA~\cite{SHERPA}, \PYTHIA~\cite{PYTHIA}, and \HERWIG~\cite{HERWIG}
 provide functionality that allows to adjust the number of events sampled in different regions of PS through user-defined weighting functions.
-An alternative approach is to divide the PS into distinct regions (``slices'') and to produce separate independent MC samples covering each slice.
+An alternative approach is to partition the PS into distinct regions (``slices'') and to produce separate independent MC samples covering each slice.
 Following Ref.~\cite{HSFPhysicsEventGeneratorWG:2020gxw}, we refer to the first approach as ``biasing'' and to the second one as ``slicing''.
 
 In this paper, we focus on the case that MC samples have already been produced and present a method that makes optimal use of these samples,
 where ``optimal'' refers to yielding the lowest statistical uncertainty on the signal or background estimate that is obtained from these samples.
 The sets of MC available samples typically overlap in PS.
-For example, one set of MC samples may divide the PS based on the number of jets, 
-whereas another set of MC samples may divide the PS based on $\HT$, the scalar sum in $\pT$ of these jets.
+For example, one set of MC samples may partition the PS based on the number of jets, 
+whereas another set of MC samples may partition the PS based on $\HT$, the scalar sum in $\pT$ of these jets.
 Our method is general enough to handle arbitrary overlaps between these samples.
 The overlap is accounted for by applying appropriately chosen weights to the simulated events.
 We refer to the procedure as ``stitching''.
