@@ -22,7 +22,7 @@ amounts to $\approx 75$~mb~\cite{Aaboud:2016mmw,Sirunyan:2018nqx}.
 The $\Pp\Pp$ scattering data recorded by the ATLAS and CMS experiments during LHC Run $2$ 
 amounts to an integrated luminosity of $\approx 140\fbinv$ per experiment~\cite{ATLAS-CONF-2019-021,LUM-17-001,LUM-17-004,LUM-18-002}.
 Thus, $N_{\data} \approx 10^{16}$ inelastic $\Pp\Pp$ scattering interactions occurred in each of the two experiments during this time.
-Ideally, one would want the number of simulated events to be higher then the number of events in the data,
+Ideally, one would want the number of simulated events to be higher than the number of events in the data,
 such that the statistical uncertainties on the MC simulation are small compared to the statistical uncertainties on the data.
 The production of such large MC samples is clearly prohibitive, however.
 
@@ -60,6 +60,8 @@ whereas another set of MC samples may partition the PS based on $\HT$, the scala
 Our method is general enough to handle arbitrary overlaps between these samples.
 The overlap is accounted for by applying appropriately chosen weights to the simulated events.
 We refer to the procedure as ``stitching''.
+One useful feature of the stitching method is that it allows to increase the number of simulated events in certain regions of PS
+in case one finds these regions not to be sufficiently populated by the existing MC samples.
 
 In the following, we will assume that all MC samples that are subject to the stitching procedure 
 have been produced with the same version of the MC program and consistent (\ie identical) settings 

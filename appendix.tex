@@ -111,7 +111,7 @@ except for statistical fluctuations on the $P_{\incl}^{i}$ and $P_{j}^{i}$.
 The $P_{\incl}^{i}$ and $P_{j}^{i}$ are obtained by determining the fraction of events in the inclusive and exclusive samples that fall into PS region $i$.
 The symbol $j$ here refers to those $N_{\jet}$- and $\HT$-samples that cover the PS region $i$
 and the symbol $\sigma_{j}$ to the cross section corresponding to these samples.
-We denote the unknown true value of the left-hand-side (and equivalently of the right-hand-side) of Eq.~(\ref{eq:lambda1}) by the symbol $\lambda_{i}$
+We denote the unknown true value of the left-hand side (and equivalently of the right-hand side) of Eq.~(\ref{eq:lambda1}) by the symbol $\lambda_{i}$
 and use the symbols $r_{\incl}^{i}$ and $r_{j}^{i}$ to refer to the deviations (``residuals''), caused by statistical fluctuations,
 between the true values of the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ and the values obtained using the MC samples.
 We further use the symbols $e_{\incl}^{i}$ and $e_{j}^{i}$ to denote the expected statistical fluctuations (``errors'') of these probabilities.
@@ -123,7 +123,7 @@ the best estimate for the value of $\lambda_{i}$ is obtained as solution to the 
 \end{eqnarray*}
 subject to the condition that the sum of residuals:
 \begin{equation*}
-\left( \frac{r_{\incl}^{i}}{e_{\incl}^{i}} \right)^{2} + \sum_{j} \left( \frac{r_{j}^{i}}{s_{j}^{i}} \right)^{2}
+\left( \frac{r_{\incl}^{i}}{e_{\incl}^{i}} \right)^{2} + \sum_{j} \left( \frac{r_{j}^{i}}{e_{j}^{i}} \right)^{2}
 \end{equation*}
 attains its minimal value.
 The expected statistical fluctuations $e_{\incl}^{i}$ and $e_{j}^{i}$ of the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$
@@ -140,9 +140,9 @@ The solution for $\lambda_{i}$ is given by the expression:
 from which the probabilities $P_{\incl}^{i} = \lambda_{i}/\sigma_{\incl}$ and $P_{j}^{i} = \lambda_{i}/\sigma_{j}$ follow.
 The symbols $\alpha_{\incl}^{i}$ and $\alpha_{j}^{i}$ are defined as:
 \begin{equation*}
-\alpha_{\incl}^{i} = \frac{1}{\left( \sigma_{\incl} \cdot e^{i} \right)^{2}} \quad \mbox{and} \quad \alpha_{j}^{i} = \frac{1}{\left( \sigma_{j} \cdot e_{j}^{i} \right)^{2}}
+\alpha_{\incl}^{i} = \frac{1}{\left( \sigma_{\incl} \cdot e_{\incl}^{i} \right)^{2}} \quad \mbox{and} \quad \alpha_{j}^{i} = \frac{1}{\left( \sigma_{j} \cdot e_{j}^{i} \right)^{2}}
 \end{equation*}
-and act as ``weights'' in the expression on the right-hand-side of Eq.~(\ref{eq:lambda2}),
+and act as ``weights'' in the expression on the right-hand side of Eq.~(\ref{eq:lambda2}),
 which has the form of a weighted average.
 We use the symbols $\alpha_{\incl}^{i}$ and $\alpha_{j}^{i}$ to refer to these weights,
 in order to distinguish them from the weights $w_{\incl}^{k}$ and $w_{j}^{k}$ computed by the MC generator program

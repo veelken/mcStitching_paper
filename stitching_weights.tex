@@ -17,7 +17,7 @@ matches the SM prediction in that region:
 \end{equation}
 where the symbol $L$ corresponds to the integrated luminosity of the analyzed dataset
 and $\sigma^{i}$ denotes the fiducial cross section for the process under study in the PS region $i$.
-The first (second) sum on the left-hand-side extends over the MC samples $j$ 
+The first (second) sum on the left-hand side extends over the MC samples $j$ 
 (over the events $k$ in the $j$-th MC sample, where $N_{j}$ denotes the total number of simulated events in the sample $j$).
 The symbol $w_{j}^{k}$ denotes the weight assigned to event $k$ by the MC generator program,
 while $s_{j}^{i}$ denotes the ``stitching'' weight that is applied to events from the sample $j$ falling into the PS region $i$ to account for the overlap of the MC samples in PS.
@@ -54,6 +54,9 @@ s^{i} = \frac{L \cdot \sigma_{\incl}}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}} \
 where $w_{\incl}^{k}$ refers to the weights assigned to events in the inclusive sample by the MC generator program and $N_{\incl}$ denotes the total number of events in the inclusive sample.
 The sum over $j$ in Eq.~(\ref{eq:weight_incl}) extends over the additional MC samples, which each cover a different region in PS.
 We will refer to these samples as the ``exclusive'' samples.
+We assume that the weights $w_{\incl}^{k}$ and $w_{j}^{k}$ are normalized such that the average of these weights,
+$\frac{1}{N_{\incl}} \, \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}$ and $\frac{1}{N_{j}} \, \sum_{k=1}^{N_{j}} \, w_{j}^{k}$,
+equals unity for the inclusive sample and for each exclusive sample $j$.
 The two factors in Eq.~(\ref{eq:weight_incl}) may be interpreted in the following way:
 The product of $w_{\incl}^{k}$ and the first factor, $w_{\incl}^{k} \cdot \frac{L \cdot \sigma_{\incl}}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}$,
 corresponds to the weight that one would apply to an event in PS region $i$ 
