@@ -44,7 +44,7 @@ In order to mitigate the effect of limited computing resources, both experiments
 A common feature of these strategies is to vary the expenditure of computing resources across phase space (PS),
 depending on the needs of physics analyses.
 When searching for new physics, for example, it is important to produce sufficiently many events in the tails of distributions,
-to prevent these signals from being obscured by the statistical uncertainties on backgrounds that arise from established SM processes which are modeled by the MC simulation.
+as otherwise these signals may be obscured by the statistical uncertainties on the SM background.
 
 Different mechanisms for adapting the expenditure of computing resources to the needs of physics analyses have been proposed in the literature.
 Modern MC programs (``generators'') such as \POWHEG~\cite{POWHEG1,POWHEG2,POWHEG3}, \MGvATNLO~\cite{MGvATNLO}, \SHERPA~\cite{SHERPA}, \PYTHIA~\cite{PYTHIA}, and \HERWIG~\cite{HERWIG}
@@ -54,14 +54,14 @@ Following Ref.~\cite{HSFPhysicsEventGeneratorWG:2020gxw}, we refer to the first 
 
 In this paper, we focus on the case that MC samples have already been produced and present a method that makes optimal use of these samples,
 where ``optimal'' refers to yielding the lowest statistical uncertainty on the signal or background estimate that is obtained from these samples.
-The sets of MC available samples typically overlap in PS.
+The samples in general overlap in PS.
 For example, one set of MC samples may partition the PS based on the number of jets, 
-whereas another set of MC samples may partition the PS based on $\HT$, the scalar sum in $\pT$ of these jets.
+whereas another set of samples may partition the PS based on $\HT$, the scalar sum in $\pT$ of these jets.
 Our method is general enough to handle arbitrary overlaps between these samples.
 The overlap is accounted for by applying appropriately chosen weights to the simulated events.
 We refer to the procedure as ``stitching''.
-One useful feature of the stitching method is that it allows to increase the number of simulated events in certain regions of PS
-in case one finds these regions not to be sufficiently populated by the existing MC samples.
+One useful feature of the stitching method is that it allows to increase the number of simulated events incrementally in certain regions of PS
+in case these regions are not yet sufficiently populated by the existing MC samples.
 
 In the following, we will assume that all MC samples that are subject to the stitching procedure 
 have been produced with the same version of the MC program and consistent (\ie identical) settings 
@@ -71,7 +71,7 @@ the effect of the inconsistencies either need to be small (compared to \eg the s
 to make all MC samples consistent prior to applying the stitching procedure.
 
 Variants of the stitching procedure described in the first part of this manuscript have been used by the ATLAS and CMS experiments since LHC Run $1$,
-but, to the best of our knowledge, have not been documented in a publication yet.
+but, to the best of our knowledge, have not been described in detail in a public document yet.
 The formalism for the computation of stitching weights is detailed in Section~\ref{sec:stitching_weights}.
 Concrete examples for using the formalism in physics analyses are given in Sections~\ref{sec:WJets_vs_Njet} and~\ref{sec:WJets_vs_Njet_and_HT}.
 The examples characterize the use of the stitching procedure by the CMS experiment during LHC Runs $1$ and $2$.
@@ -82,7 +82,7 @@ The distinguishing feature between the applications of the stitching procedure d
 is that in the former (but not in the latter) the cross section of the process that is modeled by the MC simulation
 is orders of magnitude smaller compared to the inelastic $\Pp\Pp$ scattering cross section.
 In the former case one can make the simplifying assumption that the process of interest (the process modeled by the MC simulation) 
-solely occurs in the hard-scatter interaction and not in any of the pileup interactions.
+solely occurs in the hard-scatter interaction and not in pileup interactions.
 For the purpose of estimating trigger rates, a relevant use case is that the hard-scatter interaction as well as the pileup interactions are inelastic $\Pp\Pp$ scattering interactions,
 and the hard-scatter interaction is in fact indistinguishable from the pileup.
 As described in detail in Section~\ref{sec:examples_trigger_rate},

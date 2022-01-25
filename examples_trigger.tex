@@ -6,7 +6,8 @@ The ``rate'' of a trigger corresponds to the number of $\Pp\Pp$ collision events
 The estimation of trigger rates constitutes an important task for demonstrating the physics potential of the HL-LHC.
 The HL-LHC physics program demands a large amount of integrated luminosity to be delivered by the LHC, 
 in order to facilitate measurements of rare signal processes
-(such as the precise measurement of $\PHiggs$ boson couplings and the study of $\PHiggs$ boson pair production) by the ATLAS and CMS experiments.
+(such as the precise measurement of $\PHiggs$ boson couplings and the study of $\PHiggs$ boson pair production),
+as well as to enhance the sensitivity of searches for new physics, by the ATLAS and CMS experiments.
 In order to satisfy this demand, the HL-LHC is expected to operate at an instantaneous luminosity of $5$-$7.5 \times 10^{34}$~cm$^{-2}$~s$^{-1}$
 at a center-of-mass energy of $\sqrt{s} = 14$~\TeV~\cite{TDR_Phase2_LHC}.
 The challenge of developing triggers for the HL-LHC is to design the triggers such that rare signal processes pass the triggers with a high efficiency,
@@ -88,7 +89,7 @@ the main difference being that the index $i$ is replaced by the vector $I$,
 the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ are replaced by the probabilities $P_{\incl}^{I}$ and $P_{j}^{I}$
 and the product of luminosity times cross section, $L \cdot \sigma_{\incl}$, is replaced by the frequency $F$ of $\Pp\Pp$ collisions:
 \begin{equation}
-s^{I} = \frac{F}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}} \cdot \frac{P^{I} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}{P_{\incl}^{I} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, P_{j}^{I} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
+s^{I} = \frac{F}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}} \cdot \frac{P_{\incl}^{I} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}{P_{\incl}^{I} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, P_{j}^{I} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
 \label{eq:weight_tmp}
 \end{equation}
 The probabilities $P_{\incl}^{I}$ and $P_{j}^{I}$ are given by Eqs.(~\ref{eq:P_inclusive}) and~(\ref{eq:P_exclusive}).
@@ -107,7 +108,7 @@ which allows to simplify Eq.~(\ref{eq:weight_trigger_rate}).
 Using the relations $\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} = N_{\incl}$ and $\sum_{k=1}^{N_{j}} \, w_{j}^{k} = N_{j}$,
 we obtain the expression:
 \begin{equation}
-s^{I} = \frac{F}{N_{\incl} + \sum_{j} \, N_{j} \cdot \frac{n_{j}}{(N_{\pileup} + 1) \times p_{j}}} \, .
+s^{I} = \frac{F}{N_{\incl} + \sum_{j} \, \frac{n_{j}}{(N_{\pileup} + 1) \times p_{j}} \cdot N_{j}} \, .
 \label{eq:weight_trigger_rate_simplified}
 \end{equation}
 
@@ -122,17 +123,17 @@ and for the case that no condition is imposed on $\pThat$.
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{l|c}
-Sample                    & Number of events \\
+Sample                            & Number of events \\
 \hline
-Inclusive                 & $8 \times 10^{5}$ \\
-$ 30 < \pThat <  50$~\GeV & $4 \times 10^{5}$ \\
-$ 50 < \pThat <  80$~\GeV & $2 \times 10^{5}$ \\
-$ 80 < \pThat < 120$~\GeV & $1 \times 10^{5}$ \\
-$120 < \pThat < 170$~\GeV & $5 \times 10^{4}$ \\
-$170 < \pThat < 300$~\GeV & $5 \times 10^{4}$ \\
-$300 < \pThat < 470$~\GeV & $5 \times 10^{4}$ \\
-$470 < \pThat < 600$~\GeV & $5 \times 10^{4}$ \\
-$\pThat > 600$~\GeV       & $5 \times 10^{4}$ \\
+Inclusive                         & $8 \times 10^{5}$ \\
+$ 30 \leqslant \pThat <  50$~\GeV & $4 \times 10^{5}$ \\
+$ 50 \leqslant \pThat <  80$~\GeV & $2 \times 10^{5}$ \\
+$ 80 \leqslant \pThat < 120$~\GeV & $1 \times 10^{5}$ \\
+$120 \leqslant \pThat < 170$~\GeV & $5 \times 10^{4}$ \\
+$170 \leqslant \pThat < 300$~\GeV & $5 \times 10^{4}$ \\
+$300 \leqslant \pThat < 470$~\GeV & $5 \times 10^{4}$ \\
+$470 \leqslant \pThat < 600$~\GeV & $5 \times 10^{4}$ \\
+$\pThat \geqslant 600$~\GeV       & $5 \times 10^{4}$ \\
 \end{tabular}
 \end{center}
 \caption{
@@ -176,21 +177,20 @@ that we obtain when inserting the numbers given in Tables~\ref{tab:samples_trigg
 For comparison, we also show the corresponding weight, given by $s_{\incl} = F/N_{\incl}$,
 for the case that only the inclusive sample is used to estimate the trigger rate.
 The weight $s_{\incl}$ amounts to $35$~Hz in this example.
-As can be seen in Fig.~\ref{fig:weight_trigger_rate}, the addition of samples produced in ranges in $\pThat$ to the inclusive sample reduces the weights.
-Lower weights reduce the statistical uncertainties on the estimate of the trigger rate.
+As can be seen in Fig.~\ref{fig:weight_trigger_rate}, the addition of samples produced in ranges of $\pThat$ to the inclusive sample reduces the weights.
+Lower weights in turn reduce the statistical uncertainties on the trigger rate estimate.
 The different maxima in the distribution of stitching weights $s^{I}$ correspond to events 
 in which the transverse momentum exchanged between the scattered protons falls into different ranges in $\pThat$.
 The spectrum of weights shown in Fig.~\ref{fig:weight_trigger_rate} is plotted before any trigger selection is applied.
-The stitching weights $s^{I}$ are on average smaller for events that pass than for events that fail the trigger selection,
-as the probability for an event to pass the trigger increases with $\pThat$.
-In contrast, the weight $s_{\incl}$ is the same before and after the trigger selection is applied.
+As the probability for an event to pass the trigger increases with $\pThat$,
+the stitching weights $s^{I}$ are on average smaller for events that pass than for events that fail the trigger selection.
 Consequently, the reduction in statistical uncertainties that one obtains by using the exclusive samples and applying the stitching weights 
-becomes even more pronounced after the trigger selection is applied.
+becomes even more pronounced after the trigger selection is applied (the weight $s_{\incl}$ remains fixed at $35$~Hz).
 
 \begin{figure}
 \setlength{\unitlength}{1mm}
 \begin{center}
-\includegraphics*[height=76mm]{plots/makeEvtWeightPlotsForPaper_evtWeight_log.pdf}
+\includegraphics*[height=76mm]{plots/makeEvtWeightPlotsForPaper_evtWeight_log_modified.pdf}
 \end{center}
 \caption{
   Stitching weights $s^{I}$, computed according to Eq.~(\ref{eq:weight_trigger_rate_simplified}), 
@@ -204,6 +204,9 @@ The rates are computed as function of the $\pT$ threshold that is applied to the
 In case of the dijet trigger, the same $\pT$ threshold is applied to both jets.
 The jets are reconstructed as described in Section~\ref{sec:WJets_vs_Njet}
 and are required to be within the geometric acceptance $\vert\eta\vert < 5.0$.
+All stable generator-level particles (except neutrinos) originating either from the HS interaction or from any of the PU interactions are used as input to the jet reconstruction.
+The statistical uncertainties on the rate estimates obtained from the inclusive sample are represented by error bars,
+while those obtained from the sum of inclusive plus exclusive samples are represented by the shaded area.
 
 \begin{figure}
 \setlength{\unitlength}{1mm}
@@ -226,20 +229,18 @@ and are required to be within the geometric acceptance $\vert\eta\vert < 5.0$.
 The rate estimate obtained for the inclusive sample and for the sum of inclusive plus exclusive samples, 
 with the stitching weights computed according to Eq.~(\ref{eq:weight_trigger_rate_simplified}),
 agree within statistical uncertainties, demonstrating that the estimate of the trigger rate obtained from the stitching procedure is unbiased.
-The statistical uncertainties on the rate estimates obtained from the inclusive sample are represented by error bars,
-while those obtained from the sum of inclusive plus exclusive samples are represented by the shaded area.
 The modest difference between the rate estimates for the dijet trigger with jet $\pT$ thresholds higher than $280$~\GeV
 is not statistically significant.
-One needs to keep in mind that the trigger rate estimates for adjacent bins are correlated,
+It is important to keep in mind that the trigger rate estimates for adjacent bins are correlated,
 because all events that pass the trigger for a given jet $\pT$ threshold also pass the trigger for all lower thresholds.
 
-The statistical uncertainties obtained with the stitching procedure are smaller than the ones obtained in case only the inclusive sample is used.
-The reduction in the statistical uncertainties is small for the single jet trigger and larger for the dijet trigger,
-in particular for high jet $\pT$ thresholds.
-The reason for the difference in behaviour between the single jet and the dijet trigger rates is caused by events with low $\pThat$ that contain a single jet of high $\pT$.
-The stitching weights $s^{I}$ for these low $\pThat$ events are not much smaller than the weights for the inclusive sample,
-which explains why the statistical uncertainties on the single jet trigger rate are reduced only modestly by the stitching procedure.
-One can see the effect of these low $\pThat$ events in the ``flattening'' of the single jet trigger rate for jet $\pT$ thresholds higher than $400$~\GeV.
+For both triggers and all jet $\pT$ thresholds,
+the statistical uncertainties obtained with the stitching procedure are smaller than the uncertainties obtained in case only the inclusive sample is used.
+The reduction in the statistical uncertainties is significantly less pronounced for the single jet trigger than for the dijet trigger, however.
+For the latter, the stitching procedure reduces the statistical uncertainties in particular for jet $\pT$ thresholds higher than $100$~\GeV.
+The reduction in the statistical uncertainties for the single jet trigger is limited by events with low $\pThat$ that contain a single jet of high $\pT$.
+The stitching weights $s^{I}$ for these low $\pThat$ events are not much smaller than the weights for the inclusive sample.
+These low $\pThat$ events also cause a ``flattening'' of the single jet trigger rate for jet $\pT$ thresholds higher than $400$~\GeV.
 The requirement of a second high $\pT$ jet removes most of these low $\pThat$ events,
 with the effect that the dijet trigger rate decreases more rapidly as function of the jet $\pT$ threshold
-and the stitching procedure becomes more effective in reducing the statistical uncertainties on the rate of the dijet trigger.
+and the stitching procedure becomes more effective in reducing the statistical uncertainties for the dijet trigger.

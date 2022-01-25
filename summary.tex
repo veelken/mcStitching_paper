@@ -1,10 +1,10 @@
 \section{Summary}
 \label{sec:summary}
 
-The production of MC samples containing an adequate number of events to allow for a meaningful comparison with the data is often a challenge in modern HEP experiments,
+The production of MC samples containing a sufficient number of events to allow for a meaningful comparison with the data is often a challenge in modern HEP experiments,
 due to the computing resources required to produce and store such samples.
 This is particularly true for experiments at the CERN LHC,
-firstly because of the large cross sections of relevant processes (such as DY, $\PW$+jets, and $\Ptop\APtop$+jets production)
+firstly because of the large cross sections of relevant processes (\eg DY, $\PW$+jets, and $\Ptop\APtop$+jets production)
 and secondly because of the large luminosity delivered by the LHC.
 
 In this paper we have focused on the case that the MC samples have already been produced
@@ -16,8 +16,13 @@ We refer to the procedure as ``stitching''.
 The formalism for computing the stitching weights is general enough to be applied to a variety of use-cases.
 When used in physics analyses, the stitching procedure allows to reduce the statistical uncertainties in particular in the tails of distributions.
 Examples that document the typical use of the stitching procedure in physics analyses performed by the CMS experiment during LHC Runs $1$ and $2$ have been presented.
-We have then presented an extension of the formalism to cover the case of estimating trigger rates at the HL-LHC,
-where up to $200$ simultaneous $\Pp\Pp$ collisions are expected per crossing of the proton beams.
-The distinguishing feature of this use-case is that the same physics process, 
+The formalism has been extended to the case of estimating trigger rates at the HL-LHC.
+Up to  $200$ simultaneous $\Pp\Pp$ collisions are expected per crossing of the proton beams at the HL-LHC.
+The distinguishing feature of this application of the stitching procedure is that the same physics process, 
 inelastic $\Pp\Pp$ scattering interactions in which a transverse momentum $\pThat$ is exchanged between the protons,
-may occur in the ``hard-scatter'' interaction and in ``pileup'' interactions.
+may occur in the ``hard-scatter'' (HS) interaction and in ``pileup'' (PU) interactions.
+Our formalism for computing the stitching weight treats the HS and PU interactions on equal footing.
+
+The examples demonstrate that the stitching procedure provides unbiased estimates of event yields and rates as well as of the shapes of distributions.
+The reduction in the statistical uncertainties achieved by the stitching method depends on the number of events contained in the available MC samples
+and ranges from moderate to significant.
