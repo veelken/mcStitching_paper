@@ -58,7 +58,7 @@ The probability $P^{I}$ for an event in the inclusive sample that contains $N_{\
 to feature $n_{1}$ inelastic $\Pp\Pp$ scatterings that fall into the first interval in $\pThat$, $n_{2}$ that fall into the second,$\dots$, and $n_{m}$ that fall into the $m$-th 
 follows a multinomial distribution~\cite{evans2011statistical} and is given by:
 \begin{equation}
-P_{\incl}^{I} = \frac{(N_{\pileup} + 1)!}{n_{1}! \cdot \dots \cdot n_{m}!} \cdot p_{1}^{n_{1}} \cdot \dots \cdot p_{m}^{n_{m}} \, ,
+P_{\incl}^{I} = \frac{(N_{\pileup} + 1)!}{n_{1}! \times \dots \times n_{m}!} \cdot p_{1}^{n_{1}} \times \dots \times p_{m}^{n_{m}} \, ,
 \label{eq:P_inclusive}
 \end{equation}
 where the symbols $p_{i}$ correspond to the probability for a single inelastic $\Pp\Pp$ scattering interaction to feature a transverse momentum exchange that falls into the $i$-th interval in $\pThat$.
@@ -67,7 +67,7 @@ The $n_{i}$ satisfy the condition $\sum_{i=1}^{m} \, n_{i} = N_{\pileup} + 1$.
 The corresponding probability $P_{j}^{I}$ for an event in the $j$-th exclusive sample that contains $N_{\pileup}$ pileup interactions is given by:
 \begin{equation}
 P_{j}^{I} = \begin{cases}
-\frac{N_{\pileup}!}{n_{1}! \cdot \dots \cdot (n_{j} - 1)! \cdot \dots \cdot n_{m}!} \cdot p_{1}^{n_{1}} \cdot \dots \cdot p_{j}^{(n_{j} - 1)} \cdot \dots \cdot p_{m}^{n_{m}} \, ,
+\frac{N_{\pileup}!}{n_{1}! \times \dots \times (n_{j} - 1)! \times \dots \times n_{m}!} \cdot p_{1}^{n_{1}} \times \dots \times p_{j}^{(n_{j} - 1)} \times \dots \times p_{m}^{n_{m}} \, ,
   & \text{if $n_{j} \geq 1$} \\
 0 \, , & \text{otherwise} \, .
 \end{cases}
@@ -211,7 +211,7 @@ while those obtained from the sum of inclusive plus exclusive samples are repres
 \begin{figure}
 \setlength{\unitlength}{1mm}
 \begin{center}
-\begin{picture}(180,86)(0,0)
+\begin{picture}(180,90)(0,0)
 \put(4.5, 4.0){\mbox{\includegraphics*[height=86mm]
   {plots/makeRatePlotsForPaper_SingleJet_absEtaLt5p00_log.pdf}}}
 \put(83.5, 4.0){\mbox{\includegraphics*[height=86mm]
