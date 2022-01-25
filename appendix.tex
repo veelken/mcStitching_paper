@@ -108,7 +108,7 @@ The aim is to make the computation of these probabilities less prone to statisti
 
 Our use of the least-squares method is based on assuming the following relation to hold:
 \begin{equation}
-\sigma_{\incl} \cdot P_{\incl}^{i} = \sigma_{j} \cdot P_{j}^{i} \quad \forall \, j \, ,
+\sigma_{\incl} \cdot P_{\incl}^{i} = \sigma_{j} \cdot P_{j}^{i} \qquad \forall \, j \, ,
 \label{eq:lambda1}
 \end{equation}
 except for statistical fluctuations on the $P_{\incl}^{i}$ and $P_{j}^{i}$.
@@ -122,18 +122,18 @@ We further use the symbols $e_{\incl}^{i}$ and $e_{j}^{i}$ to denote the expecte
 According to the least-squares method,
 the best estimate for the value of $\lambda_{i}$ is given by the solution to the following system of equations:
 \begin{eqnarray*}
-\sigma_{\incl} \cdot \left( P_{\incl}^{i} + r_{\incl}^{i} \right) - \lambda_{i} & = & 0 \quad \mbox{and} \\
-\sigma_{j} \cdot \left( P_{j}^{i} + r_{j}^{i} \right) - \lambda_{i} & = & 0 \quad \forall \, j \, ,
+\sigma_{\incl} \cdot \left( P_{\incl}^{i} + r_{\incl}^{i} \right) - \lambda_{i} & = & 0 \qquad \mbox{and} \\
+\sigma_{j} \cdot \left( P_{j}^{i} + r_{j}^{i} \right) - \lambda_{i} & = & 0 \qquad \forall \, j \, ,
 \end{eqnarray*}
 subject to the condition that the sum of residuals:
 \begin{equation*}
-\left( \frac{r_{\incl}^{i}}{e_{\incl}^{i}} \right)^{2} + \sum_{j} \left( \frac{r_{j}^{i}}{e_{j}^{i}} \right)^{2}
+\left( \frac{r_{\incl}^{i}}{e_{\incl}^{i}} \right)^{2} \, + \, \sum_{j} \left( \frac{r_{j}^{i}}{e_{j}^{i}} \right)^{2}
 \end{equation*}
 attains its minimal value.
 The expected statistical fluctuations $e_{\incl}^{i}$ and $e_{j}^{i}$ of the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$
 are given by the standard errors of the Binomial distribution~\cite{Cowan:1998ji}:
 \begin{equation*}
-e_{\incl}^{i} = \sqrt{\frac{P_{\incl}^{i} \cdot (1 - P_{\incl}^{i})}{N_{\incl}}} \quad \mbox{and} \quad e_{j}^{i} = \sqrt{\frac{P_{j}^{i} \cdot (1 - P_{j}^{i})}{N_{j}}} \, .
+e_{\incl}^{i} = \sqrt{\frac{P_{\incl}^{i} \cdot (1 - P_{\incl}^{i})}{N_{\incl}}} \qquad \mbox{and} \qquad e_{j}^{i} = \sqrt{\frac{P_{j}^{i} \cdot (1 - P_{j}^{i})}{N_{j}}} \, .
 \end{equation*}
 The fluctuations decrease proportional to the inverse of the square-root of the number of events in the MC samples.
 The solution for $\lambda_{i}$ is given by the expression:
