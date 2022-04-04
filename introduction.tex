@@ -13,7 +13,7 @@ firstly due to the large cross section for proton-proton ($\Pp\Pp$) scattering a
 
 The number of $\Pp\Pp$ scattering interactions, $N_{\data}$, that occur within a given interval of time 
 is given by the product of the $\Pp\Pp$ scattering cross section, $\sigma$, and of the integrated luminosity, $L$, that the LHC has delivered during this time:
-$N_{\data} = \sigma \times L$.
+$N_{\data} = \sigma \, L$.
 We refer to the ensemble of $\Pp\Pp$ scattering interactions that occur within the same crossing of the proton bunches as an ``event''.
 The interaction with the highest momentum exchange between the protons is referred to as the ``hard-scatter'' interaction,
 and the remaining interactions are referred to as ``pileup''.
@@ -49,6 +49,7 @@ as otherwise potential signals may be obscured by the statistical uncertainties 
 Different mechanisms for adapting the expenditure of computing resources to the needs of physics analyses have been proposed in the literature.
 Modern MC programs (``generators'') such as \POWHEG~\cite{POWHEG1,POWHEG2,POWHEG3}, \MGvATNLO~\cite{MGvATNLO}, \SHERPA~\cite{SHERPA}, \PYTHIA~\cite{PYTHIA}, and \HERWIG~\cite{HERWIG}
 provide functionality that allows to adjust the number of events sampled in different regions of PS through user-defined weighting functions.
+This approach has been used in Ref.~\cite{ATLAS:2021yza}.
 An alternative approach is to partition the PS into distinct regions (``slices'') and to produce separate independent MC samples covering each slice.
 Following Ref.~\cite{HSFPhysicsEventGeneratorWG:2020gxw}, we refer to the first approach as ``biasing'' and to the second one as ``slicing''.
 

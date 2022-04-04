@@ -30,7 +30,7 @@ The weights $w_{j}^{k}$ and $w_{\incl}^{k}$ are equal to one for all events in t
 Thus, $\sum_{k=1}^{N_{j}} \, w_{j}^{k} = N_{j}$ and $\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} = N_{\incl}$ for this example,
 which allows us to simplify Eq.~(\ref{eq:weight_incl}) to:
 \begin{equation}
-s^{i} = \frac{L \cdot \sigma_{\incl}}{N_{\incl}} \cdot \frac{P_{\incl}^{i} \cdot N_{\incl}}{P_{\incl}^{i} \cdot N_{\incl} + P_{j}^{i} \cdot N_{j}} \, .
+s^{i} = \frac{L \, \sigma_{\incl}}{N_{\incl}} \, \frac{P_{\incl}^{i} \, N_{\incl}}{P_{\incl}^{i} \, N_{\incl} + P_{j}^{i} \, N_{j}} \, .
 \label{eq:weight_incl_simplified}
 \end{equation}
 
@@ -71,6 +71,20 @@ In order to demonstrate that the stitching procedure is unbiased,
 we compare the normalization and shape of distributions obtained using the stitching procedure with the normalization and shape of distributions obtained from the inclusive sample.
 Distributions in $\pT$ of the ``leading'' and ``subleading'' jet (the jets of, respectively, highest and second-highest $\pT$ in the event),
 in the multiplicity of jets and in the observable $\HT$ are shown in Fig.~\ref{fig:controlPlots_WJets_vs_Njet}.
+The distributions obtained from the inclusive sample are represented by black markers (``inclusive only''),
+while those obtained by applying the stitching procedure to the combination of the inclusive sample and the samples binned in $N_{\jet}$ are represented by pink lines (``stitched'').
+For illustration,
+the contributions of individual exclusive samples $j$ to the stitched distribution are represented by different colors and fill patterns in the upper part of each figure.
+The contribution of the inclusive sample to the stitched distribution is represented by the white area (``inclusive stitched'').
+We remark that the ``inclusive only'' and ``inclusive stitched'' distributions contain the exact same events. 
+The sole difference between these two distributions 
+is that the stitching weights, given in Table~\ref{tab:weights_WJets_vs_Njet},
+are applied to the ``inclusive stitched'', but not to the ``inclusive only'' distribution.
+In the lower part of each figure, we show the difference in normalization and shape between the distribution obtained using the stitching procedure
+and the distribution obtained when using solely the inclusive sample.
+The differences are given relative to the distribution obtained from our stitching procedure.
+The size of statistical uncertainties on the ``inclusive only'' and ``stitched'' distributions
+is visualized in the lower part of each figure and is represented by the length of the error bars and by the height of the dark shaded area, respectively.
 The jets shown in the figure are reconstructed using the anti-\kt algorithm~\cite{Cacciari:2008gp,Cacciari:2011ma} with a distance parameter of $0.4$,
 using all stable generator-level particles (after hadron shower and hadronization) except neutrinos as input, and are required to satisfy the selection criteria $\pT > 25$~\GeV and $\vert\eta\vert < 5.0$.
 The observable $\HT$ is computed as the scalar sum in $\pT$ of these jets.
@@ -78,13 +92,6 @@ Note that the multiplicity of jets and the observable $\HT$ shown in Fig.~\ref{f
 differ from the observables $N_{\jet}$ and $\HT$ that are used in the stitching procedure:
 The former refer to jets at the generator (detector) level, while the latter refer to jets at the matrix-element level.
 The distributions are normalized to an integrated luminosity of $140$~fb$^{-1}$.
-The contributions of individual exclusive samples $j$ to the stitched distribution are distinguished by different colors and fill patterns in the upper part of each figure.
-The white area represents the contribution of the inclusive sample to the distribution obtained from the stitching procedure.
-In the lower part, we show the difference in normalization and shape between the distributions obtained from the inclusive sample and from the sum of inclusive and exclusive samples,
-using our stitching procedure.
-The differences are given relative to the distribution obtained from our stitching procedure.
-The size of statistical uncertainties on the distributions obtained from the inclusive sample and from our stitching procedure
-is visualized in the lower part of each figure and is represented by the the length of the error bars and by the height of the dark shaded area, respectively.
 
 The distributions for the inclusive sample and for the sum of inclusive plus exclusive samples, with the stitching weights applied, are in agreement within the statistical uncertainties.
 The exclusive samples reduce the statistical uncertainties in particular in the tails of the distributions.
@@ -183,14 +190,19 @@ which is solely covered by the inclusive sample,
 is computed according to the relation $P_{\incl}^{0} = 1 - \sum_{i=1}^{44} \, P_{\incl}^{i}$.
 The numerical values of the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ obtained by the least-square method
 and of the stitching weights $s^{i}$, computed according to Eq.~(\ref{eq:weight_incl_simplified}), are given in Tables~\ref{tab:probabilities_WJets_vs_Njet_and_HT}
-and~\ref{tab:weights_WJets_vs_Njet_and_HT}.
+and~\ref{tab:weights_WJets_vs_Njet_and_HT} in the appendix.
 
 Distributions in $\pT$ of the leading and subleading jet,
 in the multiplicity of jets, and in the observable $\HT$ 
-for the sum of inclusive plus exclusive samples are compared to the distributions obtained for the inclusive sample in Fig.~\ref{fig:controlPlots_WJets_vs_Njet_and_HT}.
+obtained from our stitching procedure are compared to the distributions obtained from the inclusive sample in Fig.~\ref{fig:controlPlots_WJets_vs_Njet_and_HT}.
+The distributions obtained by stitching the inclusive sample with the samples binned in $N_{\jet}$ and in $\HT$ are represented by pink lines,
+while those obtained when using solely the inclusive sample are represented by black markers.
+The weights given in Table~\ref{tab:weights_WJets_vs_Njet_and_HT} are applied to the stitched distributions.
+The contribution of all $N_{\jet}$-binned samples to the stitched distribution is represented by the blue shaded area (``sum of $N_{\jet}$ samples''),
+while the contribution of all samples produced in ranges in $\HT$ is represented by the yellow shaded area (``sum of $\HT$ samples'') in the upper part of the figures.
+Following Fig.~\ref{fig:controlPlots_WJets_vs_Njet},
+the white area represents the contribution of the inclusive sample to the stitched distribution.
 The jets are reconstructed as described in Section~\ref{sec:WJets_vs_Njet} and are required to pass the selection criteria $\pT > 25$~\GeV and $\vert\eta\vert < 5.0$.
-We use the same fill pattern for all $N_{\jet}$-samples, another pattern for all $\HT$-samples, and a third pattern for the stitched inclusive sample,
-so that one can better see where each type of sample contributes the most.
 In the lower part of each figure, we again show the difference between the distributions obtained from the inclusive sample and obtained by using our stitching procedure,
 and also the respective statistical uncertainties.
 As one would expect, the addition of samples simulated in ranges in $\HT$ to the example given in Section~\ref{sec:WJets_vs_Njet}

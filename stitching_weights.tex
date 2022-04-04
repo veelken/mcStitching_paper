@@ -12,7 +12,7 @@ the overlap of the samples in PS needs to be accounted for by applying weights t
 The weights need to be chosen such that the weighted sum of simulated events in each region $i$ of PS 
 matches the SM prediction in that region:
 \begin{equation}
-\sum_{j} \, P_{j}^{i} \cdot s_{j}^{i} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k} = L \cdot \sigma^{i} \, ,
+\sum_{j} \, P_{j}^{i} \, s_{j}^{i} \, \sum_{k=1}^{N_{j}} \, w_{j}^{k} = L \, \sigma^{i} \, ,
 \label{eq:one}
 \end{equation}
 where the symbol $L$ corresponds to the integrated luminosity of the analyzed dataset
@@ -33,12 +33,12 @@ and refer to these weights using the symbol $s^{i}$ from now on.
 We define the symbol $P_{\incl}^{i}$ as the ratio of the fiducial cross section $\sigma^{i}$ to the ``inclusive'' cross section $\sigma_{\incl}$,
 which refers to the whole PS:
 \begin{equation*}
-P_{\incl}^{i} = \frac{\sigma^{i}}{\sigma_{\incl}} \quad \Longleftrightarrow \quad \sigma^{i} = \sigma_{\incl} \cdot P_{\incl}^{i} \, .
+P_{\incl}^{i} = \frac{\sigma^{i}}{\sigma_{\incl}} \quad \Longleftrightarrow \quad \sigma^{i} = \sigma_{\incl} \, P_{\incl}^{i} \, .
 \label{eq:two}
 \end{equation*}
 Upon inserting this relation into Eq.~(\ref{eq:one}) and solving for the weight $s^{i}$, we obtain:
 \begin{equation}
-s^{i} = \frac{L \cdot \sigma_{\incl} \cdot P_{\incl}^{i}}{P_{j}^{i} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
+s^{i} = \frac{L \, \sigma_{\incl} \, P_{\incl}^{i}}{P_{j}^{i} \, \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
 \label{eq:master}
 \end{equation}
 
@@ -48,7 +48,7 @@ while additional MC samples are used to reduce the statistical uncertainties in 
 We refer to the MC sample that covers the whole PS as the ``inclusive'' sample and the corresponding PS as the ``inclusive'' PS.
 In this case, Eq.~(\ref{eq:master}) can be rewritten in the form:
 \begin{equation}
-s^{i} = \frac{L \cdot \sigma_{\incl}}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}} \cdot \frac{P_{\incl}^{i} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}{P_{\incl}^{i} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, P_{j}^{i} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, ,
+s^{i} = \frac{L \, \sigma_{\incl}}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}} \, \frac{P_{\incl}^{i} \, \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}{P_{\incl}^{i} \, \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, P_{j}^{i} \, \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, ,
 \label{eq:weight_incl}
 \end{equation}
 where $w_{\incl}^{k}$ refers to the weights assigned to events in the inclusive sample by the MC generator program and $N_{\incl}$ denotes the total number of events in the inclusive sample.
@@ -61,13 +61,13 @@ equals unity for the inclusive sample and for each exclusive sample $j$~\footnot
   it can be achieved by a simple multiplication of the weights $w_{\incl}^{k}$ and $w_{j}^{k}$ by the factors $1/\wbar_{\incl}$ and $1/\wbar_{j}$.
 }.
 The two factors in Eq.~(\ref{eq:weight_incl}) may be interpreted in the following way:
-The product of $w_{\incl}^{k}$ and the first factor, $w_{\incl}^{k} \cdot \frac{L \cdot \sigma_{\incl}}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}$,
+The product of $w_{\incl}^{k}$ and the first factor, $w_{\incl}^{k} \, \frac{L \, \sigma_{\incl}}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}$,
 corresponds to the weight that one would apply to an event in PS region $i$ 
 in case no exclusive samples are available and the signal or background estimate in PS region $i$ is based solely on the inclusive sample.
 The availability of the additional exclusive samples increases the number of simulated events in the PS region $i$, 
-from $N_{\incl} \cdot P_{\incl}^{i}$ to $N_{\incl} \cdot P_{\incl}^{i} + \sum_{j} \, N_{j} \cdot P_{j}^{i}$,
+from $N_{\incl} \, P_{\incl}^{i}$ to $N_{\incl} \, P_{\incl}^{i} + \sum_{j} \, N_{j} \, P_{j}^{i}$,
 and reduces the weights that are applied to simulated events falling into the region $i$.
 The reduction in the event weight is given by the second factor in Eq.~(\ref{eq:weight_incl}).
 It has the effect of reducing the statistical uncertainty on the signal or background estimate in PS region $i$
 by the square-root of this factor,
-\ie by $\sqrt{\frac{P_{\incl}^{i} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}{P_{\incl}^{i} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + P_{j}^{i} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}}}$.
+\ie by $\sqrt{\frac{P_{\incl}^{i} \, \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}{P_{\incl}^{i} \, \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + P_{j}^{i} \, \sum_{k=1}^{N_{j}} \, w_{j}^{k}}}$.

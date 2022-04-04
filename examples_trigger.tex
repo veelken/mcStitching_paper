@@ -40,7 +40,7 @@ Our formalism treats the HS interaction and the PU interactions on an equal foot
 The ``inclusive'' sample in this example are events containing $N_{\pileup} + 1$ minimum bias interactions,
 where for each event the number of PU interactions, $N_{\pileup}$, is sampled at random from the Poisson probability distribution:
 \begin{equation}
-\Poisson(N_{\pileup} \vert \Nbar) = \frac{\Nbar^{N_{\pileup}} \times e^{-\Nbar}}{N_{\pileup}!}
+\Poisson(N_{\pileup} \vert \Nbar) = \frac{\Nbar^{N_{\pileup}} \, e^{-\Nbar}}{N_{\pileup}!}
 \label{eq:Poisson}
 \end{equation}
 with a mean $\Nbar = 200$.
@@ -58,7 +58,7 @@ The probability $P^{I}$ for an event in the inclusive sample that contains $N_{\
 to feature $n_{1}$ inelastic $\Pp\Pp$ scatterings that fall into the first interval in $\pThat$, $n_{2}$ that fall into the second,$\dots$, and $n_{m}$ that fall into the $m$-th 
 follows a multinomial distribution~\cite{evans2011statistical} and is given by:
 \begin{equation}
-P_{\incl}^{I} = \frac{(N_{\pileup} + 1)!}{n_{1}! \times \dots \times n_{m}!} \cdot p_{1}^{n_{1}} \times \dots \times p_{m}^{n_{m}} \, ,
+P_{\incl}^{I} = \frac{(N_{\pileup} + 1)!}{n_{1}! \, \dots \, n_{m}!} \, p_{1}^{n_{1}} \, \dots \, p_{m}^{n_{m}} \, ,
 \label{eq:P_inclusive}
 \end{equation}
 where the symbols $p_{i}$ correspond to the probability for a single inelastic $\Pp\Pp$ scattering interaction to feature a transverse momentum exchange that falls into the $i$-th interval in $\pThat$.
@@ -67,7 +67,7 @@ The $n_{i}$ satisfy the condition $\sum_{i=1}^{m} \, n_{i} = N_{\pileup} + 1$.
 The corresponding probability $P_{j}^{I}$ for an event in the $j$-th exclusive sample that contains $N_{\pileup}$ pileup interactions is given by:
 \begin{equation}
 P_{j}^{I} = \begin{cases}
-\frac{N_{\pileup}!}{n_{1}! \times \dots \times (n_{j} - 1)! \times \dots \times n_{m}!} \cdot p_{1}^{n_{1}} \times \dots \times p_{j}^{(n_{j} - 1)} \times \dots \times p_{m}^{n_{m}} \, ,
+\frac{N_{\pileup}!}{n_{1}! \, \dots \, (n_{j} - 1)! \, \dots \, n_{m}!} \, p_{1}^{n_{1}} \, \dots \, p_{j}^{(n_{j} - 1)} \, \dots \, p_{m}^{n_{m}} \, ,
   & \text{if $n_{j} \geq 1$} \\
 0 \, , & \text{otherwise} \, .
 \end{cases}
@@ -79,7 +79,7 @@ implies that $N_{\pileup} + 1$ needs to be replaced by $N_{\pileup}$ and $n_{j}$
 as one of the inelastic $\Pp\Pp$ scatterings that fall into the $j$-th interval in $\pThat$ is ``fixed'' and thus not subject to the random fluctuations, which are modeled by the multinomial distribution.
 The ratio of Eq.~(\ref{eq:P_exclusive}) to Eq.~(\ref{eq:P_inclusive}) is given by the expression:
 \begin{equation}
-\frac{P_{j}^{I}}{P_{\incl}^{I}} = \frac{n_{j}}{(N_{\pileup} + 1) \cdot p_{j}} \, .
+\frac{P_{j}^{I}}{P_{\incl}^{I}} = \frac{n_{j}}{(N_{\pileup} + 1) \, p_{j}} \, .
 \label{eq:P_ratio}
 \end{equation}
 The validity of Eq.~(\ref{eq:P_ratio}) includes the case $n_{j} = 0$.
@@ -87,15 +87,15 @@ The validity of Eq.~(\ref{eq:P_ratio}) includes the case $n_{j} = 0$.
 The expression for the stitching weight $s^{I}$ is given by an expression similar to Eq.~(\ref{eq:weight_incl}),
 the main difference being that the index $i$ is replaced by the vector $I$,
 the probabilities $P_{\incl}^{i}$ and $P_{j}^{i}$ are replaced by the probabilities $P_{\incl}^{I}$ and $P_{j}^{I}$
-and the product of luminosity times cross section, $L \cdot \sigma_{\incl}$, is replaced by the frequency $F$ of $\Pp\Pp$ collisions:
+and the product of luminosity times cross section, $L \, \sigma_{\incl}$, is replaced by the frequency $F$ of $\Pp\Pp$ collisions:
 \begin{equation}
-s^{I} = \frac{F}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}} \cdot \frac{P_{\incl}^{I} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}{P_{\incl}^{I} \cdot \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, P_{j}^{I} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
+s^{I} = \frac{F}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}} \, \frac{P_{\incl}^{I} \, \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k}}{P_{\incl}^{I} \, \sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, P_{j}^{I} \, \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
 \label{eq:weight_tmp}
 \end{equation}
 The probabilities $P_{\incl}^{I}$ and $P_{j}^{I}$ are given by Eqs.(~\ref{eq:P_inclusive}) and~(\ref{eq:P_exclusive}).
 Dividing both numerator and denominator on the right-hand side of Eq.~(\ref{eq:weight_tmp}) by $P_{\incl}^{I}$ and replacing the ratio $P_{j}^{I}/P_{\incl}^{I}$ by Eq.~(\ref{eq:P_ratio}) yields:
 \begin{equation}
-s^{I} = \frac{F}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, \frac{n_{j}}{(N_{\pileup} + 1) \cdot p_{j}} \cdot \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
+s^{I} = \frac{F}{\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} + \sum_{j} \, \frac{n_{j}}{(N_{\pileup} + 1) \, p_{j}} \, \sum_{k=1}^{N_{j}} \, w_{j}^{k}} \, .
 \label{eq:weight_trigger_rate}
 \end{equation}
 The sum over $j$ refers to the exclusive samples.
@@ -108,7 +108,7 @@ which allows to simplify Eq.~(\ref{eq:weight_trigger_rate}).
 Using the relations $\sum_{k=1}^{N_{\incl}} \, w_{\incl}^{k} = N_{\incl}$ and $\sum_{k=1}^{N_{j}} \, w_{j}^{k} = N_{j}$,
 we obtain the expression:
 \begin{equation}
-s^{I} = \frac{F}{N_{\incl} + \sum_{j} \, \frac{n_{j}}{(N_{\pileup} + 1) \times p_{j}} \cdot N_{j}} \, .
+s^{I} = \frac{F}{N_{\incl} + \sum_{j} \, \frac{n_{j}}{(N_{\pileup} + 1) \, p_{j}} \, N_{j}} \, .
 \label{eq:weight_trigger_rate_simplified}
 \end{equation}
 
